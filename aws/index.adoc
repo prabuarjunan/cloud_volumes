@@ -1,0 +1,15 @@
+---
+sidebar: sidebar_aws
+permalink: aws/index.html
+summary: Welcome to the documentation portal for Cloud Volumes on Amazon Web Services.
+---
+
+= Cloud Volumes on Amazon Web Services documentation
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+:keywords: cloud volumes, amazon web services, aws, documentation, help
+
+Initial Content for Cloud Volumes on Amazon Web Services.
