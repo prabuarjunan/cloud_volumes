@@ -28,7 +28,6 @@ You should bookmark this URL. You will need to return to it later.
 The Create Volume page appears.
 
 . Provide information for the following fields:
-+
 * *Name*
 +
 Specify the name you want to use for the volume.
