@@ -12,10 +12,20 @@ entries:
         url: /task_mounting_cloud_volumes_for_aws.html    
 
  - title: Managing Cloud Volumes for AWS 
-     entries:
+    entries:
       - title: Modifying Cloud Volumes
         url: /task_modifying_cloud_volumes_for_aws.html
-            entries:
       - title: Deleting Cloud Volumes 
         url: /task_deleting_cloud_volumes_for_aws.html
-      
+  
+ - title: Managing Cloud Volume snapshots
+    entries:
+      - title: Creating an on-demand snapshot for a Cloud Volume
+        url: /task_creating_on_demand_snapshots.html
+      - title: Creating or editing a snapshot policy
+        url: /task_creating_editing_snapshots.html
+      - title: Deleting a snapshot
+        url: /task_deleting_snapshots.html
+      - title: Restoring a snapshot to a new volume
+        url: /task_restoring_snapshots_to_new_volumes.html
+        
