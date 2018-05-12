@@ -1,0 +1,27 @@
+---
+sidebar: sidebar_aws
+permalink: aws/task_creating_additional_export_policy_rules.html
+keywords: Cloud Volumes for AWS, export policy rules, creating additional.
+summary: You can create additional export policy rules to enable flexible client access.  For example, you can specify that a given IP range should have only read-only access to a volume.
+---
+
+= Editing an export policy rule
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+You can create additional export policy rules to enable flexible client access.  For example, you can specify that a given IP range should have only read-only access to a volume.
+
+.Steps
+. Click *+ Add export policy rule*.
+. Set values for the following fields:
++
+* *Allowed client*
+* *Access type*
+* *Protocol*
+. Click *Save changes*.

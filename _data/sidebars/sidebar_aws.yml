@@ -28,4 +28,13 @@ entries:
         url: /task_deleting_snapshots.html
       - title: Restoring a snapshot to a new volume
         url: /task_restoring_snapshots_to_new_volumes.html
+ 
+- title: Managing export policy rules 
+    entries:
+      - title: Editing an export policy rule
+        url: /task_editing_export_policy_rules.html
+      - title: Creating additional export policy rules
+        url: /task_creating_additional_export_policy_rules.html
+      - title: Deleting export policy rules
+        url: /task_deleting_export_policy_rules.html
         

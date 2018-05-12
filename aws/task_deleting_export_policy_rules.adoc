@@ -1,0 +1,22 @@
+---
+sidebar: sidebar_aws
+permalink: aws/task_deleting_export_policy_rules.html
+keywords: Cloud Volumes for AWS, export policy rules, deleting.
+summary: You can delete export policy rules that are no longer needed.
+---
+
+= Editing an export policy rule
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+You can delete export policy rules that are no longer needed.
+
+.Steps
+. Click *X* for the policy rule that you want to delete.
+. Click *Save changes*.
