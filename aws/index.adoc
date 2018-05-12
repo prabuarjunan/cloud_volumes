@@ -12,4 +12,21 @@ summary: Welcome to the documentation portal for Cloud Volumes on Amazon Web Ser
 :imagesdir: ./media/
 :keywords: cloud volumes, amazon web services, aws, documentation, help
 
-Initial Content for Cloud Volumes on Amazon Web Services.
+The NetApp Cloud Volumes for AWS service is a cloud native file service that provides NAS volumes over NFS and SMB with all-flash performance. This service enables any workload, including legacy applications, to run in the AWS cloud. 
+
+link:concept_overview.html[NetApp Cloud Volumes for AWS overview] 
+
+== Perform top tasks
+
+* link:task_creating_cloud_volumes_for_aws.html[Creating Cloud Volumes for AWS]
+
+
+== Learn about NetApp Cloud Volumes for AWS
+
+video::QlsRSCEGBW0[youtube, width=848, height=480]
+
+
+== Find more information
+
+* https://cloud.netapp.com/home[NetApp Cloud Central^]
+* https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volumes-for-aws.aspx?hsCtaTracking=4f67614a-8c97-4c15-bd01-afa38bd31696%7C5e536b53-9371-4ce1-8e38-efda436e592e[Get a first look at the new NetApp Cloud Volumes for AWS^]
