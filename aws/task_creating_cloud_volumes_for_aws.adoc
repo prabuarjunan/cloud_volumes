@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/task_mounting_cloud_volumes.html
-keywords: Cloud Volumes for AWS, creating, new volume
+keywords: Cloud Volumes for AWS, creating, new volume, snapshot, service level, quota, export policy, NFS, SMB, Active Directory.
 summary: You manage Cloud Volumes for AWS from the NetApp Cloud Central site.
 ---
 
@@ -16,6 +16,11 @@ summary: You manage Cloud Volumes for AWS from the NetApp Cloud Central site.
 
 [.lead]
 You create Cloud Volumes for AWS from the https://netapp-cloud-account.auth0.com/login?state=UmcKlfisH8-Mqpq_F8G5O6491GsIZjk2&client=h9WqlUdmJ0hyy2em37COpqOhxMKmYS2o&protocol=oauth2&redirect_uri=https%3A%2F%2Fcds-aws.netapp.com%2F_oauth%2Fauth0&scope=openid%20profile%20offline_access&response_type=code&audience=https%3A%2F%2Fapi.cloud.netapp.com[NetApp Cloud Central^] site.
+
+.Before you begin
+You must have subscribed to the NetApp Cloud Volumes for AWS service before you can create a Cloud Volume.
+
+See the https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volumes-for-aws.aspx?hsCtaTracking=4f67614a-8c97-4c15-bd01-afa38bd31696%7C5e536b53-9371-4ce1-8e38-efda436e592e[Get a first look at the new NetApp Cloud Volumes for AWS^] page for information about subscribing to the NetApp Cloud Volumes for AWS service.
 
 .Steps
 
@@ -96,5 +101,8 @@ You can create additional snapshot policies by repeating the steps above.
 You can edit export policies and snapshot policies after the volume is created.
 . Scroll down the Create Volume page, and then click the *Create Volume* button to create a volume.
 +
-The volume you created appears.
+The volume you created appears in the Volumes page.
 image:diagram_volume_created.png[A volume is created]
+
+.After you finish
+Continue with <<task_mounting_cloud_volumes_for_aws.adoc#,Mounting a Cloud Volume for AWS>>

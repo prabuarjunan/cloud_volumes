@@ -1,0 +1,31 @@
+---
+sidebar: sidebar_aws
+permalink: aws/task_mounting_cloud_volumes_for_aws.html
+keywords: Cloud Volumes for AWS, mounting, mount targets, EC2.
+summary: You can mount a Cloud Volume to your AWS instance, which can be Red Hat, SuSE, Ubuntu, or Debian.
+---
+
+= Mounting a Cloud Volume for AWS
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+You can mount a Cloud Volume to your AWS instance, which can be Red Hat, SuSE, Ubuntu, or Debian.
+
+.Steps
+
+. To obtain mount instructions, on the volume you created, click the blue question mark (?) at the end of the Export Paths field next to the volume name.
++
+When you hover over the question mark, it displays *Show mount instructions*.
++
+image:diagram_show_mount_instructions.png[Show mount instructions]
+
+. Click the question mark to display the mount instructions.
+. Connect to your Amazon Elastic Compute Cloud (EC2) instance by using your SSH client, and then follow the mount instructions for your instance (Red Hat, SuSE, Ubuntu, or Debian).
++
+After completing the steps in the mount instructions, you have successfully mounted your volume to your AWS instance.

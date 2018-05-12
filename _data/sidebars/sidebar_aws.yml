@@ -9,6 +9,13 @@ entries:
       - title: Creating Cloud Volumes for AWS 
         url: /task_creating_cloud_volumes_for_aws.html
       - title: Mounting a Cloud Volume
-        url: /task_mounting_cloud_volumes.html    
+        url: /task_mounting_cloud_volumes_for_aws.html    
 
-    
+ - title: Managing Cloud Volumes for AWS 
+     entries:
+      - title: Modifying Cloud Volumes
+        url: /task_modifying_cloud_volumes_for_aws.html
+            entries:
+      - title: Deleting Cloud Volumes 
+        url: /task_deleting_cloud_volumes_for_aws.html
+      
