@@ -18,6 +18,7 @@ summary: You can create additional export policy rules to enable flexible client
 You can create additional export policy rules to enable flexible client access.  For example, you can specify that a given IP range should have only read-only access to a volume.
 
 .Steps
+. Click the volume name, and then select *Export policy*. 
 . Click *+ Add export policy rule*.
 . Set values for the following fields:
 +

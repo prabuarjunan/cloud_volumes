@@ -31,5 +31,10 @@ Snapshot policies can be Hourly, Daily, Weekly, or Monthly.
 * Select *Minute* for hourly snapshots.
 * Select *Hour* and *Minute* for daily snapshots.
 * Select *Weekday/s*, *Hour*, and *Minutes* for weekly snapshots.
-* Select *Day/s* of month, *Hour*, and *Minutes* for monthly snapshots.5.	If you need to create additional snapshot policies, repeat steps 2 through 4.
+* Select *Day/s* of month, *Hour*, and *Minutes* for monthly snapshots.
++
+image:diagram_snapshot_policy_1.png[Show mount instructions]
+
+. If you need to create additional snapshot policies, repeat steps 2 through 4.
+
 . Click *Save changes*.

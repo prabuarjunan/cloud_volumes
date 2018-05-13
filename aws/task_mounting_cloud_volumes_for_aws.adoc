@@ -23,9 +23,11 @@ You can mount a Cloud Volume to your AWS instance, which can be Red Hat, SuSE, U
 +
 When you hover over the question mark, it displays *Show mount instructions*.
 +
-image:diagram_show_mount_instructions.png[Show mount instructions]
+image:diagram_mount_1.png[Show mount instructions]
 
 . Click the question mark to display the mount instructions.
++
+image:diagram_mount_2.png[Mount instructions]
 . Connect to your Amazon Elastic Compute Cloud (EC2) instance by using your SSH client, and then follow the mount instructions for your instance (Red Hat, SuSE, Ubuntu, or Debian).
 +
 After completing the steps in the mount instructions, you have successfully mounted your volume to your AWS instance.
