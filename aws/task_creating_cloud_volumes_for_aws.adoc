@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/task_mounting_cloud_volumes.html
-keywords: Cloud Volumes for AWS, creating, new volume, snapshot, service level, quota, export policy, NFS, SMB, Active Directory.
+keywords: Cloud Volumes for AWS, volumes, snapshots, service levels, quota, export policy, NFS, SMB, Active Directory, AD, Windows
 summary: You manage Cloud Volumes for AWS from the NetApp Cloud Central site.
 ---
 

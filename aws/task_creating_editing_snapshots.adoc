@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/task_creating_editing_snapshots.html
-keywords: Cloud Volumes for AWS, snapshot policies, creating, editing
+keywords: Cloud Volumes for AWS, snapshot policies
 summary: You can create or edit a snapshot policy as necessary for a Cloud Volume.
 ---
 
@@ -33,7 +33,7 @@ Snapshot policies can be Hourly, Daily, Weekly, or Monthly.
 * Select *Weekday/s*, *Hour*, and *Minutes* for weekly snapshots.
 * Select *Day/s* of month, *Hour*, and *Minutes* for monthly snapshots.
 +
-image:diagram_snapshot_policy_1.png[Show mount instructions]
+image:diagram_snapshot_policy_1.png[Snapshot policy]
 
 . If you need to create additional snapshot policies, repeat steps 2 through 4.
 

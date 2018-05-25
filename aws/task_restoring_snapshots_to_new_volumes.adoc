@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/task_restoring_snapshots_to_new_volumes.html
-keywords: Cloud Volumes for AWS, snapshots, restoring, new volumes.
+keywords: Cloud Volumes for AWS, snapshots, restore
 summary: You can restore a snapshot to a new volume as necessary.
 ---
 
