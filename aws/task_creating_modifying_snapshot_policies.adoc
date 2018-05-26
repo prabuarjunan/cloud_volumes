@@ -1,12 +1,12 @@
 
 ---
 sidebar: sidebar_aws
-permalink: aws/task_creating_editing_snapshot_policies.html
+permalink: aws/task_creating_modifying_snapshot_policies.html
 keywords: Cloud Volumes for AWS, snapshot policies
-summary: You can create or edit a snapshot policy as necessary for a Cloud Volume.
+summary: You can create or modifying a snapshot policy as necessary for a Cloud Volume.
 ---
 
-= Creating or editing a snapshot policy
+= Creating or modifying a snapshot policy
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -16,7 +16,7 @@ summary: You can create or edit a snapshot policy as necessary for a Cloud Volum
 
 
 [.lead]
-You can create or edit a snapshot policy as necessary for a Cloud Volume.
+You can create or modifying a snapshot policy as necessary for a Cloud Volume.
 
 .Steps
 . From the Volumes page, click *volume name*, and then select *Snapshot policy*.

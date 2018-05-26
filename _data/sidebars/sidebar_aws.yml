@@ -22,8 +22,8 @@ entries:
     entries:
       - title: Creating an on-demand snapshot for a Cloud Volume
         url: /task_creating_on_demand_snapshots.html
-      - title: Creating or editing a snapshot policy
-        url: /task_creating_editing_snapshot_policies.html
+      - title: Creating or modifying a snapshot policy
+        url: /task_creating_modifying_snapshot_policies.html
       - title: Deleting a snapshot
         url: /task_deleting_snapshots.html
       - title: Restoring a snapshot to a new volume
@@ -31,8 +31,8 @@ entries:
  
 - title: Managing export policy rules 
     entries:
-      - title: Editing an export policy rule
-        url: /task_editing_export_policy_rules.html
+      - title: Modifying an export policy rule
+        url: /task_modifying_export_policy_rules.html
       - title: Creating additional export policy rules
         url: /task_creating_additional_export_policy_rules.html
       - title: Deleting export policy rules
