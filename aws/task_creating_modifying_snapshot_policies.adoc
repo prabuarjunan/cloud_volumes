@@ -1,4 +1,3 @@
-
 ---
 sidebar: sidebar_aws
 permalink: aws/task_creating_modifying_snapshot_policies.html
