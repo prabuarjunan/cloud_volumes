@@ -21,7 +21,7 @@ toc::[]
 
 == Creating snapshots from the Volumes page
 .Steps
-.	Click *Volume name*, select *Snapshots*, and then click  *+ Create new snapshot*.
+.	Click the volume name, select *Snapshots*, and then click  *+ Create new snapshot*.
 .	Enter a name for the snapshot, or use the automatically generated name.
 .	Select the volume name, and then, from the drop-down list, select the volume for which you want to create a snapshot.
 .	Click *Create snapshot*.
