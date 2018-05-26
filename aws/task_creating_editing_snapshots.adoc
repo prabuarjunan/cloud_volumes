@@ -19,10 +19,10 @@ You can create or edit a snapshot policy as necessary for a Cloud Volume.
 
 .Steps
 . From the Volumes page, click *volume name*, and then select *Snapshot policy*.
++
 Snapshot policies can be Hourly, Daily, Weekly, or Monthly.
 +
-* Active policies are marked with a green dot.
-* Inactive policies are marked with a red dot.
+Active policies are marked with a green dot. Inactive policies are marked with a red dot.
 
 . Select *Hourly*, *Daily*, *Weekly*, or *Monthly* to specify the frequency for creating snapshots.
 . Select the number of snapshots to keep.

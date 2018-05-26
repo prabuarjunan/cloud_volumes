@@ -28,7 +28,7 @@ toc::[]
 
 The created snapshot appears.
 
-== Creating snapshots from the Snapshots page:
+== Creating snapshots from the Snapshots page
 .Steps
 .	Click *+ Create new snapshot*.
 .	Enter a name for the snapshot, or use the automatically generated name.

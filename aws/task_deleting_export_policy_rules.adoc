@@ -5,7 +5,7 @@ keywords: Cloud Volumes for AWS, export policy rules
 summary: You can delete export policy rules that are no longer needed.
 ---
 
-= Editing an export policy rule
+= Deleting export policy rules
 :toc: macro
 :hardbreaks:
 :nofooter:

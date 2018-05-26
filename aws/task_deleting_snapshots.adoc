@@ -22,8 +22,8 @@ toc::[]
 == Deleting a snapshot from the Volumes page
 
 .Steps
-. Click *volume name*, and then select *Snapshots* to see a list of snapshots for the volume.
-. Specify the snapshots that you want to delete by selecting the corresponding check boxes, click *Actions*, and then select *Delete snapshot/s* from the drop-down list.
+. Click the volume name, and then select *Snapshots* to see a list of snapshots for the volume.
+. Specify the snapshots that you want to delete by selecting the corresponding checkboxes, click *Actions*, and then select *Delete snapshot/s* from the drop-down list.
 +
 Alternatively, you can click *Available* under Actions, then select *Delete snapshot* from the drop-down list.
 . In the confirmation dialog box, type `delete` to confirm, and then click *Delete*.
@@ -33,5 +33,5 @@ Alternatively, you can click *Available* under Actions, then select *Delete snap
 .Steps
 
 . (Optional) Use the search dialog to filter the listed snapshots.
-. Select the snapshot or snapshots you want to delete by checking the corresponding box or boxes, click *Actions*, and then select *Delete snapshot/s* from the drop-down list.
+. Specify the snapshots that you want to delete by selecting the corresponding checkboxes, click *Actions*, and then select *Delete snapshot/s* from the drop-down list.
 . In the confirmation dialog box, type `delete` to confirm, and then click *Delete*.

@@ -24,9 +24,10 @@ See the https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volum
 
 .Steps
 
-. Navigate to the https://cds-aws.netapp.com/storage/volumes[NetApp Cloud Central^] site (https://cds-aws.netapp.com/storage/volumes), and then log in with the email address that you provided during your subscription.
+. Navigate to the https://cds-aws.netapp.com/storage/volumes[NetApp Cloud Central^] site, and then log in with the email address that you provided during your subscription.
 +
 You should bookmark this URL. You will need to return to it later.
+. Click the *Create new volume* button.
 +
 The Create Volume page appears.
 +
@@ -46,7 +47,7 @@ Select the AWS region where you want to create the volume.
 Select your time zone.
 * *Generated volume path*
 +
-Specify the path you want to use, or accept the automatically generated path.
+Specify the path you want to use or accept the automatically generated path.
 * *Create from snapshot* (Optional)
 +
 Select an existing snapshot to create a volume.
@@ -86,6 +87,8 @@ Enter an administrator username for the Active Directory server.
 ** *Password*
 +
 Enter the password for the Active Directory administrator.
++
+image::diagram_create_volume_ad.png[Active Directory]
 * *Snapshot policy* (Optional)
 +
 ** Select the snapshot frequency: *Hourly*, *Daily*, *Weekly*, or *Monthly*.
@@ -108,4 +111,4 @@ The volume you created appears in the Volumes page.
 image:diagram_create_volume_3.png[A volume is created]
 
 .After you finish
-Continue with <<task_mounting_cloud_volumes_for_aws.adoc#,Mounting a Cloud Volume for AWS>>
+Continue with <<task_mounting_cloud_volumes_for_aws.adoc#,Mounting a Cloud Volume for AWS>>.
