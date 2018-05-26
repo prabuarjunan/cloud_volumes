@@ -23,7 +23,7 @@ link:concept_overview.html[NetApp Cloud Volumes for AWS overview]
 * link:task_mounting_cloud_volumes_for_aws.html[Mounting a Cloud Volume for AWS]
 * link:task_creating_on_demand_snapshots.html[Creating an on-demand snapshot for a Cloud Volume]
 
-== Learn about NetApp Cloud Volumes for AWS
+== Learn about Cloud Volumes for AWS
 
 video::QlsRSCEGBW0[youtube, width=848, height=480]
 

@@ -29,7 +29,7 @@ The Cloud Volumes for AWS service provides the following benefits:
 
 == Prerequisites
 
-You must have subscribed to the Cloud Volumes for AWS service before you can perform the Cloud Volumes management tasks that are described in this documentation.  The subscription process includes the initial setup and configuration that are required for using the service.
+You must have subscribed to the Cloud Volumes for AWS service before you can perform the Cloud Volumes tasks that are described in this documentation.  The subscription process includes the initial setup and configuration that are required for using the service.
 
 See the https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volumes-for-aws.aspx?hsCtaTracking=4f67614a-8c97-4c15-bd01-afa38bd31696%7C5e536b53-9371-4ce1-8e38-efda436e592e[Get a first look at the new NetApp Cloud Volumes for AWS^] page for information about subscribing to the Cloud Volumes for AWS service.
 
