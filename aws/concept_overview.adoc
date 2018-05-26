@@ -5,7 +5,7 @@ keywords: overview, concepts, features, use cases, prerequisites, workflow
 summary: Cloud Volumes for AWS are simple to use and fast to deploy. Some prerequisites apply for using the NetApp Cloud Volumes for AWS service.
 ---
 
-= NetApp Cloud Volumes for AWS overview
+= Cloud Volumes for AWS overview
 :toc: macro
 :hardbreaks:
 :nofooter:
