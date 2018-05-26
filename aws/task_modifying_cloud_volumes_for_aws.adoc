@@ -21,10 +21,10 @@ You can modify existing volumes, including changing the volume name, quota, or s
 
 . Log in to https://cds-aws.netapp.com/storage/volumes[NetApp Cloud Central^].
 . Click the name of the volume that you want to manage.
-. Modify volume fields as applicable:
+. Modify the following volume fields as applicable:
 +
 * Name
 * Quota
 * Service level
 +
-NOTE: Changing the service level is nondisruptive and does not affect client data access.
+Changing the service level is nondisruptive and does not affect client data access.
