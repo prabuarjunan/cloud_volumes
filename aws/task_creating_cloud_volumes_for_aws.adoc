@@ -67,7 +67,7 @@ Specify the allowed clients by using an IP address or Classless Inter-Domain Rou
 Select *Read & Write* or *Read only*.
 ** *Protocol*
 +
-Select *NFS3* or *SMB* .
+Select *NFS3* or *SMB*.
 ** *Add export policy rule* (optional)
 +
 Click to add additional export policy rules if needed.
