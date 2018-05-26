@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/index.html
-summary: Welcome to the documentation portal for Cloud Volumes on Amazon Web Services.
+summary: Welcome to the documentation portal for NetApp Cloud Volumes for AWS.
 ---
 
 = NetApp Cloud Volumes for AWS documentation
