@@ -2,7 +2,7 @@
 sidebar: sidebar_aws
 permalink: aws/concept_overview.html
 keywords: overview, concepts, features, use cases, prerequisites, workflow
-summary: The NetApp Cloud Volumes for AWS service is a cloud native file service that provides NAS volumes over NFS and SMB with all-flash performance. This service enables any workload, including legacy applications, to run in the AWS cloud.
+summary: Cloud Volumes for AWS are simple to use and fast to deploy. Some prerequisites apply for using the NetApp Cloud Volumes for AWS service.
 ---
 
 = NetApp Cloud Volumes for AWS overview
@@ -14,7 +14,7 @@ summary: The NetApp Cloud Volumes for AWS service is a cloud native file service
 :imagesdir: ./media/
 
 [.lead]
-Cloud Volumes for AWS are simple to use and fast to deploy.  Some prerequisites apply before you can begin to use the NetApp Cloud Volumes for AWS service.
+Cloud Volumes for AWS are simple to use and fast to deploy.  Some prerequisites apply for using the NetApp Cloud Volumes for AWS service.
 
 == Benefits of using NetApp Cloud Volumes for AWS
 
