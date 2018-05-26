@@ -32,4 +32,4 @@ Example:
 image:diagram_mount_2.png[Mount instructions]
 . Connect to your Amazon Elastic Compute Cloud (EC2) instance by using your SSH client, and then follow the mount instructions for your instance (Red Hat, SuSE, Ubuntu, or Debian).
 +
-After completing the steps in the mount instructions, you have successfully mounted your volume to your AWS instance.
+After completing the steps in the mount instructions, you have successfully mounted the Cloud Volume to your AWS instance.
