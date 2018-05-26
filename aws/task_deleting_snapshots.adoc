@@ -32,6 +32,6 @@ Alternatively, you can click *Available* under Actions, then select *Delete snap
 == Deleting a snapshot from the Snapshots page
 .Steps
 
-. (Optional) Use the search dialog to filter the listed snapshots.
+. (Optional) Use the search box to filter the listed snapshots.
 . Specify the snapshots that you want to delete by selecting the corresponding checkboxes, click *Actions*, and then select *Delete snapshot/s* from the drop-down list.
 . In the confirmation dialog box, type `delete` to confirm, and then click *Delete*.
