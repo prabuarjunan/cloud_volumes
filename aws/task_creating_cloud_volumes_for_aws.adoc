@@ -73,7 +73,7 @@ Select *NFS3* or *SMB* .
 Click to add additional export policy rules if needed.
 * *Active Directory*
 +
-If SMB is selected , provide the information:
+If SMB is selected, provide the following information:
 
 ** *DNS server*
 +
