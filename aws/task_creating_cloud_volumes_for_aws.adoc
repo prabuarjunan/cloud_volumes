@@ -70,14 +70,14 @@ Select *Read & Write* or *Read only*.
 Select *NFS3* or *SMB*.
 ** *Add export policy rule* (optional)
 +
-Click to add additional export policy rules if needed.
+Click to add additional export policy rules.
 * *Active Directory*
 +
 If SMB is selected, provide the following information:
 
 ** *DNS server*
 +
-Enter the IP address of the DNS server you want to use.
+Enter the IP address of the DNS server that you want to use.
 ** *Domain*
 +
 Enter the domain for the SMB share.
@@ -103,7 +103,7 @@ You can create additional snapshot policies by repeating the steps above.
 +
 image::diagram_snapshot_policy_1.png[Snapshot policy]
 +
-NOTE: You can edit export policies and snapshot policies after the volume is created.
+You can edit export policies and snapshot policies after the volume is created.
 
 . Scroll down the Create Volume page, and then click the *Create Volume* button to create the volume.
 +
