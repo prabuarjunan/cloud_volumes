@@ -1,6 +1,7 @@
+
 ---
 sidebar: sidebar_aws
-permalink: aws/task_creating_editing_snapshots.html
+permalink: aws/task_creating_editing_snapshot_policies.html
 keywords: Cloud Volumes for AWS, snapshot policies
 summary: You can create or edit a snapshot policy as necessary for a Cloud Volume.
 ---
