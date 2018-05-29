@@ -21,7 +21,7 @@ You can delete a Cloud Volume that is no longer needed.
 
 . Unmount the volume from all clients:
 +
-* On Linux clients, use the `unmount` command.
+* On Linux clients, use the `umount` command.
 * On Windows clients, click *Disconnect network drive*.
 
 . From the Volumes page, specify the volumes that you want to delete by selecting the corresponding checkboxes, click *Actions*, and then select *Delete volume/s* from the drop-down list.
