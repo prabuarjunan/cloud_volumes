@@ -11,7 +11,7 @@ before_install:
 - git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
 - rm -rf dependencies/jekyll/.git/
 - rm -rf dependencies/jekyll/*.md
-- mv dependencies/jekyll/* .
+- cp dependencies/jekyll/* .
 - rm -rf dependencies
 - cp sidebar.yml _data/sidebars/
 - sed -i 's/\/jekyll/'$JEKYLL_BASEURL'/g' ./_config.yml
