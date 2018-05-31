@@ -20,4 +20,7 @@ You can delete export policy rules that are no longer needed.
 .Steps
 . Click the volume name, and then select *Export policy*.
 . Click *X* for the policy rule that you want to delete.
++
+image:diagram_export_policy_delete.png[Deleting an export policy]
+
 . Click *Save changes*.
