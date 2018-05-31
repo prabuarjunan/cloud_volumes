@@ -11,9 +11,9 @@ before_install:
 - git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
 - rm -rf dependencies/jekyll/.git/
 - rm -rf dependencies/jekyll/*.md
-- cp dependencies/jekyll/* .
+- cp -rl dependencies/jekyll/ ./
 - rm -rf dependencies
-- cp sidebar.yml _data/sidebars/
+- mv sidebar.yml _data/sidebars/
 - sed -i 's/\/jekyll/'$JEKYLL_BASEURL'/g' ./_config.yml
 script:
 - bundle exec rake deploy
