@@ -1,0 +1,35 @@
+---
+sidebar: sidebar_aws
+permalink: aws/task_mounting_cloud_volumes_for_aws.html
+keywords: Cloud Volumes for AWS, mount targets, Elastic Compute Cloud, EC2
+summary: You can mount a Cloud Volume to your AWS instance.
+---
+
+= Mounting a Cloud Volume for AWS
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+You can mount a Cloud Volume to your AWS instance.
+
+.Steps
+
+. Obtain mount instructions for the volume you created by clicking the blue question mark (?) at the end of the Export Paths field next to the volume name.
++
+When you hover over the question mark, it displays *Show mount instructions*.
++
+image:diagram_mount_1.png[Show mount instructions]
+
+. Click the question mark to display the mount instructions.
++
+NFS example:
++
+image:diagram_mount_2.png[Mount instructions]
+. Connect to your Amazon Elastic Compute Cloud (EC2) instance by using an SSH or RDP client, and then follow the mount instructions for your instance.
++
+After completing the steps in the mount instructions, you have successfully mounted the Cloud Volume to your AWS instance.

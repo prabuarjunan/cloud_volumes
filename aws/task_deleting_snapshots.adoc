@@ -1,0 +1,37 @@
+---
+sidebar: sidebar_aws
+permalink: aws/task_deleting_snapshots.html
+keywords: Cloud Volumes for AWS, snapshots
+summary: You can delete a snapshot from the Volumes or Snapshots page.
+---
+
+= Deleting a snapshot
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+You can delete a snapshot from the Volumes or Snapshots page.
+
+toc::[]
+
+== Deleting a snapshot from the Volumes page
+
+.Steps
+. Click the volume name, and then select *Snapshots* to see a list of snapshots for the volume.
+. Specify the snapshots that you want to delete by selecting the corresponding checkboxes, click *Actions*, and then select *Delete snapshot/s* from the drop-down list.
++
+Alternatively, you can click *Available* under Actions, then select *Delete snapshot* from the drop-down list.
+. In the confirmation dialog box, type `delete` to confirm, and then click *Delete*.
+
+
+== Deleting a snapshot from the Snapshots page
+.Steps
+
+. (Optional) Use the search box to filter the listed snapshots.
+. Specify the snapshots that you want to delete by selecting the corresponding checkboxes, click *Actions*, and then select *Delete snapshot/s* from the drop-down list.
+. In the confirmation dialog box, type `delete` to confirm, and then click *Delete*.

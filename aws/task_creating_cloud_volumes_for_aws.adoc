@@ -1,0 +1,117 @@
+---
+sidebar: sidebar_aws
+permalink: aws/task_creating_cloud_volumes_for_aws.html
+keywords: Cloud Volumes for AWS, volumes, snapshots, service levels, quota, export policy, NFS, SMB, Active Directory, AD, Windows
+summary: You create Cloud Volumes for AWS from the NetApp Cloud Central site.
+---
+
+= Creating Cloud Volumes for AWS
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+You create Cloud Volumes for AWS from the https://netapp-cloud-account.auth0.com/login?state=UmcKlfisH8-Mqpq_F8G5O6491GsIZjk2&client=h9WqlUdmJ0hyy2em37COpqOhxMKmYS2o&protocol=oauth2&redirect_uri=https%3A%2F%2Fcds-aws.netapp.com%2F_oauth%2Fauth0&scope=openid%20profile%20offline_access&response_type=code&audience=https%3A%2F%2Fapi.cloud.netapp.com[NetApp Cloud Central^] site.
+
+.Before you begin
+You must have subscribed to the NetApp Cloud Volumes for AWS service before you can create a Cloud Volume.
+
+See the https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volumes-for-aws.aspx?hsCtaTracking=4f67614a-8c97-4c15-bd01-afa38bd31696%7C5e536b53-9371-4ce1-8e38-efda436e592e[Get a first look at the new NetApp Cloud Volumes for AWS^] page for information about subscribing to the NetApp Cloud Volumes for AWS service.
+
+.Steps
+
+. Navigate to the https://cds-aws.netapp.com/storage/volumes[NetApp Cloud Central^] site, and then log in with the email address that you provided during your subscription.
++
+You should bookmark this URL. You will need to return to it later.
+. Click the *Create new volume* button.
++
+The Create Volume page appears.
++
+image::diagram_create_volume_1.png[Create Volume page]
+
+. In the Create Volume page, provide information for the following fields:
+* *Name*
++
+Specify the name you want to use for the volume.
++
+* *Region*
++
+Select the AWS region where you want to create the volume.
++
+* *Timezone*
++
+Select your time zone.
+* *Generated volume path*
++
+Specify the path you want to use or accept the automatically generated path.
+* *Create from snapshot* (Optional)
++
+Select an existing snapshot to create a volume.
+* *Service level*
++
+Select *Standard*, *Premium*, or *Extreme*.
+* *Quota*
++
+Select the size for the volume.
+* *Export policy*
++
+** *Allowed clients*
++
+Specify the allowed clients by using an IP address or Classless Inter-Domain Routing (CIDR).
+** *Access*
++
+Select *Read & Write* or *Read only*.
+** *Protocol*
++
+Select *NFSv3* or *SMB*.
+** *Add export policy rule* (optional)
++
+Click to add additional export policy rules.
+* *Active Directory*
++
+If you selected SMB, provide the following information:
+
+** *DNS server*
++
+Enter the IP address of the DNS server that you want to use.
+** *Domain*
++
+Enter the domain for the SMB share.
+** *NetBIOS*
++
+Enter the NetBIOS name.
+** *Username*
++
+Enter an administrator username for the Active Directory server.
+** *Password*
++
+Enter the password for the Active Directory administrator.
++
+image::diagram_create_volume_ad.png[Active Directory]
+* *Snapshot policy* (Optional)
++
+** Select the snapshot frequency: *Hourly*, *Daily*, *Weekly*, or *Monthly*.
+** Select the number of snapshots to keep.
+** Select the time when the snapshot should be taken:
+***	Select *Minute* for hourly snapshots.
+***	Select *Hour* and *Minute* for daily snapshots.
+***	Select *Weekday(s)*, *Hour*, and *Minutes* for weekly snapshots.
+***	Select *Day(s)* of month, *Hour*, and *Minutes* for monthly snapshots.
++
+You can create additional snapshot policies by repeating the steps above.
++
+image::diagram_snapshot_policy_1.png[Snapshot policy]
++
+You can edit export policies and snapshot policies after the volume is created.
+
+. Scroll down the Create Volume page, and then click the *Create Volume* button to create the volume.
++
+The volume you created appears in the Volumes page.
+image:diagram_create_volume_3.png[A volume is created]
+
+.After you finish
+Continue with <<task_mounting_cloud_volumes_for_aws.adoc#,Mounting a Cloud Volume for AWS>>.

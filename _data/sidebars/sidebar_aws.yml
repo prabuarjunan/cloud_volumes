@@ -1,3 +1,35 @@
 entries:
-  - title: Cloud Volumes on AWS
+  - title: Cloud Volumes for AWS docs
     url: /index.html
+  - title: Getting started
+    entries:
+      - title: Overview
+        url: /concept_overview.html
+      - title: Creating Cloud Volumes for AWS
+        url: /task_creating_cloud_volumes_for_aws.html
+      - title: Mounting a Cloud Volume
+        url: /task_mounting_cloud_volumes_for_aws.html
+  - title: Managing Cloud Volumes for AWS
+    entries:
+      - title: Modifying Cloud Volumes
+        url: /task_modifying_cloud_volumes_for_aws.html
+      - title: Deleting Cloud Volumes
+        url: /task_deleting_cloud_volumes_for_aws.html
+  - title: Managing Cloud Volume snapshots
+    entries:
+      - title: Creating an on-demand snapshot for a Cloud Volume
+        url: /task_creating_on_demand_snapshots.html
+      - title: Creating or modifying a snapshot policy
+        url: /task_creating_modifying_snapshot_policies.html
+      - title: Deleting a snapshot
+        url: /task_deleting_snapshots.html
+      - title: Restoring a snapshot to a new volume
+        url: /task_restoring_snapshots_to_new_volumes.html
+  - title: Managing export policy rules
+    entries:
+      - title: Modifying an export policy rule
+        url: /task_modifying_export_policy_rules.html
+      - title: Creating additional export policy rules
+        url: /task_creating_additional_export_policy_rules.html
+      - title: Deleting export policy rules
+        url: /task_deleting_export_policy_rules.html
