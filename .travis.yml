@@ -13,7 +13,7 @@ before_install:
 - rm -rf dependencies/jekyll/*.md
 - mv dependencies/jekyll/* .
 - rm -rf dependencies
-- mv sidebar.yml _data/sidebars/
+- cp sidebar.yml _data/sidebars/
 - sed -i 's/\/jekyll/'$JEKYLL_BASEURL'/g' ./_config.yml
 script:
 - bundle exec rake deploy
