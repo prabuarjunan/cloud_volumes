@@ -2,22 +2,22 @@
 
 
 {
-"title": "Cloud Volumes for AWS overview",
+"title": "Cloud Volumes Service for AWS overview",
 "tags": "",
-"keywords": "overview, concepts, features, use cases, prerequisites, workflow",
+"keywords": "Cloud Volumes Service for AWS, overview, concepts, features, use cases, prerequisites, workflow",
 "url": "/cloud_volumes/aws/concept_overview.html",
-"summary": "Cloud Volumes for AWS are simple to use and fast to deploy. Some prerequisites apply for using the Cloud Volumes for AWS service."
+"summary": "Cloud Volumes are simple to use and fast to deploy. Some prerequisites apply for using Cloud Volumes Service for AWS."
 }
 ,
 
 
 
 {
-"title": "NetApp Cloud Volumes for AWS documentation",
+"title": "NetApp Cloud Volumes Service for AWS documentation",
 "tags": "",
 "keywords": "",
 "url": "/cloud_volumes/aws/index.html",
-"summary": "Welcome to the documentation portal for NetApp Cloud Volumes for AWS."
+"summary": "Welcome to the documentation portal for NetApp Cloud Volumes Service for AWS."
 }
 ,
 
@@ -39,7 +39,7 @@
 {
 "title": "Creating additional export policy rules",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, export policy rules, clients, IP range, access",
+"keywords": "Cloud Volumes Service for AWS, export policy rules, clients, IP range, access",
 "url": "/cloud_volumes/aws/task_creating_additional_export_policy_rules.html",
 "summary": "You can create additional export policy rules to enable flexible client access.  For example, you can specify that a given IP range should have only read-only access to a volume."
 }
@@ -48,11 +48,11 @@
 
 
 {
-"title": "Creating Cloud Volumes for AWS",
+"title": "Creating Cloud Volumes",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, volumes, snapshots, service levels, quota, export policy, NFS, SMB, Active Directory, AD, Windows",
+"keywords": "Cloud Volumes Service for AWS, volumes, snapshots, service levels, quota, export policy, NFS, SMB, Active Directory, AD, Windows",
 "url": "/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html",
-"summary": "You create Cloud Volumes for AWS from the NetApp Cloud Central site."
+"summary": "You create Cloud Volumes from the NetApp Cloud Orchestrator site."
 }
 ,
 
@@ -61,7 +61,7 @@
 {
 "title": "Creating or modifying a snapshot policy",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, snapshot policies",
+"keywords": "Cloud Volumes Service for AWS, snapshot policies",
 "url": "/cloud_volumes/aws/task_creating_modifying_snapshot_policies.html",
 "summary": "You can create or modify a snapshot policy as necessary for a Cloud Volume."
 }
@@ -72,7 +72,7 @@
 {
 "title": "Creating an on-demand snapshot for a Cloud Volume",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, snapshots, on-demand",
+"keywords": "Cloud Volumes Service for AWS, snapshots, on-demand",
 "url": "/cloud_volumes/aws/task_creating_on_demand_snapshots.html",
 "summary": "You can create an on-demand snapshot of a Cloud Volume from either the Volumes or Snapshots page."
 }
@@ -81,9 +81,9 @@
 
 
 {
-"title": "Deleting Cloud Volumes for AWS",
+"title": "Deleting Cloud Volumes",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, delete, unmount",
+"keywords": "Cloud Volumes Service for AWS, delete, unmount",
 "url": "/cloud_volumes/aws/task_deleting_cloud_volumes_for_aws.html",
 "summary": "You can delete a Cloud Volume that is no longer needed."
 }
@@ -94,7 +94,7 @@
 {
 "title": "Deleting export policy rules",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, export policy rules",
+"keywords": "Cloud Volumes Service for AWS, export policy rules",
 "url": "/cloud_volumes/aws/task_deleting_export_policy_rules.html",
 "summary": "You can delete export policy rules that are no longer needed."
 }
@@ -105,7 +105,7 @@
 {
 "title": "Deleting a snapshot",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, snapshots",
+"keywords": "Cloud Volumes Service for AWS, snapshots",
 "url": "/cloud_volumes/aws/task_deleting_snapshots.html",
 "summary": "You can delete a snapshot from the Volumes or Snapshots page."
 }
@@ -114,9 +114,9 @@
 
 
 {
-"title": "Modifying Cloud Volumes for AWS",
+"title": "Modifying Cloud Volumes",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, volume names, quota, service levels.",
+"keywords": "Cloud Volumes Service for AWS, volume names, quota, service levels.",
 "url": "/cloud_volumes/aws/task_modifying_cloud_volumes_for_aws.html",
 "summary": "You can modify existing volumes, including changing the volume name, quota, or service level."
 }
@@ -127,7 +127,7 @@
 {
 "title": "Modifying an export policy rule",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, export policy rules, client access, access types, protocol support",
+"keywords": "Cloud Volumes Service for AWS, export policy rules, client access, access types, protocol support",
 "url": "/cloud_volumes/aws/task_modifying_export_policy_rules.html",
 "summary": "You can modify the export policy rule for a volume to change client access, the access type, or protocol support."
 }
@@ -136,9 +136,9 @@
 
 
 {
-"title": "Mounting a Cloud Volume for AWS",
+"title": "Mounting a Cloud Volume",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, mount targets, Elastic Compute Cloud, EC2",
+"keywords": "Cloud Volumes Service for AWS, mount targets, Elastic Compute Cloud, EC2",
 "url": "/cloud_volumes/aws/task_mounting_cloud_volumes_for_aws.html",
 "summary": "You can mount a Cloud Volume to your AWS instance."
 }
@@ -149,7 +149,7 @@
 {
 "title": "Restoring a snapshot to a new volume",
 "tags": "",
-"keywords": "Cloud Volumes for AWS, snapshots, restore",
+"keywords": "Cloud Volumes Service for AWS, snapshots, restore",
 "url": "/cloud_volumes/aws/task_restoring_snapshots_to_new_volumes.html",
 "summary": "You can restore a snapshot to a new volume as necessary."
 }
