@@ -1,33 +1,3 @@
-#search-demo-results {
-  display: inline-block;
-  left: auto;
-  text-align: right:
-  top: 0px;
-}
-
-#ie-i18n-menu {
-  display: inline-block;
-  position: relative;
-  text-align: left;
-  width: 30px;
-}
-
-#search-demo-container {
-  display: inline-block;
-  position: relative;
-  text-align: right;
-}
-
-.n-globe__icon {
-  display: inline-block;
-  height: 25px;
-  left: 0px;
-  position: relative;
-  top: 0px;
-  width: 28px;
-  vertical-align: middle;
-}
-
 body {
   font-family:Roboto, sans-serif;
 }

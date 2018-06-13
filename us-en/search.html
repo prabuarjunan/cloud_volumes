@@ -3,7 +3,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Pagination | NetApp Cloud Docs</title>
+  <title>Search results | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +21,19 @@
   <!-- Icons -->
   <link rel="icon" href="/cloud_volumes/us-en/images/favicon.ico" type="image/x-icon">
 
+  <link rel="stylesheet" href='/cloud_volumes/us-en/css/na-sidebar.css' type='text/css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/clouddocs.css' type='text/css'>
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
   <!-- LUCI CSS Content -->
   <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/bower_components/eightshapes-blocks/dist/esb.min.css">
   <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/netapp-library/css/netapp-library.min.css">
@@ -29,21 +42,13 @@
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
   <link rel="stylesheet" type="text/css" href="/cloud_volumes/us-en/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/cloud_volumes/us-en/css/customstyles.css">
+  <!-- <link rel="stylesheet" href="/cloud_volumes/us-en/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
   <link rel="stylesheet" href="/cloud_volumes/us-en/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
   <link rel='stylesheet' href='/cloud_volumes/us-en/css/netapp.css' type='text/css'>
 
-  <!-- Controls the Sidebar layout -->
-  <link rel="stylesheet" href="/cloud_volumes/us-en/css/na-sidebar.css">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
-  <!-- Controls the custom layout of the site -->
-  <link rel='stylesheet' href='/cloud_volumes/us-en/css/clouddocs.css' type='text/css'>
   <script src='/cloud_volumes/us-en/js/clouddocs.js'></script>
   <script src='/cloud_volumes/us-en/js/s_code_impl.js'></script>
   <script src="/cloud_volumes/us-en/js/jquery.navgoco.min.js"></script>
@@ -197,26 +202,6 @@
 
       <!-- NetApp Search Bar -->
       
-      <div id="search-demo-container" class="n-property-bar__search">
-        <input type="text" id="search-input" class="n-search-form__input" placeholder="Search Documentation">
-        <ul id="results-container"></ul>
-        <script src="/cloud_volumes/us-en/js/jekyll-search.js" type="text/javascript"></script>
-
-      <script type="text/javascript">
-      window.simpleJekyllSearch = new SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '/cloud_volumes/us-en/search.json',
-        searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-        noResultsText: 'No results found',
-        limit: 10,
-        fuzzy: false,
-        exclude: ['Welcome']
-      })
-    </script>
-
-      </div>
-      
 
       <div id="ie-i18n-menu" class="n-property-bar__utils">
         <ul class="n-property-navigation-bar__utils-list">
@@ -283,72 +268,23 @@
               
 
               <div class="n-doc__component-detail-content n-doc__component-detail-content--show-code">
+                <!-- Begin of page container -->
+                <article class="page-content">
+                  
 
-              <!-- Begin of page container -->
-              
-
-<div class="content" id="home">
-  <div id="sidebar-button">
-    <img src="/cloud_volumes/images/sidebar-button.png">
-  </div>
-  <div id="post-info">
-    <div id="cover-photo-container">
-      <img id="cover-photo" src="/cloud_volumes/images/cover.jpg">
-    </div>
-    <div id="info-container">
-      <h1 id="title">Pagination</h1>
-    </div>
-  </div>
-
-  <div class="post">
-    <div align="right">
-      <!-- Adds links to other languages on the post -->
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Search results
+    <span>
       
-        
-          
-            <a href="/cloud_volumes/pagination/" >Default</a>
-          
-
-          
-
-          
-            <span class="separator"> &bull; </span>
-          
-
-        
-      
-        
-          
-            <a href="/cloud_volumes/en/pagination/" >English</a>
-          
-
-          
-
-          
-
-        
-      
-        
-      
-    </div>
-
-    <!-- This loops through the paginated posts -->
-    
-
-    <!-- Pagination links -->
-    <div class="pagination">
-      
-        <span class="previous">Previous</span>
-      
-      <span class="page_number ">Page:  of </span>
-      
-        <span class="next ">Next</span>
-      
-    </div>
-  </div>
+    </span>
+  </h1>
 </div>
 
-              <!-- Page Container -->
+<div id="react-search"></div>
+
+
+                </article>
+                <!-- Page Container -->
               </div>
             </div>
           </div>
@@ -425,6 +361,24 @@
     <script src="/cloud_volumes/us-en/common/js/doc-components.js"></script>
 
     <!-- i18n script -->
-    <script src="/cloud_volumes/us-en/js/responsive.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/cloud_volumes/us-en/js/responsive.js"></script>
+
+    <!-- Elasticsearch JS -->
+    <script type="text/javascript" src='/cloud_volumes/us-en/js/bundle.js'></script>
   </body>
+
+  
+  <script>
+      if(hasParameter(window.location.search,'q')) {
+        var queryString = decodeURI(params.get('q'));
+        document.getElementsByClassName("sk-search-box__text")[0].setAttribute("value", queryString);
+      }
+
+      function hasParameter(searchString,param) {
+        searchString = searchString || "";
+        param = param || "";
+        return (searchString.indexOf("?"+param+"=") != -1 || searchString.indexOf("&"+param+"=") != -1);
+      }
+  </script>
+  
 </html>

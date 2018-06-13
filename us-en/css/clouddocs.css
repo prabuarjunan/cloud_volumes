@@ -19,6 +19,27 @@
   border-color: #ccc;
 }
 
+/* i18n */
+.n-globe__icon {
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  height: 25px;
+  position: relative;
+  width: 28px;
+  vertical-align: middle;
+}
+
+#ie-i18n-menu {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  height: 40px;
+  vertical-align: top;
+}
+
+/* Misc */
+
 .image:after {
   display: none !important;
 }
@@ -122,6 +143,10 @@ main {
   #ie-i18n-menu {
     top: auto;
     right: auto;
+    margin-left: 0px;
+    position: relative;
+    height: 40px;
+    vertical-align: top;
   }
 
   .image img {
@@ -149,6 +174,10 @@ main {
   #ie-i18n-menu {
     top: auto;
     right: auto;
+    margin-left: 0px;
+    position: relative;
+    height: 40px;
+    vertical-align: top;
   }
 
   .image img {
@@ -175,6 +204,10 @@ main {
   #ie-i18n-menu {
     top: auto;
     right: auto;
+    margin-left: 0px;
+    position: relative;
+    height: 40px;
+    vertical-align: top;
   }
 
   .image img {
