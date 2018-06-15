@@ -15,8 +15,8 @@
 
   
 
-  <meta name="description" content="You can delete a Cloud Sync data broker that is no longer needed.">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, Cloud Sync, data brokers">
+  <meta name="description" content="NetApp Cloud Sync is integrated with NetApp Cloud Volumes Service for AWS to enable fast data syncing to or from a Cloud Volume.  A Cloud Sync data broker en...">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, Cloud Sync, data brokers, sync relationships">
 
   <!-- Icons -->
   <link rel="icon" href="/cloud_volumes/images/favicon.ico" type="image/x-icon">
@@ -425,21 +425,11 @@
 </div>
 
 <div class="paragraph lead">
-<p>You can delete a Cloud Sync data broker that is no longer needed.</p>
+<p>NetApp Cloud Sync is integrated with NetApp Cloud Volumes Service for AWS to enable fast data syncing to or from a Cloud Volume.  A Cloud Sync data broker enables you to create a Cloud Sync relationship for syncing data.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
-<p>This task removes the data broker from Cloud Volumes, but it does not delete the data broker instance in AWS.</p>
-</div>
-<div class="paragraph">
-<p>To delete the data broker instance in AWS, you must go to the AWS console for your account, locate the EC2 instance for the broker by name, and then terminate it as needed.</p>
-</div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>All Cloud Sync relationships that use the data broker must have already been deleted before you can delete the data broker.</p>
-</div>
-<div class="paragraph">
-<p><a href="task_deleting_cloud_sync_relationship.html">Deleting a Cloud Sync Relationship</a></p>
+<p>If you already have a Cloud Sync data broker in the same AWS Virtual Private Cloud (VPC) that you use for your Cloud Volumes account, you can skip this task.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -448,12 +438,88 @@
 <p>Go to the Sync page or the Sync tab for a volume on the Volumes page.</p>
 </li>
 <li>
-<p>Delete a data broker by clicking the data broker’s name and click the trash can icon.</p>
+<p>Create a data broker by clicking <strong>Create data broker</strong>.</p>
 </li>
 <li>
-<p>In the confirmation dialog box, type <code>delete</code> to confirm, and then click <strong>Delete</strong>.</p>
+<p>Provide information for the following fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong></p>
+<div class="paragraph">
+<p>Provide a name for the data broker.</p>
+</div>
+</li>
+<li>
+<p><strong>Type</strong></p>
+<div class="paragraph">
+<p>Select AWS.</p>
+</div>
+</li>
+<li>
+<p><strong>Region</strong></p>
+<div class="paragraph">
+<p>Select an available region.</p>
+</div>
+</li>
+<li>
+<p><strong>API key</strong></p>
+<div class="paragraph">
+<p>Provide the access key for your AWS account.</p>
+</div>
+</li>
+<li>
+<p><strong>Secret key</strong></p>
+<div class="paragraph">
+<p>Provide the secret key for your AWS account.</p>
+</div>
+</li>
+<li>
+<p><strong>Keypair</strong></p>
+<div class="paragraph">
+<p>Select an available keypair.</p>
+</div>
+<div class="paragraph">
+<p>The keypair will be updated after you enter valid keys.</p>
+</div>
+</li>
+<li>
+<p><strong>VPC</strong></p>
+<div class="paragraph">
+<p>Select the VPC that is connected to your Cloud Volumes account.</p>
+</div>
+</li>
+<li>
+<p><strong>Subnet</strong></p>
+<div class="paragraph">
+<p>Select an available subnet to use for the data broker.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_creating_cloud_sync_data_broker.png" alt="Creating a Cloud Sync data broker">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create data broker</strong> to start the data broker creation process.</p>
+<div class="paragraph">
+<p>It takes a few minutes to create a data broker.<br>
+After the data broker is created, it is marked with a green dot to indicate that it is ready.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_creating_cloud_sync_data_broker2.png" alt="A Cloud Sync data broker is created">
+</div>
+</div>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<div class="title">After you finish</div>
+<p>Continue with <a href="task_creating_cloud_sync_relationship.html">Creating a Cloud Sync Relationship</a>.</p>
 </div>
 
                 </article>

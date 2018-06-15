@@ -3,7 +3,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Creating a Cloud Sync data broker | NetApp Cloud Docs</title>
+  <title>Deleting a Cloud Sync data broker | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,23 +15,23 @@
 
   
 
-  <meta name="description" content="NetApp Cloud Sync is integrated with NetApp Cloud Volumes Service for AWS to enable fast data syncing to or from a Cloud Volume.  A Cloud Sync data broker en...">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, Cloud Sync, data brokers, sync relationships">
+  <meta name="description" content="You can delete a Cloud Sync data broker that is no longer needed.">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, Cloud Sync, data brokers">
 
   <!-- Icons -->
-  <link rel="icon" href="/cloud_volumes/us-en/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/cloud_volumes/images/favicon.ico" type="image/x-icon">
 
-  <link rel="stylesheet" href='/cloud_volumes/us-en/css/na-sidebar.css' type='text/css'>
+  <link rel="stylesheet" href='/cloud_volumes/css/na-sidebar.css' type='text/css'>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
   
-    <script src='/cloud_volumes/us-en/js/na-search.js'></script>
+    <script src='/cloud_volumes/js/na-search.js'></script>
   
-  <link rel='stylesheet' href='/cloud_volumes/us-en/css/na-search.css' type='text/css'>
-  <link rel='stylesheet' href='/cloud_volumes/us-en/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/css/clouddocs.css' type='text/css'>
 
   <!-- Elastic Search -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
@@ -43,21 +43,21 @@
   <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/css/doc-components.css">
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
-  <link rel="stylesheet" type="text/css" href="/cloud_volumes/us-en/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/cloud_volumes/us-en/css/customstyles.css"> -->
+  <link rel="stylesheet" type="text/css" href="/cloud_volumes/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloud_volumes/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/cloud_volumes/us-en/css/boxshadowproperties.css">
+  <link rel="stylesheet" href="/cloud_volumes/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
-  <link rel='stylesheet' href='/cloud_volumes/us-en/css/netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/css/netapp.css' type='text/css'>
 
-  <script src='/cloud_volumes/us-en/js/clouddocs.js'></script>
-  <script src='/cloud_volumes/us-en/js/s_code_impl.js'></script>
-  <script src="/cloud_volumes/us-en/js/jquery.navgoco.min.js"></script>
+  <script src='/cloud_volumes/js/clouddocs.js'></script>
+  <script src='/cloud_volumes/js/s_code_impl.js'></script>
+  <script src="/cloud_volumes/js/jquery.navgoco.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
-  <script src="/cloud_volumes/us-en/js/toc.js"></script>
-  <script src="/cloud_volumes/us-en/js/customscripts.js"></script>
+  <script src="/cloud_volumes/js/toc.js"></script>
+  <script src="/cloud_volumes/js/customscripts.js"></script>
 
   <script>
       $(document).ready(function() {
@@ -142,7 +142,7 @@
       <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
       <ul class="n-off-canvas-menu__property-navigation-list">
         <li class="n-off-canvas-menu__property-navigation-list-item ">
-          <a href="https://docs.netapp.com/us-en/" class="n-off-canvas-menu__property-navigation-link">
+          <a href="https://docs.netapp.com/zz/" class="n-off-canvas-menu__property-navigation-link">
             Home
           </a>
           <div class="n-off-canvas-menu__child-menu">
@@ -183,19 +183,19 @@
       <div class="n-property-bar__menu-toggle">
         <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
           <title>bars</title>
-          <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#bars"></use>
+          <use xlink:href="/cloud_volumes/common/svg/sprite.svg#bars"></use>
         </svg></a>
       </div>
       <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
-        <a class="n-property-bar__property-link" href="https://docs.netapp.com/us-en/">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/zz/">
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
             <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
-              <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
           <h2 class="n-property-bar__property-name">Cloud Docs</h2>
@@ -215,7 +215,7 @@
             <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
               <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
                 <title>globe</title>
-                <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#globe"></use>
+                <use xlink:href="/cloud_volumes/common/svg/sprite.svg#globe"></use>
               </svg>
             </a>
           </li>
@@ -241,7 +241,7 @@
             </li>
           </ul>
           <div class="menu__footer">
-            <p>Current Language: us-en
+            <p>Current Language: zz
             </p>
           </div>
         </div>
@@ -372,7 +372,7 @@
         
 
   
-    <li class="active"><a href="task_creating_cloud_sync_data_broker.html">Creating a Cloud Sync data broker</a></li>
+    <li><a href="task_creating_cloud_sync_data_broker.html">Creating a Cloud Sync data broker</a></li>
   
 
   
@@ -388,7 +388,7 @@
   
 
   
-    <li><a href="task_deleting_cloud_sync_data_broker.html">Deleting a Cloud Sync data broker</a></li>
+    <li class="active"><a href="task_deleting_cloud_sync_data_broker.html">Deleting a Cloud Sync data broker</a></li>
   
 
 
@@ -415,21 +415,31 @@
                   
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Creating a Cloud Sync data broker
+  <h1 class="n-doc__component-detail-heading">Deleting a Cloud Sync data broker
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_creating_cloud_sync_data_broker.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_deleting_cloud_sync_data_broker.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
       
     </span>
   </h1>
 </div>
 
 <div class="paragraph lead">
-<p>NetApp Cloud Sync is integrated with NetApp Cloud Volumes Service for AWS to enable fast data syncing to or from a Cloud Volume.  A Cloud Sync data broker enables you to create a Cloud Sync relationship for syncing data.</p>
+<p>You can delete a Cloud Sync data broker that is no longer needed.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
-<p>If you already have a Cloud Sync data broker in the same AWS Virtual Private Cloud (VPC) that you use for your Cloud Volumes account, you can skip this task.</p>
+<p>This task removes the data broker from Cloud Volumes, but it does not delete the data broker instance in AWS.</p>
+</div>
+<div class="paragraph">
+<p>To delete the data broker instance in AWS, you must go to the AWS console for your account, locate the EC2 instance for the broker by name, and then terminate it as needed.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>All Cloud Sync relationships that use the data broker must have already been deleted before you can delete the data broker.</p>
+</div>
+<div class="paragraph">
+<p><a href="task_deleting_cloud_sync_relationship.html">Deleting a Cloud Sync Relationship</a></p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -438,88 +448,12 @@
 <p>Go to the Sync page or the Sync tab for a volume on the Volumes page.</p>
 </li>
 <li>
-<p>Create a data broker by clicking <strong>Create data broker</strong>.</p>
+<p>Delete a data broker by clicking the data broker’s name and click the trash can icon.</p>
 </li>
 <li>
-<p>Provide information for the following fields:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Name</strong></p>
-<div class="paragraph">
-<p>Provide a name for the data broker.</p>
-</div>
-</li>
-<li>
-<p><strong>Type</strong></p>
-<div class="paragraph">
-<p>Select AWS.</p>
-</div>
-</li>
-<li>
-<p><strong>Region</strong></p>
-<div class="paragraph">
-<p>Select an available region.</p>
-</div>
-</li>
-<li>
-<p><strong>API key</strong></p>
-<div class="paragraph">
-<p>Provide the access key for your AWS account.</p>
-</div>
-</li>
-<li>
-<p><strong>Secret key</strong></p>
-<div class="paragraph">
-<p>Provide the secret key for your AWS account.</p>
-</div>
-</li>
-<li>
-<p><strong>Keypair</strong></p>
-<div class="paragraph">
-<p>Select an available keypair.</p>
-</div>
-<div class="paragraph">
-<p>The keypair will be updated after you enter valid keys.</p>
-</div>
-</li>
-<li>
-<p><strong>VPC</strong></p>
-<div class="paragraph">
-<p>Select the VPC that is connected to your Cloud Volumes account.</p>
-</div>
-</li>
-<li>
-<p><strong>Subnet</strong></p>
-<div class="paragraph">
-<p>Select an available subnet to use for the data broker.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./media/diagram_creating_cloud_sync_data_broker.png" alt="Creating a Cloud Sync data broker">
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Click <strong>Create data broker</strong> to start the data broker creation process.</p>
-<div class="paragraph">
-<p>It takes a few minutes to create a data broker.<br>
-After the data broker is created, it is marked with a green dot to indicate that it is ready.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./media/diagram_creating_cloud_sync_data_broker2.png" alt="A Cloud Sync data broker is created">
-</div>
-</div>
+<p>In the confirmation dialog box, type <code>delete</code> to confirm, and then click <strong>Delete</strong>.</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<div class="title">After you finish</div>
-<p>Continue with <a href="task_creating_cloud_sync_relationship.html">Creating a Cloud Sync Relationship</a>.</p>
 </div>
 
                 </article>
@@ -549,7 +483,7 @@ After the data broker is created, it is marked with a green dot to indicate that
                       <span class="n-footer__social-link-text">blog</span>
                       <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                         <title>blog@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#blog"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#blog"></use>
                       </svg>
                     </a>
                   </li>
@@ -558,7 +492,7 @@ After the data broker is created, it is marked with a green dot to indicate that
                       <span class="n-footer__social-link-text">community</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>community@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#comments"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#comments"></use>
                       </svg>
                     </a>
                   </li>
@@ -568,7 +502,7 @@ After the data broker is created, it is marked with a green dot to indicate that
                       <span class="n-footer__social-link-text">twitter</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>twitter@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#twitter"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#twitter"></use>
                       </svg>
                     </a>
                   </li>
@@ -577,7 +511,7 @@ After the data broker is created, it is marked with a green dot to indicate that
                       <span class="n-footer__social-link-text">youtube</span>
                       <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                         <title>youtube@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#youtube"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#youtube"></use>
                       </svg>
                     </a>
                   </li>
@@ -596,14 +530,14 @@ After the data broker is created, it is marked with a green dot to indicate that
 
     </div>
 
-    <script src="/cloud_volumes/us-en/common/js/components.js"></script>
-    <script src="/cloud_volumes/us-en/common/js/doc-components.js"></script>
+    <script src="/cloud_volumes/common/js/components.js"></script>
+    <script src="/cloud_volumes/common/js/doc-components.js"></script>
 
     <!-- i18n script -->
-    <script type="text/javascript" src="/cloud_volumes/us-en/js/responsive.js"></script>
+    <script type="text/javascript" src="/cloud_volumes/js/responsive.js"></script>
 
     <!-- Elasticsearch JS -->
-    <script type="text/javascript" src='/cloud_volumes/us-en/js/bundle.js'></script>
+    <script type="text/javascript" src='/cloud_volumes/js/bundle.js'></script>
   </body>
 
   
