@@ -72,8 +72,8 @@ function setElasticUrl() {
   ES_AUTH=${ES_AUTH:-$ES_AUTH_DEFAULT};
   SK_INDEXES=${SK_INDEXES:-$ES_INDEX};
 
-  echo "[DEBUG] ES_API="$ES_AUTH;
-  echo "[DEBUG] ES_API_DEFAULT="$ES_API_DEFAULT;
+  echo "[DEBUG] ES_AUTH="$ES_AUTH;
+  echo "[DEBUG] ES_API="$ES_API;
 
   if [[ "$ES_API" != "$ES_API_DEFAULT" ]]; then
     echo "Running in production mode";
@@ -174,6 +174,6 @@ case "$1" in
           ;;
   build)  function_exists build && build
           ;;
-  *)      echo "Invalid command - Valid->start|stop|restart"
+  *)      echo "Invalid command - Valid->run|build|start|stop|restart"
           ;;
 esac
