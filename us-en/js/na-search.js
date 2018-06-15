@@ -1,11 +1,15 @@
 $(document).ready(function() {
-  $(document).click(function(event) {
-      if(!$(event.target).closest('#react-search').length
-        && $('._Search_display_wrapper').is(":visible")) {
-        $('._Search_display_wrapper').hide();
-      } else if($('._Search_display_wrapper').is(":hidden")) {
-        $('._Search_display_wrapper').show();
-      }
+  $("#react-search").on('click', function() {
+    if($('._Search_display_wrapper').is(":hidden")) {
+      $('._Search_display_wrapper').show();
+    }
+  });
+
+  $(document).on('click', function(event) {
+    if(!$(event.target).closest('#react-search').length
+      && $('._Search_display_wrapper').is(":visible")) {
+      $('._Search_display_wrapper').hide();
+    }
   });
 
   $("body").on('DOMSubtreeModified', '.search__results', function() {

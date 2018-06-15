@@ -66,7 +66,7 @@ function getDockerUrl() {
 function setElasticUrl() {
   ES_API_DEFAULT=$(getDockerUrl);
   ES_AUTH_DEFAULT="";
-  ES_INDEX="clouddocs-"$REPO_NAME;
+  ES_INDEX="clouddocs-"$REPO_NAME"-dev";
 
   ES_API=${ES_API:-$ES_API_DEFAULT};
   ES_AUTH=${ES_AUTH:-$ES_AUTH_DEFAULT};
@@ -93,6 +93,7 @@ function setElasticUrl() {
 
   sed -i 's/url\:\s*\"localhost\:9200\"/url\: \"'$ES_INDEX_URL'\"/g' ./_config.yml
   sed -i 's/index\_name\:\s*.*/index\_name\: \"'$ES_INDEX'\"/g' ./_config.yml
+  sed -i 's/REPO\_URL/'$REPO_NAME'/g' ./webpack/components/Search.js
   sed -i 's/ES\_AUTH/\"'$ES_AUTH'\"/g' ./webpack/components/Search.js
   sed -i 's/SK\_ES\_URL/\"'$SK_ES_URL'\"/g' ./webpack/components/Search.js
 }
