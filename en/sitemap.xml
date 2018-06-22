@@ -31,9 +31,16 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/cloud_volumes/en/aws/reference_security_groups_windows_ad_servers.html</loc>
+      
+        <lastmod>2018-06-22T04:19:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/cloud_volumes/en/aws/search.html</loc>
       
-        <lastmod>2018-06-21T19:28:03+00:00</lastmod>
+        <lastmod>2018-06-22T04:19:29+00:00</lastmod>
       
     </url>
   
@@ -61,7 +68,7 @@
     <url>
       <loc>https://docs.netapp.com/cloud_volumes/en/aws/task_creating_cloud_volumes_for_aws.html</loc>
       
-        <lastmod>2018-06-14T16:01:03+00:00</lastmod>
+        <lastmod>2018-06-22T04:19:10+00:00</lastmod>
       
     </url>
   
@@ -138,7 +145,7 @@
     <url>
       <loc>https://docs.netapp.com/cloud_volumes/en/aws/task_mounting_cloud_volumes_for_aws.html</loc>
       
-        <lastmod>2018-06-02T06:49:57+00:00</lastmod>
+        <lastmod>2018-06-22T04:19:10+00:00</lastmod>
       
     </url>
   

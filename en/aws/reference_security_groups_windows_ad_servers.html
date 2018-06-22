@@ -3,7 +3,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Deleting a Cloud Sync data broker | NetApp Cloud Docs</title>
+  <title>AWS security group settings for Windows AD servers | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +15,8 @@
 
   
 
-  <meta name="description" content="You can delete a Cloud Sync data broker that is no longer needed.">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, Cloud Sync, data brokers">
+  <meta name="description" content="If you use Windows Active Directory (AD) servers with Cloud Volumes, you should familiarize yourself with the guidance on AWS security group settings. The se...">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, security groups, ports, protocols, Windows, Active Directory, AD">
 
   <!-- Icons -->
   <link rel="icon" href="/cloud_volumes/en/images/favicon.ico" type="image/x-icon">
@@ -390,7 +390,7 @@
   
 
   
-    <li class="active"><a href="task_deleting_cloud_sync_data_broker.html">Deleting a Cloud Sync data broker</a></li>
+    <li><a href="task_deleting_cloud_sync_data_broker.html">Deleting a Cloud Sync data broker</a></li>
   
 
 
@@ -399,7 +399,7 @@
   
 
   
-    <li><a href="reference_security_groups_windows_ad_servers.html">Reference</a></li>
+    <li class="active"><a href="reference_security_groups_windows_ad_servers.html">Reference</a></li>
   
 
   
@@ -421,46 +421,122 @@
                   
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Deleting a Cloud Sync data broker
+  <h1 class="n-doc__component-detail-heading">AWS security group settings for Windows AD servers
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_deleting_cloud_sync_data_broker.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/reference_security_groups_windows_ad_servers.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
       
     </span>
   </h1>
 </div>
 
 <div class="paragraph lead">
-<p>You can delete a Cloud Sync data broker that is no longer needed.</p>
+<p>If you use Windows Active Directory (AD) servers with Cloud Volumes, you should familiarize yourself with the guidance on AWS security group settings. The settings enable Cloud Volumes to integrate with AD correctly.</p>
 </div>
 <div class="paragraph">
-<div class="title">About this task</div>
-<p>This task removes the data broker from Cloud Volumes, but it does not delete the data broker instance in AWS.</p>
+<p>By default, the AWS security group applied to an EC2 Windows instance does not contain inbound rules for any protocol except for RDP.  You must add the following rules to the security groups that are attached to each Windows AD instance to enable inbound communication from Cloud Volumes Service:</p>
 </div>
-<div class="paragraph">
-<p>To delete the data broker instance in AWS, you must go to the AWS console for your account, locate the EC2 instance for the broker by name, and then terminate it as needed.</p>
-</div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>All Cloud Sync relationships that use the data broker must have already been deleted before you can delete the data broker.</p>
-</div>
-<div class="paragraph">
-<p><a href="task_deleting_cloud_sync_relationship.html">Deleting a Cloud Sync Relationship</a></p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Go to the Sync page or the Sync tab for a volume on the Volumes page.</p>
-</li>
-<li>
-<p>Delete a data broker by clicking the data broker’s name and click the trash can icon.</p>
-</li>
-<li>
-<p>In the confirmation dialog box, type <code>delete</code> to confirm, and then click <strong>Delete</strong>.</p>
-</li>
-</ol>
-</div>
+<table class="tableblock frame-all grid-all" style="width: 70%;">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Service</th>
+<th class="tableblock halign-left valign-top">Port</th>
+<th class="tableblock halign-left valign-top">Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AD Web Services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9389</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ICMPv4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Echo Reply</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kerberos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">464</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kerberos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">464</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kerberos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">88</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kerberos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">88</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">389</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">389</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3268</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetBIOS name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">138</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SAM/LSA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">445</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SAM/LSA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">445</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secure LDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">636</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secure LDAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3269</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w32time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">123</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UDP</p></td>
+</tr>
+</tbody>
+</table>
 
                 </article>
                 <!-- Page Container -->
