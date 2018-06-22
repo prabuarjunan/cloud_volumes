@@ -1,1 +1,1 @@
-Sitemap: https://docs.netapp.com/cloud_volumes/sitemap.xml
+Sitemap: https://docs.netapp.com/zz/cloud_volumes/sitemap.xml
