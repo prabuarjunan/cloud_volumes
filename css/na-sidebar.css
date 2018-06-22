@@ -12,10 +12,6 @@ h2[id].n-property-bar__property-name {
   position: fixed;
 }
 
-#n-main-content {
-  padding-top:115px;
-}
-
 /* NetApp Sidebar Overrides */
 @media (max-width: 990px) {
     #mysidebar {

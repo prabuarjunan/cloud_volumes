@@ -64,3 +64,32 @@ function standardizeUrl(siteLocales, originUrl, proxyUrl) {
 
 	redirectToWebserver(pathChunks, originUrl, proxyUrl);
 }
+
+// Handles the Anchor Tags with Fixed Header
+$(document).ready(function() {
+	const OFFSET = 165;
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+			&& location.hostname == this.hostname) {
+
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				$('html,body').animate({
+					scrollTop: target.offset().top - OFFSET
+				});
+				return false;
+			}
+		}
+	});
+	//Executed on page load with URL containing an anchor tag.
+	if($(location.href.split("#")[1])) {
+		var target = $('#'+location.href.split("#")[1]);
+		if (target.length) {
+			$('html,body').animate({
+				scrollTop: target.offset().top - OFFSET
+			});
+			return false;
+		}
+	}
+});

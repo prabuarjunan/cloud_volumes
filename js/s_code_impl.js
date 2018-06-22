@@ -36,7 +36,7 @@ function setDefaultParams(cloudParams) {
   var lang = hrefChunks[4];
 
   // For base site, set product to home
-  if (document.title.includes("NetApp Cloud Documentation |")) {
+  if (document.title.indexOf("NetApp Cloud Documentation |") != -1) {
     productId = "home";
     lang = hrefChunks[3];
   }

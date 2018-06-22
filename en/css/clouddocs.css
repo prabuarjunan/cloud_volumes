@@ -124,7 +124,8 @@
   width: 90vw;
 }
 
-main {
+#n-main-content {
+  padding-top: 115px;
   min-height: 86vh;
 }
 
