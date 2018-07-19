@@ -19,16 +19,16 @@ The Cloud Volume capabilities that are available through the web UI  are also av
 
 toc::[]
 
-==	Finding the URL, API key, and the secret key
-You need the URL, API key, and the secret key to run an API call.
+==	[[finding_urL_key_secretKey]]Finding the API URL, API key, and secret key
+You need to obtain the API URL, API key, and secret key for running an API call.
 
 .Steps
 . Click **API access** on the storage page or in the drop-down menu under your username.
 +
-. Record the API URL, the API key, and the secret key.
+. Record the API URL, API key, and secret key.
 
 == Listing the available APIs
-The storage page displays available APIs that you can use.
+The storage page displays the available APIs that you can use.
 
 .Steps
 . Click **API documentation** on the storage page.
@@ -52,7 +52,7 @@ The APIs are listed by function, for example:
 
 
 == Using the Cloud Volume APIs
-This section shows you how to use the Cloud Volumes APIs.  The examples use curl from a Linux bash shell. You need to replace `api_url`, `api_key`, and `secret_key` with your values for Cloud Volumes Service.
+This section shows you how to use the Cloud Volume APIs.  The examples use curl from a Linux bash shell. You need to replace `<api_url>`, `<api_key>`, and `<secret_key>` with the values you recorded from <<finding_urL_key_secretKey, Finding the API URL, API key, and secret key>>.
 
 === Syntax
 `*curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X [GET,POST,PUT,DELETE] <api_url>/v1/<command>*`
@@ -110,7 +110,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 ``
 
 ==== Updating a volume
-The following example uses a `PUT` call to update a volume called `Test`, change the service level to `extreme`, and change the quota to 500GB:
+The following example uses a `PUT` call to update a volume called `Test`, change the service level to `extreme`, and change the quota to 500 GB:
 ``
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X PUT <api_url>/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8 -d '
 {"creationToken": "grahams-test-volume4",
@@ -141,7 +141,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 ``
 
 ==== Reverting a snapshot
-The following example uses a `POST` call to revert a volume from a snapshot by providing `snapshotId` and `fileSystemId`:
+The following example uses a `POST` call to revert a volume from a snapshot specified by `snapshotId` and `fileSystemId`:
 ``
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8/Revert -d '
 {"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
