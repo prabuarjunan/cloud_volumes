@@ -19,7 +19,8 @@ The Cloud Volume capabilities that are available through the web UI  are also av
 
 toc::[]
 
-==	[[finding_urL_key_secretKey]]Finding the API URL, API key, and secret key
+== Finding the API URL, API key, and secret key
+[[finding_urL_key_secretKey]]
 You need to obtain the API URL, API key, and secret key for running an API call.
 
 .Steps
