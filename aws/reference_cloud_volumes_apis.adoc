@@ -1,0 +1,169 @@
+---
+sidebar: sidebar_aws
+permalink: aws/reference_cloud_volumes_apis.html
+keywords: Cloud Volumes Service for AWS, APIs
+summary: The Cloud Volume capabilities that are available through the web UI  are also available through RESTful APIs.  The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.
+---
+
+= Cloud Volume APIs
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+The Cloud Volume capabilities that are available through the web UI  are also available through RESTful APIs. The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.
+
+toc::[]
+
+==	Finding the URL, API key, and the secret key
+You need the URL, API key, and the secret key to run an API call.
+
+.Steps
+. Click **API access** on the storage page or in the drop-down menu under your username.
++
+. Record the API URL, the API key, and the secret key.
+
+== Listing the available APIs
+The storage page displays available APIs that you can use.
+
+.Steps
+. Click **API documentation** on the storage page.
++
+The page lists the available APIs.
+. Scroll through the page to see the available APIs.
++
+The APIs are listed by function, for example:
++
+* `filesystems`
+* `mounttargets`
+* `storage`
+* `snapshots`
++
+. To obtain details and examples of how to use an API call, select the function and click one of the following actions:
++
+* `GET`: reads
+* `POST`: creates
+* `PUT`: updates or modifies
+* `DELETE`: destroys
+
+
+== Using the Cloud Volume APIs
+This section shows you how to use the Cloud Volumes APIs.  The examples use curl from a Linux bash shell. You need to replace `api_url`, `api_key`, and `secret_key` with your values for Cloud Volumes Service.
+
+=== Syntax
+`*curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X [GET,POST,PUT,DELETE] <api_url>/v1/<command>*`
+
+=== Examples
+==== Listing volumes
+The following example displays information about all volumes:
+
+NOTE:
+Piping the command through `jq` improves the formatting of the `json` output. You might need to install `jq` on your system.
+
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v1/FileSystems | jq
+[
+  {
+    "created": "2018-07-05T18:58:23.000Z",
+    "fileSystemId": "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",
+    "lifeCycleState": "available",
+    "lifeCycleStateDetails": "Available for use",
+    "name": "SMB",
+    "ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
+    "region": "us-west",
+    "creationToken": "prickly-bellicose-archimedes",
+    "quotaInBytes": 1000000000000,
+    "serviceLevel": "standard",
+    "snapReserve": 0,
+    "timezone": "PT",
+    "usedBytes": 0
+  }
+]
+``
+
+==== Listing the details for a specific volume
+Each volume has an ID called `fileSystemId`, for example, `07c9ab6c-b655-a9fe-f904-b9b97ef9baaa`. Including the ID in the API call provides details for the specific volume:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa
+``
+
+To see the network details for the volume, you can add `MountTargets` to the `GET` call:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/MountTargets
+``
+
+==== Creating a volume
+The following example uses a `POST` call to create a volume called `Test`:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v1/FileSystems -d '
+{"name": "Test",
+  "creationToken": "grahams-test-volume3",
+  "region": "us-west",
+  "serviceLevel": "standard",
+  "quotaInBytes": 100000000000,
+  "exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
+  "labels": ["test"]}'
+``
+
+==== Updating a volume
+The following example uses a `PUT` call to update a volume called `Test`, change the service level to `extreme`, and change the quota to 500GB:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X PUT <api_url>/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8 -d '
+{"creationToken": "grahams-test-volume4",
+  "region": "us-west",
+  "serviceLevel": "extreme",
+  "quotaInBytes": 500000000000}'
+``
+
+==== Deleting a volume
+The following example uses a `DELETE` call to delete a volume specified by `fileSystemId`:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v1/FileSystems/08b0578d-465f-6c1a-bf8c-f40098b6451b
+``
+CAUTION: This API call deletes the volume and all its data.
+
+==== Creating a snapshot
+The following example uses a `POST` call to create a snapshot called `snappy` for a specific volume:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots -d '
+{"name": "snappy",
+ "region": "us-west"}'
+``
+
+==== Listing snapshots for a specific volume
+The following example uses a `GET` call to list the snapshots for  a specific volume:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots
+``
+
+==== Reverting a snapshot
+The following example uses a `POST` call to revert a volume from a snapshot by providing `snapshotId` and `fileSystemId`:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8/Revert -d '
+{"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
+"fileSystemId": "cdef5090-aa5e-c2cf-6bba-f77d259a37f8",
+"region": "us-west"}'
+``
+CAUTION: This API call causes any data written after the snapshot to be lost.
+
+==== Creating a new volume from a snapshot
+The following example uses a `POST` call to create a new volume specified by `snapshotId`:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v1/FileSystems -d '
+{"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
+  "name": "Clone",
+  "creationToken": "perfectly-cloned-volume",
+  "region": "us-west",
+  "serviceLevel": "extreme"}'
+``
+
+==== Deleting a snapshot
+The following example uses a `DELETE` call to delete a snapshot specified by `snapshotId`:
+``
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d
+``
+CAUTION: This API call deletes the snapshot and all its data.
