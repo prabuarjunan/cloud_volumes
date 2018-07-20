@@ -445,10 +445,25 @@
 <div class="paragraph lead">
 <p>A Cloud Sync relationship enables you to sync data to or from the Cloud Volume.</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">Before you begin</div>
-<p>You must already have a Cloud Sync data broker.<br>
-<a href="task_creating_cloud_sync_data_broker.html">Creating a Cloud Sync data broker</a></p>
+<ul>
+<li>
+<p>You must already have a Cloud Sync data broker.</p>
+<div class="paragraph">
+<p><a href="task_creating_cloud_sync_data_broker.html">Creating a Cloud Sync data broker</a></p>
+</div>
+</li>
+<li>
+<p>The data broker IP address must have been added to the export policy for both the source and the target volumes.</p>
+<div class="paragraph">
+<p>The export policy on the target volume must allow write access to the broker.</p>
+</div>
+<div class="paragraph">
+<p><a href="task_creating_additional_export_policy_rules.html">Creating additional export policy rules</a></p>
+</div>
+</li>
+</ul>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
