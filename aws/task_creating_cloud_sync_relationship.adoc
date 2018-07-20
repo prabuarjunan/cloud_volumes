@@ -23,7 +23,7 @@ A Cloud Sync relationship enables you to sync data to or from the Cloud Volume.
 <<task_creating_cloud_sync_data_broker.adoc#,Creating a Cloud Sync data broker>>
 * The data broker IP address must have been added to the export policy for both the source and the target volumes.
 + 
-The export policy on the target volume must allow write access to the broker.
+The export policy on the target volume must allow write access to the data broker.
 +
 <<task_creating_additional_export_policy_rules.adoc#,Creating additional export policy rules>>
 
