@@ -18,8 +18,14 @@ summary: A Cloud Sync relationship enables you to sync data to or from the Cloud
 A Cloud Sync relationship enables you to sync data to or from the Cloud Volume.
 
 .Before you begin
-You must already have a Cloud Sync data broker.
+* You must already have a Cloud Sync data broker.
++
 <<task_creating_cloud_sync_data_broker.adoc#,Creating a Cloud Sync data broker>>
+* The data broker IP address must have been added to the export policy for both the source and the target volumes.
++ 
+The export policy on the target volume must allow write access to the broker.
++
+<<task_creating_additional_export_policy_rules.adoc#,Creating additional export policy rules>>
 
 .Steps
 . Go to the Sync page or the Sync tab for a volume on the Volumes page.
