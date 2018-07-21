@@ -33,7 +33,7 @@ The Create Volume page appears.
 +
 image::diagram_create_volume_1.png[Create Volume page]
 
-. In the Create Volume page, provide information for the following fields:
+. Select *NFS*, *SMB*, or *Dual-protocol* in the Create Volume page, and provide information for the following fields:
 * *Name*
 +
 Specify the name you want to use for the volume.
@@ -45,7 +45,7 @@ Select the AWS region where you want to create the volume.
 * *Timezone*
 +
 Select your time zone.
-* *Generated volume path*
+* *Volume path*
 +
 Specify the path you want to use or accept the automatically generated path.
 * *Create from snapshot* (Optional)
@@ -63,21 +63,21 @@ Select *Standard*, *Premium*, or *Extreme*.
 Select the allocated capacity for the volume.
 * *Export policy*
 +
+If you selected NFS or Dual-protocol, you can create an export policy by providing information for the following fields:
++
 ** *Allowed clients*
 +
 Specify the allowed clients by using an IP address or Classless Inter-Domain Routing (CIDR).
 ** *Access*
 +
 Select *Read & Write* or *Read only*.
-** *Protocol*
-+
-Select *NFSv3* or *SMB*.
+
 ** *Add export policy rule* (optional)
 +
 Click to add additional export policy rules.
 * *Active Directory*
 +
-If you selected SMB, provide the following information:
+If you selected SMB or Dual-protocol, you can integrate the volume with a Windows Active Directory server by providing information for the following fields:
 
 ** *DNS server*
 +
@@ -97,8 +97,18 @@ Enter the password for the Active Directory administrator.
 +
 image::diagram_create_volume_ad.png[Active Directory]
 +
-IMPORTANT: You should follow the guidance on AWS security group settings to enable Cloud Volumes to integrate with Active Directory correctly.
+IMPORTANT: You should follow the guidance on AWS security group settings to enable Cloud Volumes to integrate with Windows Active Directory servers correctly.
 <<reference_security_groups_windows_ad_servers.adoc#,AWS security group settings for Windows AD servers>>
+
+* *Security style*
++
+If you selected Dual-protocol, you can change the security style by selecting *NTFS* or *UNIX* from the drop-down menu.
++
+Security styles affect the file permission type used and how permissions can be modified.
++
+** UNIX uses NFSv3 mode bits, and only NFS clients can modify permissions.
+** NTFS uses NTFS ACLs, and only SMB clients can modify permissions.
+
 * *Snapshot policy* (Optional)
 +
 ** Select the snapshot frequency: *Hourly*, *Daily*, *Weekly*, or *Monthly*.
