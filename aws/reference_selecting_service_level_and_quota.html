@@ -1,0 +1,1681 @@
+
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
+  <head>
+  <title>Selecting the appropriate service level and quota | NetApp Cloud Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation">
+  <meta http-equiv="nss-subtype" content="User Guide">
+
+  
+
+  <meta name="description" content="The cost for Cloud Volumes Service for AWS is based on the service level and the capacity allocated by the quota that you select.  Selecting the appropriate ...">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, security levels, quotas, bandwidth, capacity">
+
+  <!-- Icons -->
+  <link rel="icon" href="/cloud_volumes/images/favicon.ico" type="image/x-icon">
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- LUCI CSS Content -->
+  <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/bower_components/eightshapes-blocks/dist/esb.min.css">
+  <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/netapp-library/css/netapp-library.min.css">
+  <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/css/doc.css">
+  <link rel="stylesheet" href="//luci.netapp.com/archives/3_3_2/css/doc-components.css">
+
+  <link rel="stylesheet" href='/cloud_volumes/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/css/clouddocs.css' type='text/css'>
+
+  <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
+  <link rel="stylesheet" type="text/css" href="/cloud_volumes/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloud_volumes/css/customstyles.css"> -->
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/cloud_volumes/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel='stylesheet' href='/cloud_volumes/css/netapp.css' type='text/css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/cloud_volumes/js/na-search.js'></script>
+  
+
+  <script src='/cloud_volumes/js/clouddocs.js'></script>
+  <script src='/cloud_volumes/js/s_code_impl.js'></script>
+  <script src="/cloud_volumes/js/jquery.navgoco.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+  <script src="/cloud_volumes/js/toc.js"></script>
+  <script src="/cloud_volumes/js/customscripts.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco({
+              caretHtml: '',
+              accordion: true,
+              openClass: 'active', // open
+              save: false, // leave false or nav highlighting doesn't work right
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      })
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+
+  <!-- Controls the i18n Browser Redirection -->
+  <script>
+    var siteLocales = [];
+    
+      siteLocales.push("zz");
+    
+      siteLocales.push("en");
+    
+      siteLocales.push("us-en");
+    
+
+    standardizeUrl(siteLocales, "clouddocs.netapp.com", "https://docs.netapp.com");
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class="n-doc__component-detail">
+    <a href="#n-main-content" class="visually-hidden">Skip to main content</a>
+<div class="n-off-canvas-menu">
+  <div class="n-off-canvas-menu__menu">
+    <div class="n-off-canvas-menu__menu-inner">
+      <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
+      <ul class="n-off-canvas-menu__property-navigation-list">
+        <li class="n-off-canvas-menu__property-navigation-list-item ">
+          <a href="https://docs.netapp.com/zz/" class="n-off-canvas-menu__property-navigation-link">
+            Home
+          </a>
+          <div class="n-off-canvas-menu__child-menu">
+            <ul class="n-menu__list">
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="n-off-canvas-menu__global-navigation-list">
+         <li class="n-off-canvas-menu__global-navigation-list-header">More From NetApp</li>
+         <li class="n-off-canvas-menu__global-navigation-list-item"><a href="#" class="n-off-canvas-menu__global-navigation-link">Netapp.com</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="n-off-canvas-menu__content-wrap">
+      <!-- Header -->
+      <header>
+  <!-- Top Hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+            <li class="n-top-hat__list-item">
+              <a href="http://www.netapp.com" class="n-top-hat__link">NetApp.com</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Bar -->
+  <div class="n-property-bar n-property-bar--v3">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+          <title>bars</title>
+          <use xlink:href="/cloud_volumes/common/svg/sprite.svg#bars"></use>
+        </svg></a>
+      </div>
+      <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/zz/">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
+              <title>NetApp</title>
+              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+          <h2 class="n-property-bar__property-name">Cloud Docs</h2>
+        </a>
+      </div>
+
+      <!-- NetApp Search Bar -->
+      
+      <div id="search-demo-container" class="n-property-bar__search">
+        <div id="react-search"></div>
+      </div>
+      
+
+      <div id="ie-i18n-menu" class="n-property-bar__utils">
+        <ul class="n-property-navigation-bar__utils-list">
+          <li class="n-property-navigation-bar__utils-list-item">
+            <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
+              <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
+                <title>globe</title>
+                <use xlink:href="/cloud_volumes/common/svg/sprite.svg#globe"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End NetApp Search Bar -->
+    </div>
+
+    <div class="n-property-bar__menus">
+      <div id="n-property-navigation-bar__menu--language-selector" class="n-menu n-menu--v3">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list">
+                <li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="/cloud_volumes/us-en/" class="n-menu__header-text">English</a>
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: zz
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+      <!-- Content -->
+      <main role="main" id="n-main-content" class="n-main-content">
+        <div class="n-container">
+          <div class="n-row">
+            <div class="n-doc n-doc__component-list">
+              <!-- Sidebar Column -->
+              
+              <div class="col-md-3" >
+                  
+
+<ul id="mysidebar" class="nav">
+  
+
+  
+    <li><a href="index.html">Cloud Volumes Service for AWS docs</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Getting started</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_overview.html">Overview</a></li>
+  
+
+  
+    <li><a href="task_creating_cloud_volumes_for_aws.html">Creating Cloud Volumes</a></li>
+  
+
+  
+    <li><a href="task_mounting_cloud_volumes_for_aws.html">Mounting a Cloud Volume</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Managing Cloud Volumes</a>
+      <ul>
+        
+
+  
+    <li><a href="task_modifying_cloud_volumes_for_aws.html">Modifying Cloud Volumes</a></li>
+  
+
+  
+    <li><a href="task_deleting_cloud_volumes_for_aws.html">Deleting Cloud Volumes</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Managing Cloud Volume snapshots</a>
+      <ul>
+        
+
+  
+    <li><a href="task_creating_on_demand_snapshots.html">Creating an on-demand snapshot for a Cloud Volume</a></li>
+  
+
+  
+    <li><a href="task_creating_modifying_snapshot_policies.html">Creating or modifying a snapshot policy</a></li>
+  
+
+  
+    <li><a href="task_deleting_snapshots.html">Deleting a snapshot</a></li>
+  
+
+  
+    <li><a href="task_restoring_snapshots_to_new_volumes.html">Restoring a snapshot to a new volume</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Managing export policy rules</a>
+      <ul>
+        
+
+  
+    <li><a href="task_modifying_export_policy_rules.html">Modifying an export policy rule</a></li>
+  
+
+  
+    <li><a href="task_creating_additional_export_policy_rules.html">Creating additional export policy rules</a></li>
+  
+
+  
+    <li><a href="task_deleting_export_policy_rules.html">Deleting export policy rules</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Managing Cloud Sync for Cloud Volumes</a>
+      <ul>
+        
+
+  
+    <li><a href="task_creating_cloud_sync_data_broker.html">Creating a Cloud Sync data broker</a></li>
+  
+
+  
+    <li><a href="task_creating_cloud_sync_relationship.html">Creating a Cloud Sync relationship</a></li>
+  
+
+  
+    <li><a href="task_modifying_cloud_sync_schedule.html">Modifying the Cloud Sync schedule</a></li>
+  
+
+  
+    <li><a href="task_deleting_cloud_sync_relationship.html">Deleting a Cloud Sync relationship</a></li>
+  
+
+  
+    <li><a href="task_deleting_cloud_sync_data_broker.html">Deleting a Cloud Sync data broker</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Reference</a>
+      <ul>
+        
+
+  
+    <li><a href="reference_security_groups_windows_ad_servers.html">AWS security group settings for Windows AD servers</a></li>
+  
+
+  
+    <li class="active"><a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and quota</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="reference_notices.html">Notices</a></li>
+  
+
+
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+              </div>
+              
+
+              <div class="n-doc__component-detail-content n-doc__component-detail-content--show-code">
+                <!-- Begin of page container -->
+                <article class="page-content">
+                  
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Selecting the appropriate service level and quota
+    <span>
+      
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/reference_selecting_service_level_and_quota.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+      
+    </span>
+  </h1>
+</div>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>The cost for Cloud Volumes Service for AWS is based on the <em>service level</em> and the capacity allocated by the <em>quota</em> that you select.  Selecting the appropriate service level and quota helps you meet your storage needs at the lowest cost.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<em>All pricing information in this article is based on the list prices as of July 10, 2018.  The information is provided for example purposes only and is subject to change.</em>
+</td>
+</tr>
+</table>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#considerations">Considerations</a></li>
+<li><a href="#service-levels">Service levels</a></li>
+<li><a href="#quotas">Quotas</a></li>
+<li><a href="#bandwidth">Bandwidth</a></li>
+<li><a href="#selecting-the-service-level-and-the-quota">Selecting the service level and the quota</a>
+<ul class="sectlevel2">
+<li><a href="#cost-comparison-for-service-levels-and-quotas">Cost comparison for service levels and quotas</a></li>
+<li><a href="#example-1">Example 1</a></li>
+<li><a href="#example-2">Example 2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="considerations">Considerations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Storage needs include two fundamental aspects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The storage <em>capacity</em> for holding data</p>
+</li>
+<li>
+<p>The storage <em>bandwidth</em> for interacting with data</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you consume more storage capacity than the quota you selected for the volume, the following considerations apply:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You will be billed for the additional storage capacity that you consume at the price defined by your service level.</p>
+</li>
+<li>
+<p>The amount of storage bandwidth available to the volume does not increase until you increase the quota size or change the service level.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="service-levels">Service levels</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Volumes Service for AWS supports three service levels. You specify your service level when you create or modify the volume.</p>
+</div>
+<div class="paragraph">
+<p><a href="task_creating_cloud_volumes_for_aws.html">Creating Cloud Volumes</a><br>
+<a href="task_modifying_cloud_volumes_for_aws.html">Modifying Cloud Volumes</a></p>
+</div>
+<div class="paragraph">
+<p>The service levels are catered to different storage capacity and storage bandwidth needs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Standard</strong> (capacity)</p>
+<div class="paragraph">
+<p>If you want capacity at the lowest cost, and your bandwidth needs are limited, then the Standard service level might be most appropriate for you.  An example is using the volume as a backup target.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List Price: $0.15 per GB per month (as of July 10, 2018)</p>
+</li>
+<li>
+<p>Bandwidth: 16 KB of bandwidth per GB provisioned capacity</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Premium</strong> (a balance of capacity and performance)</p>
+<div class="paragraph">
+<p>If your application has a balanced need for storage capacity and bandwidth, then the Premium service level might be most appropriate for you.  This level is less expensive per MB/s than the Standard service level, and it is also less expensive per GB of storage capacity than the Extreme service level.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List Price: $0.30 per GB per month (as of July 10, 2018)</p>
+</li>
+<li>
+<p>Bandwidth: 64 KB of bandwidth per GB provisioned capacity</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Extreme</strong> (performance)</p>
+<div class="paragraph">
+<p>The Extreme service level is least expensive in terms of storage bandwidth.  If your application demands storage bandwidth without the associated demand for lots of storage capacity, then the Extreme service level might be most appropriate for you.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List Price: $0.40 per GB per month  (as of July 10, 2018)</p>
+</li>
+<li>
+<p>Bandwidth: 128 KB of bandwidth per GB provisioned capacity</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quotas">Quotas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You specify your quota for the volume when you create or modify the volume.</p>
+</div>
+<div class="paragraph">
+<p><a href="task_creating_cloud_volumes_for_aws.html">Creating Cloud Volumes</a><br>
+<a href="task_modifying_cloud_volumes_for_aws.html">Modifying Cloud Volumes</a></p>
+</div>
+<div class="paragraph">
+<p>While you would select your service level based on your general, high-level business needs, you should select your quota size based on the specific needs of applications, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How much storage space the applications need</p>
+</li>
+<li>
+<p>How much storage bandwidth per second the applications or the users require</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Quotas are specified in GBs.  A volume&#8217;s quota can be set within the range of 1 GB to 100,000 GB (equivalent to 100 TBs).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bandwidth">Bandwidth</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The combination of both the service level and the quota you select determines the maximum bandwidth for the volume.</p>
+</div>
+<div class="paragraph">
+<p>If your applications or users need more bandwidth than your selections, you can change the service level or increase the quota.  The changes do not disrupt data access.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="selecting-the-service-level-and-the-quota">Selecting the service level and the quota</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To select the most appropriate service level and quota for your needs, you need to know how much capacity and bandwidth you require at the peak or the edge.</p>
+</div>
+<div class="sect2">
+<h3 id="cost-comparison-for-service-levels-and-quotas">Cost comparison for service levels and quotas</h3>
+<div class="paragraph">
+<p>The table below compares cost for different service levels and quota sizes.  In the table, the leftmost column indicates the capacity, and the other columns define the MB/s available at each capacity point and its cost.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<em>All pricing information is based on the list prices as of July 10, 2018.  The information is provided for example purposes only and is subject to change.</em>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Capacity</th>
+<th class="tableblock halign-center valign-middle" colspan="2">Standard</th>
+<th class="tableblock halign-center valign-middle" colspan="2">Premium</th>
+<th class="tableblock halign-center valign-middle" colspan="2">Extreme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>TB</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MB/s</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cost</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MB/s</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cost</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MB/s</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cost</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$150</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">63</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">47</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$450</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">188</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">63</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">78</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">313</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">625</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">94</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">109</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,050</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">438</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">875</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">141</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,350</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">563</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">156</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">625</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">172</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,650</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">688</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">188</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">203</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$1,950</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">813</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,625</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">219</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">875</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">234</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">938</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,875</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">266</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,550</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,063</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">281</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">297</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$2,850</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,188</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">313</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">328</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,150</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,313</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,625</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">344</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">359</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,450</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,438</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,875</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">391</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,563</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">406</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$3,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,625</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">422</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,050</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,688</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">438</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">453</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,350</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,813</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">469</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,875</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">484</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,650</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,938</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">516</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$4,950</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,063</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">531</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">547</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,188</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">563</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">37</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">578</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,550</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,313</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">38</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">594</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$15,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">39</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">609</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$5,850</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,438</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$15,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">625</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$16,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">41</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">641</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,150</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,563</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$16,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">656</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,625</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$16,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">672</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,450</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,688</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$17,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">44</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">688</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$17,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">703</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,813</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$18,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">46</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">719</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$6,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,875</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$18,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">47</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">734</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,050</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,938</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$18,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$19,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">49</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">766</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,350</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,063</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$19,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">781</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$15,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$20,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">51</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">797</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,650</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,188</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$15,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$20,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">52</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">813</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$15,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$20,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">53</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">828</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$7,950</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,313</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$15,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$21,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">54</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">844</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$16,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$21,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">859</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,438</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$16,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$22,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">56</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">875</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$16,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$22,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">57</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">891</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,550</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$17,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$22,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">58</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">906</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$17,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$23,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">59</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">922</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$8,850</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$17,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$23,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">938</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$18,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$24,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">61</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">953</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,150</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$18,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$24,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">62</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">969</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$18,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$24,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">63</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">984</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,450</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$18,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$25,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$19,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$25,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,016</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$19,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$26,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,031</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$9,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$19,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$26,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">67</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,047</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,050</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$20,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$26,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">68</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,063</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$20,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$27,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">69</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,078</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,350</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$20,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$27,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">70</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,094</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$21,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$28,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">71</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,109</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,650</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$21,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$28,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">72</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,125</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$21,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$28,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">73</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,141</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$10,950</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$21,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$29,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">74</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,156</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$22,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$29,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,172</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$22,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$30,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">76</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,188</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$22,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$30,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">77</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,203</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,550</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$23,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$30,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">78</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,219</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$23,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$31,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">79</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,234</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$11,850</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$23,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$31,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$24,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$32,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,266</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,150</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$24,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$32,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">82</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,281</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$24,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$32,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">83</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,297</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,450</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$24,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$33,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">84</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,313</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$25,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$33,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">85</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,328</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,750</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$25,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$34,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">86</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,344</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$12,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$25,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$34,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">87</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,359</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,050</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$26,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$34,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">88</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,375</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$26,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$35,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">89</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,391</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,350</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$26,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$35,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,406</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$27,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$36,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">91</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,422</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,650</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$27,300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$36,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">92</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,438</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$27,600</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$36,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">93</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,453</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$13,950</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$27,900</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$37,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">94</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,469</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$28,200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$37,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">95</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,484</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,250</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$28,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$38,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">96</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$28,800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$38,400</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">97</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,516</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,550</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$29,100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$38,800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">98</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,531</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$29,400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$39,200</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">99</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,547</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$14,850</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$29,700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$39,600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,563</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$15,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$30,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$40,000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="example-1">Example 1</h3>
+<div class="paragraph">
+<p>For example, your application needs 25 TB of capacity and 100 MB/s of bandwidth. At 25 TB of capacity, the Standard service level would provide 391 MB/s of bandwidth at a cost of $3,750, making Standard the most suitable service level in this case.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_service_level_quota_example1.png" alt="Service level and quota selection" width="example 1"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="example-2">Example 2</h3>
+<div class="paragraph">
+<p>For example, your application needs 12 TB of capacity and 800 MB of peak bandwidth.  Although the Extreme service level can meet the demands of the application at the 12 TB mark, it is more cost-effective to select 14 TB at the Premium service level, resulting in a saving of $600 per month.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_service_level_quota_example2.png" alt="Service level and quota selection" width="example 2"></span></p>
+</div>
+</div>
+</div>
+</div>
+
+                </article>
+                <!-- Page Container -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      
+      <footer class="n-footer n-footer--v1" style="border-top: solid 10px #DFDFDF;">
+        <div class="n-footer__bottom">
+          <div class="n-container">
+            <div class="n-footer__bottom-left">
+              <div class="n-footer__copyright">
+                  <a href="//www.netapp.com/us/legal/copyright.aspx" class="n-footer__copyright-link">© 1994-2018 NetApp, Inc. All rights reserved.</a>
+              </div>
+              <div class="n-footer__copyright">
+                <a href="//www.netapp.com/us/legal/netapptmlist.aspx" class="n-footer__copyright-link">Trademarks</a>
+              </div>
+              <div class="n-footer__social-links">
+                <ul class="n-footer__social-link-list">
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-blog" href="http://blog.netapp.com" target="_blank" title="blog" alt="blog">
+                      <span class="n-footer__social-link-text">blog</span>
+                      <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                        <title>blog@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#blog"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-community" href="http://community.netapp.com/" target="_blank" title="community" alt="community">
+                      <span class="n-footer__social-link-text">community</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>community@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#comments"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netappdoc" target="_blank" title="twitter" alt="twitter">
+                      <span class="n-footer__social-link-text">twitter</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>twitter@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTechCommTV/" target="_blank" title="youtube" alt="youtube">
+                      <span class="n-footer__social-link-text">youtube</span>
+                      <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                        <title>youtube@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="n-footer__bottom-right">
+                <p class="n-footer__fine-print">
+                    Have feedback for our website?
+                    <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+                </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="/cloud_volumes/common/js/components.js"></script>
+    <script src="/cloud_volumes/common/js/doc-components.js"></script>
+
+    <!-- i18n script -->
+    <script type="text/javascript" src="/cloud_volumes/js/responsive.js"></script>
+
+    <!-- Elasticsearch JS -->
+    <script type="text/javascript" src='/cloud_volumes/js/bundle.js'></script>
+  </body>
+
+  
+</html>
