@@ -24,6 +24,7 @@ You can modify existing volumes, including changing the volume name, quota, or s
 . Modify the following volume fields as applicable:
 +
 * Name
+* Tags
 * Quota
 * Service level
 +

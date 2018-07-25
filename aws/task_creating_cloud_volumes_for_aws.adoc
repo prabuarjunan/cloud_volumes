@@ -5,7 +5,7 @@ keywords: Cloud Volumes Service for AWS, volumes, snapshots, service levels, quo
 summary: You create Cloud Volumes from the NetApp Cloud Orchestrator site.
 ---
 
-= Creating Cloud Volumes
+= Creating a Cloud Volume
 :toc: macro
 :hardbreaks:
 :nofooter:
