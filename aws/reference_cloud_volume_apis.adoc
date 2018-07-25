@@ -125,7 +125,7 @@ The following example uses a `DELETE` call to delete a volume specified by `file
 ``
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v1/FileSystems/08b0578d-465f-6c1a-bf8c-f40098b6451b
 ``
-CAUTION: This API call deletes the volume and all its data.
+IMPORTANT: Use with caution. This API call deletes the volume and all its data.
 
 ==== Creating a snapshot
 The following example uses a `POST` call to create a snapshot called `snappy` for a specific volume:
@@ -149,7 +149,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 "fileSystemId": "cdef5090-aa5e-c2cf-6bba-f77d259a37f8",
 "region": "us-west"}'
 ``
-CAUTION: This API call causes any data written after the snapshot to be lost.
+IMPORTANT: Use with caution.  This API call causes any data written after the snapshot to be lost.
 
 ==== Creating a new volume from a snapshot
 The following example uses a `POST` call to create a new volume specified by `snapshotId`:
@@ -164,7 +164,6 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 
 ==== Deleting a snapshot
 The following example uses a `DELETE` call to delete a snapshot specified by `snapshotId`:
-``
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d
-``
-CAUTION: This API call deletes the snapshot and all its data.
+
+`` curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d ``
+IMPORTANT: Use with caution. This API call deletes the snapshot and all its data.
