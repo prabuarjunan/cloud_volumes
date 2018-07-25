@@ -169,4 +169,4 @@ The following example uses a `DELETE` call to delete a snapshot specified by `sn
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d
 ``
 
-CAUTION: Use with caution. This API call deletes the snapshot and all its data.
+IMPORTANT: Use with caution. This API call deletes the snapshot and all its data.
