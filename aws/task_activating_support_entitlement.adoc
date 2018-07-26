@@ -60,6 +60,6 @@ image::diagram_support_obtain.png[Obtaining support information]
 If you ever need to deactivate support for your subscription, click **Deactivate support** from the Support page, type `deactivate` as prompted, and click **Deactivate support** again to confirm.
 
 NOTE: NetApp recommends that you do not deactivate support for your subscription unless you are certain that you no longer need the service.
-If you mistakenly deactivated support, you can create a web ticket to re-activate the subscription.
+If you mistakenly deactivated support, you can create a web ticket to reactivate the subscription.
 
 image::diagram_support_deactivate.png[Deactivate support]
