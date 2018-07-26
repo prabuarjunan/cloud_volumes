@@ -5,6 +5,8 @@ entries:
     entries:
       - title: Overview
         url: /concept_overview.html
+      - title: Activating support entitlement and accessing support
+        url: /task_activating_support_entitlement.adoc
       - title: Creating a Cloud Volume
         url: /task_creating_cloud_volumes_for_aws.html
       - title: Mounting a Cloud Volume
