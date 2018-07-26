@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar_aws
-permalink: aws/task_activating_support_entitlement.adoc.html
+permalink: aws/task_activating_support_entitlement.html
 keywords: Cloud Volumes Service for AWS, support entitlement, NetApp ID, ticketing
 summary: Before you create your first Cloud Volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.
 ---
