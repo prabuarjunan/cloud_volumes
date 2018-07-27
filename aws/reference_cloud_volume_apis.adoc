@@ -106,7 +106,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 {"name": "Test",
   "creationToken": "grahams-test-volume3",
   "region": "us-west",
-  "serviceLevel": "standard",
+  "serviceLevel": "basic",
   "quotaInBytes": 100000000000,
   "exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
   "labels": ["test"]}'
