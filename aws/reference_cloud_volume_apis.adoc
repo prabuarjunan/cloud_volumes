@@ -68,19 +68,19 @@ NOTE: Piping the command through `jq` improves the formatting of the `json` outp
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v1/FileSystems | jq
 [
   {
-    [blue]#"created"#: "2018-07-05T18:58:23.000Z",
-    [blue]#"fileSystemId"#: "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",
-    [blue]#"lifeCycleState"#: "available",
-    [blue]#"lifeCycleStateDetails"#: "Available for use",
-    [blue]#"name"#: "SMB",
-    [blue]#"ownerId"#: "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
-    [blue]#"region"#: "us-west",
-    "creationToken": "prickly-bellicose-archimedes",
-    "quotaInBytes": 1000000000000,
-    "serviceLevel": "standard",
-    "snapReserve": 0,
-    "timezone": "PT",
-    "usedBytes": 0
+    [blue]#"created"#: [green]#"2018-07-05T18:58:23.000Z"#,
+    [blue]#"fileSystemId"#: [green]#"07c9ab6c-b655-a9fe-f904-b9b97ef9baaa"#,
+    [blue]#"lifeCycleState"#: [green]#"available"#,
+    [blue]#"lifeCycleStateDetails"#: [green]#"Available for use"#,
+    [blue]#"name"#: [green]#"SMB"#,
+    [blue]#"ownerId"#: [green]#"d38839c3-a37f-4426-9ef9-ae7569e59f1d"#,
+    [blue]#"region"#: [green]#"us-west"#,
+    [blue]#"creationToken"#: [green]#"prickly-bellicose-archimedes"#,
+    [blue]#"quotaInBytes"#: 1000000000000,
+    [blue]#"serviceLevel"#: [green]#"standard"#,
+    [blue]#"snapReserve"#: 0,
+    [blue]#"timezone"#: [green]#"PT"#,
+    [blue]#"usedBytes"#: 0
   }
 ]
 ``
