@@ -50,7 +50,7 @@ entries:
       - title: Deleting a Cloud Sync data broker
         url: /task_deleting_cloud_sync_data_broker.html
   - title: Cloud Volume APIs
-    url: /reference_cloud_volumes_apis.html
+    url: /reference_cloud_volume_apis.html
   - title: Reference
     entries:
       - title: AWS security group settings for Windows AD servers

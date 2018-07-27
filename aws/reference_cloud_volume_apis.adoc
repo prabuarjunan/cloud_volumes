@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar_aws
-permalink: aws/reference_cloud_volumes_apis.html
+permalink: aws/reference_cloud_volume_apis.html
 keywords: Cloud Volumes Service for AWS, APIs
 summary: The Cloud Volume capabilities that are available through the web UI  are also available through RESTful APIs.  The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.
 ---
@@ -68,13 +68,13 @@ NOTE: Piping the command through `jq` improves the formatting of the `json` outp
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v1/FileSystems | jq
 [
   {
-    "created": "2018-07-05T18:58:23.000Z",
-    "fileSystemId": "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",
-    "lifeCycleState": "available",
-    "lifeCycleStateDetails": "Available for use",
-    "name": "SMB",
-    "ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
-    "region": "us-west",
+    [blue]#"created"#: "2018-07-05T18:58:23.000Z",
+    [blue]#"fileSystemId"#: "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",
+    [blue]#"lifeCycleState"#: "available",
+    [blue]#"lifeCycleStateDetails"#: "Available for use",
+    [blue]#"name"#: "SMB",
+    [blue]#"ownerId"#: "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
+    [blue]#"region"#: "us-west",
     "creationToken": "prickly-bellicose-archimedes",
     "quotaInBytes": 1000000000000,
     "serviceLevel": "standard",

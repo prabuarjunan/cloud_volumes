@@ -22,4 +22,4 @@ NetApp periodically updates Cloud Volumes Service for AWS to bring you new featu
 * Ability to select the security styles of NTFS or UNIX for shares exported via both NFS and SMB
 * Display for NFS and SMB mount instructions for shares exported via both NFS and SMB
 * Support for multiple Active Directory servers
-* RESTful API support and online examples: link:reference_cloud_volumes_apis.html[Cloud Volume APIs]
+* RESTful API support and online examples: link:reference_cloud_volume_apis.html[Cloud Volume APIs]
