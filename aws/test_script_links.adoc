@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/test_script_links.html
-keywords: Cloud Volumes Service for AWS, scripts
-summary:
+keywords: Cloud Volumes Service for AWS, notices
+summary: TEST
 ---
 
-= TEST
+= TEST: script links
 :toc: macro
 :hardbreaks:
 :nofooter:
