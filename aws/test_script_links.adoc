@@ -18,7 +18,7 @@ summary: TEST
 This is a test topic.
 
 * link:media/detail-cv.sh[detail-cv.sh]
-* link:media/find-fsid.sh[find-fsid.sh]
+* link:media/fsid-cv.sh[fsid-cv.sh]
 * link:media/info-cv.sh[info-cv.sh]
 * link:media/list-cv.sh[list-cv.sh]
 * link:media/snap-cv.sh[snap-cv.sh]

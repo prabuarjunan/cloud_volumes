@@ -9,7 +9,7 @@
 
 if [ $# -lt 2 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
 	echo "Find the FileSystemId for a cloud volume by export name"
-    echo "Usage: find-fsid mountpoint config_file"
+    echo "Usage: fsid-cv mountpoint config_file"
     echo
     exit 0
 fi
