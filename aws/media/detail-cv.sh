@@ -18,7 +18,7 @@ source $2
 
 
 # get filesystem info
-filesystems=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/FileSystems)
+filesystems=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems)
 
 # get filesystemIds
 ids=$(echo $filesystems |jq -r ''|grep fileSystemId |cut -d '"' -f 4)
@@ -39,9 +39,9 @@ fi
 # List volume details
 echo "Volume details"
 
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/FileSystems/$fileSystemId |jq -r ''
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems/$fileSystemId |jq -r ''
 
 echo
 echo "Network info"
 # List mount targets (network info)
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/FileSystems/$fileSystemId/MountTargets |jq -r ''
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems/$fileSystemId/MountTargets |jq -r ''

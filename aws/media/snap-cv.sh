@@ -19,7 +19,7 @@ source $2
 time=$(date +%Y%m%d%H%M%S)
 
 # get filesystem info
-filesystems=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/FileSystems)
+filesystems=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems)
 
 # get filesystemIds
 ids=$(echo $filesystems |jq -r ''|grep fileSystemId |cut -d '"' -f 4)
@@ -41,4 +41,4 @@ if [ "${#fileSystemId}" == "0" ]; then
 fi
 
 # Create snapshot
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X POST $url/FileSystems/$fileSystemId/Snapshots -d '{"name": "snap_'$time'","region": "'$region'"}' |jq -r '' 
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X POST $url/v1/FileSystems/$fileSystemId/Snapshots -d '{"name": "snap_'$time'","region": "'$region'"}' |jq -r '' 

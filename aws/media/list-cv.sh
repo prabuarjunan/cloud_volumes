@@ -17,7 +17,7 @@ fi
 source $1
 
 # get filesystem info
-filesystems=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/FileSystems)
+filesystems=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems)
 
 # Show info
 echo $filesystems |jq -r ''
