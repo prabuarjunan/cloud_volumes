@@ -18,9 +18,9 @@ summary: You create Cloud Volumes from the NetApp Cloud Orchestrator site.
 You create Cloud Volumes from the NetApp Cloud Orchestrator site.
 
 .Before you begin
-You must have subscribed to NetApp Cloud Volumes Service for AWS before you can create a Cloud Volume.
+You must have selected the region where you want to use the service.
 
-See the https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volumes-for-aws.aspx?hsCtaTracking=4f67614a-8c97-4c15-bd01-afa38bd31696%7C5e536b53-9371-4ce1-8e38-efda436e592e[Get a first look at the new NetApp Cloud Volumes Service for AWS^] page for more information.
+link:task_selecting_region.html[Selecting the region]
 
 .Steps
 
@@ -55,9 +55,9 @@ Select an existing snapshot to create a volume.
 +
 Select *Standard*, *Premium*, or *Extreme*.
 +
-** _Standard_ provides 1000 IOPS per TB (16k IO) and 16 MB of throughput per TB.
-** _Premium_ provides 4000 IOPS per TB (16k IO) and 64 MB of throughput per TB.
-** _Extreme_ provides 8000 IOPS per TB (16k IO) and 128 MB of throughput per TB.
+** _Standard_ provides 1000 IOPS per TB (16k IO) and 16 MB/s of throughput per TB.
+** _Premium_ provides 4000 IOPS per TB (16k IO) and 64 MB/s of throughput per TB.
+** _Extreme_ provides 8000 IOPS per TB (16k IO) and 128 MB/s of throughput per TB.
 +
 link:reference_selecting_service_level_and_quota.html[Selecting the appropriate service level and quota]
 
