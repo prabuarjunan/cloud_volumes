@@ -50,7 +50,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/search.html</loc>
       
-        <lastmod>2018-07-25T19:28:02+00:00</lastmod>
+        <lastmod>2018-08-06T20:23:04+00:00</lastmod>
       
     </url>
   
@@ -163,6 +163,13 @@
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_restoring_snapshots_to_new_volumes.html</loc>
       
         <lastmod>2018-06-02T06:49:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_selecting_region.html</loc>
+      
+        <lastmod>2018-08-06T20:22:23+00:00</lastmod>
       
     </url>
   
