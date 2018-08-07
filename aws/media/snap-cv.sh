@@ -1,20 +1,34 @@
 #! /bin/bash
 
-# script to create snapshots of NetApp Clould Volumes by mountpoint
+# script to create snapshots of a NetApp Cloud Volume by mountpoint
 # Written by Graham Smith, NetApp July 2018
 # requires bash, jr and curl
 # Version 0.0.1
 
 #set -x
 
-if [ $# -lt 2 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-	echo "Create a snapshots of the Cloud volume"
-    echo "Usage: snap-cv mountpoint config_file"
-    echo
-    exit 0
+usage() { echo "Usage: $0 [-m <mountpoint> ] [-c <config-file>]" 1>&2; exit 1; }
+
+while getopts ":m:c:" o; do
+    case "${o}" in
+        m)
+            m=${OPTARG}
+            ;;
+        c)
+            c=${OPTARG}
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+if [ -z "${m}" ] || [ -z "${c}" ]; then
+    usage
 fi
 
-source $2
+source $c
 
 time=$(date +%Y%m%d%H%M%S)
 
@@ -30,10 +44,10 @@ if [ "${#ids}" == "0" ]; then
 fi
 
 # get region
-region=$(echo $filesystems |jq -r '' | grep -i -B 1 $1 |grep region |cut -d '"' -f 4)
+region=$(echo $filesystems |jq -r '' | grep -i -B 1 $m |grep region |cut -d '"' -f 4)
 
 # Find matching filesystemId
-fileSystemId=$(echo $filesystems |jq -r ''| grep -i -B 10 $1 |grep fileSystemId | cut -d '"' -f 4)
+fileSystemId=$(echo $filesystems |jq -r ''| grep -i -B 10 $m |grep fileSystemId | cut -d '"' -f 4)
 
 if [ "${#fileSystemId}" == "0" ]; then
 	echo "Please check the mountpoint is correct"

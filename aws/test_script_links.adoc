@@ -17,9 +17,24 @@ summary: TEST
 [.lead]
 This is a test topic.
 
+* link:media/create-cv.sh[create-cv.sh]
+
+* link:media/delete-cv.sh[delete-cv.sh]
+
+* link:media/delete-snap.sh[delete-snap.sh]
+
 * link:media/detail-cv.sh[detail-cv.sh]
+
 * link:media/fsid-cv.sh[fsid-cv.sh]
+
+* link:media/get-snaps.sh[get-snaps.sh]
+
 * link:media/info-cv.sh[info-cv.sh]
+
 * link:media/list-cv.sh[list-cv.sh]
+
+* link:media/info-cv.sh[info-cv.sh]
+
 * link:media/snap-cv.sh[snap-cv.sh]
+
 * link:media/test.conf[test.conf]

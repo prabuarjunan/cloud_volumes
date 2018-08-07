@@ -1,18 +1,21 @@
 #! /bin/bash
 
-# script to display the details of a NetApp Cloud Volumes by mountpoint
+# script to delete a snapshot of NetApp Cloud Volume by mountpoint and snapshotId
 # Written by Graham Smith, NetApp July 2018
 # requires bash, jr and curl
 # Version 0.0.1
 
 #set -x
 
-usage() { echo "Usage: $0 [-m <mountpoint> ] [-c <config-file>]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 [-m <mountpoint> ] [-s <snapshotId> ] [-c <config-file>]" 1>&2; exit 1; }
 
-while getopts ":m:c:" o; do
+while getopts ":m:s:c:" o; do
     case "${o}" in
         m)
             m=${OPTARG}
+            ;;
+	s)
+	    s=${OPTARG}
             ;;
         c)
             c=${OPTARG}
@@ -24,12 +27,11 @@ while getopts ":m:c:" o; do
 done
 shift $((OPTIND-1))
 
-if [ -z "${m}" ] || [ -z "${c}" ]; then
+if [ -z "${m}" ] || [ -z "${s}" ] || [ -z "${c}" ]; then
     usage
 fi
 
 source $c
-
 
 # get filesystem info
 filesystems=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems)
@@ -39,7 +41,7 @@ ids=$(echo $filesystems |jq -r ''|grep fileSystemId |cut -d '"' -f 4)
 
 if [ "${#ids}" == "0" ]; then
 	echo "Please check that the apikey and secretkey are valid"
-	exit 0
+	exit
 fi
 
 # Find matching filesystemId
@@ -50,12 +52,12 @@ if [ "${#fileSystemId}" == "0" ]; then
 	exit
 fi
 
-# List volume details
-echo "Volume details"
+# Delete snapshot
+snapshot=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X DELETE $url/v1/FileSystems/$fileSystemId/Snapshots/$s)
 
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems/$fileSystemId |jq -r ''
+if [ "${#snapshot}" == "0" ]; then
+	echo "Please check that the snapshot exists"
+	exit
+fi
 
-echo
-echo "Network info"
-# List mount targets (network info)
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems/$fileSystemId/MountTargets |jq -r ''
+echo $snapshot | jq 

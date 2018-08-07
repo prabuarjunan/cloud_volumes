@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# script to display the details of a NetApp Cloud Volumes by mountpoint
+# script to delete a NetApp Cloud Volume by mountpoint
 # Written by Graham Smith, NetApp July 2018
 # requires bash, jr and curl
 # Version 0.0.1
@@ -30,7 +30,6 @@ fi
 
 source $c
 
-
 # get filesystem info
 filesystems=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems)
 
@@ -39,7 +38,7 @@ ids=$(echo $filesystems |jq -r ''|grep fileSystemId |cut -d '"' -f 4)
 
 if [ "${#ids}" == "0" ]; then
 	echo "Please check that the apikey and secretkey are valid"
-	exit 0
+	exit
 fi
 
 # Find matching filesystemId
@@ -50,12 +49,7 @@ if [ "${#fileSystemId}" == "0" ]; then
 	exit
 fi
 
-# List volume details
-echo "Volume details"
+# Delete volume
+volume=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X DELETE $url/v1/FileSystems/$fileSystemId/)
 
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems/$fileSystemId |jq -r ''
-
-echo
-echo "Network info"
-# List mount targets (network info)
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X GET $url/v1/FileSystems/$fileSystemId/MountTargets |jq -r ''
+echo $volume | jq 
