@@ -104,7 +104,7 @@ Enter the NetBIOS name.
 +
 Enter a username for your Active Directory server.
 +
-You can use any username that is authorized to access the Active Directory domain to which you are joining the SMB server.
+You can use any username that is authorized to create machine accounts in the Active Directory domain to which you are joining the SMB server.
 ** *Password*
 +
 Enter the password for the AD username that you specified in Username.
