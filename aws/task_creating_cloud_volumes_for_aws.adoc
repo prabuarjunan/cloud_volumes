@@ -25,8 +25,6 @@ link:task_selecting_region.html[Selecting the region]
 .Steps
 
 . Navigate to the https://cds-aws-bundles.netapp.com/storage/volumes[NetApp Cloud Orchestrator^] site, and then log in with the email address that you provided during your subscription.
-+
-You should bookmark this URL. You will need to return to it later.
 . Click the *Create new volume* button.
 +
 The Create Volume page appears.
