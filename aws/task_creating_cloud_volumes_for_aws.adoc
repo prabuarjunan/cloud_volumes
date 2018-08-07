@@ -83,9 +83,13 @@ Select *Read & Write* or *Read only*.
 Click to add additional export policy rules.
 +
 image::diagram_create_volume_4.png[Add export policy rule]
+* *Enable data encryption*
++
+If you selected SMB or Dual-protocol, you can enable data encryption by selecting the checkbox.
+
 * *Active Directory*
 +
-If you selected SMB or Dual-protocol, you can select **Enable data encryption**, and you can integrate the volume with a Windows Active Directory server by providing the following information:
+If you selected SMB or Dual-protocol, you can integrate the volume with a Windows Active Directory server by providing the following information:
 
 ** *DNS server*
 +
