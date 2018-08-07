@@ -102,10 +102,12 @@ Enter the domain for the SMB share.
 Enter the NetBIOS name.
 ** *Username*
 +
-Enter an administrator username for the Active Directory server.
+Enter a username for your Active Directory server.
++
+You can use any username that is authorized to access the Active Directory domain to which you are joining the SMB server.
 ** *Password*
 +
-Enter the password for the Active Directory administrator.
+Enter the password for the AD username that you specified in Username.
 +
 image::diagram_create_volume_ad.png[Active Directory]
 +
