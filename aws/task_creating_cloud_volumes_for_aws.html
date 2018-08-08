@@ -3,7 +3,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Creating Cloud Volumes | NetApp Cloud Docs</title>
+  <title>Creating a Cloud Volume | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -271,6 +271,10 @@
   
 
   
+    <li><a href="reference_whats_new_cloud_volumes_aws.html">What's new</a></li>
+  
+
+  
     <!-- Check Container -->
     <li class="subfolders">
       <a href="#">Getting started</a>
@@ -279,6 +283,8 @@
 
   
     <li><a href="concept_overview.html">Overview</a></li>
+  
+
   
 
   
@@ -441,11 +447,11 @@
                   
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Creating Cloud Volumes
+  <h1 class="n-doc__component-detail-heading">Creating a Cloud Volume
     <span>
       
         <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_creating_cloud_volumes_for_aws.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Creating Cloud Volumes](https://docs.netapp.com/zz/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Creating a Cloud Volume](https://docs.netapp.com/zz/cloud_volumes/aws/task_creating_cloud_volumes_for_aws.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -466,9 +472,6 @@
 <ol class="arabic">
 <li>
 <p>Navigate to the <a href="https://cds-aws-bundles.netapp.com/storage/volumes" target="_blank" rel="noopener">NetApp Cloud Orchestrator</a> site, and then log in with the email address that you provided during your subscription.</p>
-<div class="paragraph">
-<p>You should bookmark this URL. You will need to return to it later.</p>
-</div>
 </li>
 <li>
 <p>Click the <strong>Create new volume</strong> button.</p>
@@ -482,7 +485,7 @@
 </div>
 </li>
 <li>
-<p>In the Create Volume page, provide information for the following fields:</p>
+<p>Select <strong>NFS</strong>, <strong>SMB</strong>, or <strong>Dual-protocol</strong> in the Create Volume page, and provide information for the following fields:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -504,7 +507,7 @@
 </div>
 </li>
 <li>
-<p><strong>Generated volume path</strong></p>
+<p><strong>Volume path</strong></p>
 <div class="paragraph">
 <p>Specify the path you want to use or accept the automatically generated path.</p>
 </div>
@@ -548,6 +551,9 @@
 </li>
 <li>
 <p><strong>Export policy</strong></p>
+<div class="paragraph">
+<p>If you selected NFS or Dual-protocol, you can create an export policy by providing information for the following fields:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -563,24 +569,29 @@
 </div>
 </li>
 <li>
-<p><strong>Protocol</strong></p>
-<div class="paragraph">
-<p>Select <strong>NFSv3</strong> or <strong>SMB</strong>.</p>
-</div>
-</li>
-<li>
 <p><strong>Add export policy rule</strong> (optional)</p>
 <div class="paragraph">
 <p>Click to add additional export policy rules.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_create_volume_4.png" alt="Add export policy rule">
+</div>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
+<p><strong>Enable data encryption</strong></p>
+<div class="paragraph">
+<p>If you selected SMB or Dual-protocol, you can enable data encryption by selecting the checkbox.</p>
+</div>
+</li>
+<li>
 <p><strong>Active Directory</strong></p>
 <div class="paragraph">
-<p>If you selected SMB, provide the following information:</p>
+<p>If you selected SMB or Dual-protocol, you can integrate the volume with a Windows Active Directory server by providing the following information:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -605,13 +616,16 @@
 <li>
 <p><strong>Username</strong></p>
 <div class="paragraph">
-<p>Enter an administrator username for the Active Directory server.</p>
+<p>Enter a username for your Active Directory server.</p>
+</div>
+<div class="paragraph">
+<p>You can use any username that is authorized to create machine accounts in the Active Directory domain to which you are joining the SMB server.</p>
 </div>
 </li>
 <li>
 <p><strong>Password</strong></p>
 <div class="paragraph">
-<p>Enter the password for the Active Directory administrator.</p>
+<p>Enter the password for the AD username that you specified in Username.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -625,12 +639,31 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-You should follow the guidance on AWS security group settings to enable Cloud Volumes to integrate with Active Directory correctly.<br>
+You should follow the guidance on AWS security group settings to enable Cloud Volumes to integrate with Windows Active Directory servers correctly.<br>
 <a href="reference_security_groups_windows_ad_servers.html">AWS security group settings for Windows AD servers</a>
 </td>
 </tr>
 </table>
 </div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Security style</strong></p>
+<div class="paragraph">
+<p>If you selected Dual-protocol, you can change the security style by selecting <strong>NTFS</strong> or <strong>UNIX</strong> from the drop-down menu.</p>
+</div>
+<div class="paragraph">
+<p>Security styles affect the file permission type used and how permissions can be modified.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>UNIX uses NFSv3 mode bits, and only NFS clients can modify permissions.</p>
+</li>
+<li>
+<p>NTFS uses NTFS ACLs, and only SMB clients can modify permissions.</p>
 </li>
 </ul>
 </div>
