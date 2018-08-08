@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/task_modifying_export_policy_rules.html
-keywords: Cloud Volumes Service for AWS, export policy rules, client access, access types, protocol support
-summary: You can modify the export policy rule for a volume to change client access, the access type, or protocol support.
+keywords: Cloud Volumes Service for AWS, export policy rules, client access, access types
+summary: You can modify the export policy rule for a volume as needed.
 ---
 
 = Modifying an export policy rule
@@ -15,7 +15,7 @@ summary: You can modify the export policy rule for a volume to change client acc
 
 
 [.lead]
-You can modify the export policy rule for a volume to change client access, the access type, or protocol support.
+You can modify the export policy rule for a volume as needed.
 
 .Steps
 . Click the volume name, and then select *Export policy*.
@@ -23,5 +23,4 @@ You can modify the export policy rule for a volume to change client access, the 
 +
 * *Allowed client*
 * *Access type*
-* *Protocol*
 . Click *Save changes*.

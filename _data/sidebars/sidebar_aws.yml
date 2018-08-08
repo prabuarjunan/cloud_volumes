@@ -1,10 +1,13 @@
 entries:
   - title: Cloud Volumes Service for AWS docs
     url: /index.html
+  - title: What's new
+    url: /reference_whats_new_cloud_volumes_aws.html
   - title: Getting started
     entries:
       - title: Overview
         url: /concept_overview.html
+      - title: Creating a Cloud Volume
       - title: Selecting the region
         url: /task_selecting_region.html
       - title: Creating Cloud Volumes

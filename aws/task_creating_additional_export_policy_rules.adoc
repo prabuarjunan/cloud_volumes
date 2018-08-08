@@ -24,5 +24,4 @@ You can create additional export policy rules to enable flexible client access. 
 +
 * *Allowed client*
 * *Access type*
-* *Protocol*
 . Click *Save changes*.
