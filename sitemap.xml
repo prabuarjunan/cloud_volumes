@@ -57,7 +57,14 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloud_volumes/aws/search.html</loc>
       
-        <lastmod>2018-08-09T23:57:28+00:00</lastmod>
+        <lastmod>2018-08-14T22:04:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zz/cloud_volumes/aws/task_activating_support_entitlement.html</loc>
+      
+        <lastmod>2018-08-14T22:03:58+00:00</lastmod>
       
     </url>
   
@@ -92,14 +99,14 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloud_volumes/aws/task_creating_modifying_snapshot_policies.html</loc>
       
-        <lastmod>2018-06-02T06:49:57+00:00</lastmod>
+        <lastmod>2018-06-02T07:00:11+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloud_volumes/aws/task_creating_on_demand_snapshots.html</loc>
       
-        <lastmod>2018-06-02T06:49:57+00:00</lastmod>
+        <lastmod>2018-06-02T07:00:11+00:00</lastmod>
       
     </url>
   
@@ -120,21 +127,21 @@
     <url>
       <loc>https://docs.netapp.com/zz/cloud_volumes/aws/task_deleting_cloud_volumes_for_aws.html</loc>
       
-        <lastmod>2018-06-02T06:49:57+00:00</lastmod>
+        <lastmod>2018-06-02T07:00:11+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloud_volumes/aws/task_deleting_export_policy_rules.html</loc>
       
-        <lastmod>2018-06-02T06:49:57+00:00</lastmod>
+        <lastmod>2018-06-02T07:00:11+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/zz/cloud_volumes/aws/task_deleting_snapshots.html</loc>
       
-        <lastmod>2018-06-02T06:49:57+00:00</lastmod>
+        <lastmod>2018-06-02T07:00:11+00:00</lastmod>
       
     </url>
   

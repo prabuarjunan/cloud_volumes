@@ -3,7 +3,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Modifying the Cloud Sync schedule | NetApp Cloud Docs</title>
+  <title>Activating support entitlement and accessing support | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,11 +15,11 @@
 
   
 
-  <meta name="description" content="When a Cloud Sync relationship is initially created, auto sync is enabled by default and scheduled to run once a day. You can modify the Cloud Sync schedule ...">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, Cloud Sync schedule, auto sync">
+  <meta name="description" content="Before you create your first Cloud Volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to a...">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, support entitlement, NetApp ID, ticketing">
 
   <!-- Icons -->
-  <link rel="icon" href="/cloud_volumes/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/cloud_volumes/en/images/favicon.ico" type="image/x-icon">
 
   <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
 
@@ -27,39 +27,39 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
 
   <!-- LUCI CSS Content -->
-  <link rel="stylesheet" href="/cloud_volumes/common/css/esb.min.css">
-  <link rel="stylesheet" href="/cloud_volumes/common/css/netapp-library.min.css">
-  <link rel="stylesheet" href="/cloud_volumes/common/css/doc.css">
-  <link rel="stylesheet" href="/cloud_volumes/common/css/doc-components.css">
+  <link rel="stylesheet" href="/cloud_volumes/en/common/css/esb.min.css">
+  <link rel="stylesheet" href="/cloud_volumes/en/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/cloud_volumes/en/common/css/doc.css">
+  <link rel="stylesheet" href="/cloud_volumes/en/common/css/doc-components.css">
 
-  <link rel="stylesheet" href='/cloud_volumes/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/cloud_volumes/css/na-search.css' type='text/css'>
-  <link rel='stylesheet' href='/cloud_volumes/css/clouddocs.css' type='text/css'>
+  <link rel="stylesheet" href='/cloud_volumes/en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/en/css/clouddocs.css' type='text/css'>
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
-  <link rel="stylesheet" type="text/css" href="/cloud_volumes/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/cloud_volumes/css/customstyles.css"> -->
+  <link rel="stylesheet" type="text/css" href="/cloud_volumes/en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloud_volumes/en/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/cloud_volumes/css/boxshadowproperties.css">
+  <link rel="stylesheet" href="/cloud_volumes/en/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
-  <link rel='stylesheet' href='/cloud_volumes/css/netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/en/css/netapp.css' type='text/css'>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
   
-    <script src='/cloud_volumes/js/na-search.js'></script>
+    <script src='/cloud_volumes/en/js/na-search.js'></script>
   
 
-  <script src='/cloud_volumes/js/clouddocs.js'></script>
-  <script src='/cloud_volumes/js/s_code_impl.js'></script>
-  <script src="/cloud_volumes/js/jquery.navgoco.min.js"></script>
+  <script src='/cloud_volumes/en/js/clouddocs.js'></script>
+  <script src='/cloud_volumes/en/js/s_code_impl.js'></script>
+  <script src="/cloud_volumes/en/js/jquery.navgoco.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
-  <script src="/cloud_volumes/js/toc.js"></script>
-  <script src="/cloud_volumes/js/customscripts.js"></script>
+  <script src="/cloud_volumes/en/js/toc.js"></script>
+  <script src="/cloud_volumes/en/js/customscripts.js"></script>
 
   <script>
       $(document).ready(function() {
@@ -144,7 +144,7 @@
       <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
       <ul class="n-off-canvas-menu__property-navigation-list">
         <li class="n-off-canvas-menu__property-navigation-list-item ">
-          <a href="https://docs.netapp.com/zz/" class="n-off-canvas-menu__property-navigation-link">
+          <a href="https://docs.netapp.com/en/" class="n-off-canvas-menu__property-navigation-link">
             Home
           </a>
           <div class="n-off-canvas-menu__child-menu">
@@ -185,19 +185,19 @@
       <div class="n-property-bar__menu-toggle">
         <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
           <title>bars</title>
-          <use xlink:href="/cloud_volumes/common/svg/sprite.svg#bars"></use>
+          <use xlink:href="/cloud_volumes/en/common/svg/sprite.svg#bars"></use>
         </svg></a>
       </div>
       <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
-        <a class="n-property-bar__property-link" href="https://docs.netapp.com/zz/">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/en/">
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/cloud_volumes/en/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
             <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
-              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/cloud_volumes/en/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
           <h2 class="n-property-bar__property-name">Cloud Docs</h2>
@@ -217,7 +217,7 @@
             <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
               <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
                 <title>globe</title>
-                <use xlink:href="/cloud_volumes/common/svg/sprite.svg#globe"></use>
+                <use xlink:href="/cloud_volumes/en/common/svg/sprite.svg#globe"></use>
               </svg>
             </a>
           </li>
@@ -243,7 +243,7 @@
             </li>
           </ul>
           <div class="menu__footer">
-            <p>Current Language: zz
+            <p>Current Language: en
             </p>
           </div>
         </div>
@@ -286,7 +286,7 @@
   
 
   
-    <li><a href="task_activating_support_entitlement.html">Activating support entitlement and accessing support</a></li>
+    <li class="active"><a href="task_activating_support_entitlement.html">Activating support entitlement and accessing support</a></li>
   
 
   
@@ -394,7 +394,7 @@
   
 
   
-    <li class="active"><a href="task_modifying_cloud_sync_schedule.html">Modifying the Cloud Sync schedule</a></li>
+    <li><a href="task_modifying_cloud_sync_schedule.html">Modifying the Cloud Sync schedule</a></li>
   
 
   
@@ -449,50 +449,133 @@
                   
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Modifying the Cloud Sync schedule
+  <h1 class="n-doc__component-detail-heading">Activating support entitlement and accessing support
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_modifying_cloud_sync_schedule.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Modifying the Cloud Sync schedule](https://docs.netapp.com/zz/cloud_volumes/aws/task_modifying_cloud_sync_schedule.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_activating_support_entitlement.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Activating support entitlement and accessing support](https://docs.netapp.com/en/cloud_volumes/aws/task_activating_support_entitlement.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
 </div>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>When a Cloud Sync relationship is initially created, auto sync is enabled by default and scheduled to run once a day. You can modify the Cloud Sync schedule as appropriate.</p>
+<p>Before you create your first Cloud Volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.</p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#activating-support-entitlement">Activating support entitlement</a></li>
+<li><a href="#obtaining-support-information">Obtaining support information</a></li>
+<li><a href="#deactivating-support">Deactivating support</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="activating-support-entitlement">Activating support entitlement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>During the initial subscription process with Cloud Volumes Service for AWS, the Cloud Volumes instance generates a 20-digit NetApp subscription ID that starts with "930". The NetApp subscription ID represents the Cloud Volumes Service that is tied to your AWS account. You register the NetApp subscription ID to activate support entitlement.  You need NetApp Support Site (NSS) credentials for the support activation process.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Go to the Sync page or the Sync tab for a volume on the Volumes page to see the Cloud Sync relationships.</p>
+<p>Navigate to the <a href="https://cds-aws-bundles.netapp.com/storage/volumes" target="_blank" rel="noopener">NetApp Cloud Orchestrator</a> site, and then log in with the email address that you provided during your subscription.</p>
+</li>
+<li>
+<p>Display your NetApp subscription ID by clicking <strong>Support</strong> in the Cloud Volumes Service user interface (UI).</p>
 <div class="imageblock">
 <div class="content">
-<img src="./media/diagram_modifying_cloud_sync_schedule_sync_relationship.png" alt="Sync relationships">
+<img src="./media/diagram_support_page.png" alt="Display Support page">
 </div>
 </div>
 </li>
 <li>
-<p>To turn off auto sync for a Cloud Sync relationship, click the blue <strong>ON</strong> slider for the relationship.</p>
+<p>In the Support page, verify that your subscription status shows <code>not registered</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="./media/diagram_modifying_cloud_sync_schedule_auto_sync.png" alt="Auto sync slider">
+<img src="./media/diagram_support_status_not_registered.png" alt="Support status not registered">
 </div>
 </div>
 </li>
 <li>
-<p>To change the sync schedule, click the drop-down list under <strong>Schedule</strong>, select <strong>Day/s</strong> or <strong>Hour/s</strong>, select an interval number, and then click the checkmark.</p>
-<div class="imageblock">
-<div class="content">
-<img src="./media/diagram_modifying_cloud_sync_schedule.png" alt="Modifying the Cloud Sync schedule">
-</div>
+<p>Register your NetApp subscription ID to activate support entitlement:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If you are new to NetApp or do not have an existing NSS account, go to the  <a href="https://register.netapp.com" target="_blank" rel="noopener">Cloud Data Services Support Registration</a> page (register.netapp.com) to create a NetApp Support Site (NSS) account.</p>
+<div class="paragraph">
+<p>You will be prompted to provide your NetApp subscription ID and your AWS customer ID.</p>
 </div>
 </li>
 <li>
-<p>To start Cloud Sync immediately, click <strong>Done</strong> under Action, select <strong>Sync Now</strong>, and click <strong>Sync Now</strong> again to confirm.</p>
+<p>From the Cloud Volumes Service UI, click <strong>Activate support</strong> and enter your NSS credentials (username and password) to activate support entitlement for your NetApp subscription ID.</p>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_support_activate.png" alt="Activate support">
+</div>
+</div>
+<div class="paragraph">
+<p>After your NetApp subscription ID is activated for support entitlement, the Support page shows the <code>registered</code> status, indicating that you have activated support entitlement.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_support_status_registered.png" alt="Support status registered">
+</div>
+</div>
 </li>
 </ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="obtaining-support-information">Obtaining support information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To obtain self-service information or other forms of support information, go to the <strong>Support</strong> page from the Cloud Volumes Service UI.</p>
+</div>
+<div class="paragraph">
+<p>You need your NSS credentials to access technical support chat or create web tickets.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_support_obtain.png" alt="Obtaining support information">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deactivating-support">Deactivating support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you ever need to deactivate support for your subscription, click <strong>Deactivate support</strong> from the Support page, type <code>deactivate</code> as prompted, and click <strong>Deactivate support</strong> again to confirm.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+NetApp recommends that you do not deactivate support for your subscription unless you are certain that you no longer need the service.<br>
+If you mistakenly deactivated support, you can create a web ticket to reactivate the subscription.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_support_deactivate.png" alt="Deactivate support">
+</div>
+</div>
+</div>
 </div>
 
                 </article>
@@ -522,7 +605,7 @@
                       <span class="n-footer__social-link-text">blog</span>
                       <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                         <title>blog@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#blog"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/en/common/svg/sprite.svg#blog"></use>
                       </svg>
                     </a>
                   </li>
@@ -531,7 +614,7 @@
                       <span class="n-footer__social-link-text">community</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>community@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#comments"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/en/common/svg/sprite.svg#comments"></use>
                       </svg>
                     </a>
                   </li>
@@ -541,7 +624,7 @@
                       <span class="n-footer__social-link-text">twitter</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>twitter@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#twitter"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/en/common/svg/sprite.svg#twitter"></use>
                       </svg>
                     </a>
                   </li>
@@ -550,7 +633,7 @@
                       <span class="n-footer__social-link-text">youtube</span>
                       <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                         <title>youtube@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#youtube"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/en/common/svg/sprite.svg#youtube"></use>
                       </svg>
                     </a>
                   </li>
@@ -569,14 +652,14 @@
 
     </div>
 
-    <script src="/cloud_volumes/common/js/components.js"></script>
-    <script src="/cloud_volumes/common/js/doc-components.js"></script>
+    <script src="/cloud_volumes/en/common/js/components.js"></script>
+    <script src="/cloud_volumes/en/common/js/doc-components.js"></script>
 
     <!-- i18n script -->
-    <script type="text/javascript" src="/cloud_volumes/js/responsive.js"></script>
+    <script type="text/javascript" src="/cloud_volumes/en/js/responsive.js"></script>
 
     <!-- Elasticsearch JS -->
-    <script type="text/javascript" src='/cloud_volumes/js/bundle.js'></script>
+    <script type="text/javascript" src='/cloud_volumes/en/js/bundle.js'></script>
   </body>
 
   

@@ -3,7 +3,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Modifying the Cloud Sync schedule | NetApp Cloud Docs</title>
+  <title>Activating support entitlement and accessing support | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +15,8 @@
 
   
 
-  <meta name="description" content="When a Cloud Sync relationship is initially created, auto sync is enabled by default and scheduled to run once a day. You can modify the Cloud Sync schedule ...">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, Cloud Sync schedule, auto sync">
+  <meta name="description" content="Before you create your first Cloud Volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to a...">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, support entitlement, NetApp ID, ticketing">
 
   <!-- Icons -->
   <link rel="icon" href="/cloud_volumes/images/favicon.ico" type="image/x-icon">
@@ -286,7 +286,7 @@
   
 
   
-    <li><a href="task_activating_support_entitlement.html">Activating support entitlement and accessing support</a></li>
+    <li class="active"><a href="task_activating_support_entitlement.html">Activating support entitlement and accessing support</a></li>
   
 
   
@@ -394,7 +394,7 @@
   
 
   
-    <li class="active"><a href="task_modifying_cloud_sync_schedule.html">Modifying the Cloud Sync schedule</a></li>
+    <li><a href="task_modifying_cloud_sync_schedule.html">Modifying the Cloud Sync schedule</a></li>
   
 
   
@@ -449,50 +449,133 @@
                   
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Modifying the Cloud Sync schedule
+  <h1 class="n-doc__component-detail-heading">Activating support entitlement and accessing support
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_modifying_cloud_sync_schedule.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Modifying the Cloud Sync schedule](https://docs.netapp.com/zz/cloud_volumes/aws/task_modifying_cloud_sync_schedule.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_activating_support_entitlement.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Activating support entitlement and accessing support](https://docs.netapp.com/zz/cloud_volumes/aws/task_activating_support_entitlement.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
 </div>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>When a Cloud Sync relationship is initially created, auto sync is enabled by default and scheduled to run once a day. You can modify the Cloud Sync schedule as appropriate.</p>
+<p>Before you create your first Cloud Volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.</p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#activating-support-entitlement">Activating support entitlement</a></li>
+<li><a href="#obtaining-support-information">Obtaining support information</a></li>
+<li><a href="#deactivating-support">Deactivating support</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="activating-support-entitlement">Activating support entitlement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>During the initial subscription process with Cloud Volumes Service for AWS, the Cloud Volumes instance generates a 20-digit NetApp subscription ID that starts with "930". The NetApp subscription ID represents the Cloud Volumes Service that is tied to your AWS account. You register the NetApp subscription ID to activate support entitlement.  You need NetApp Support Site (NSS) credentials for the support activation process.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Go to the Sync page or the Sync tab for a volume on the Volumes page to see the Cloud Sync relationships.</p>
+<p>Navigate to the <a href="https://cds-aws-bundles.netapp.com/storage/volumes" target="_blank" rel="noopener">NetApp Cloud Orchestrator</a> site, and then log in with the email address that you provided during your subscription.</p>
+</li>
+<li>
+<p>Display your NetApp subscription ID by clicking <strong>Support</strong> in the Cloud Volumes Service user interface (UI).</p>
 <div class="imageblock">
 <div class="content">
-<img src="./media/diagram_modifying_cloud_sync_schedule_sync_relationship.png" alt="Sync relationships">
+<img src="./media/diagram_support_page.png" alt="Display Support page">
 </div>
 </div>
 </li>
 <li>
-<p>To turn off auto sync for a Cloud Sync relationship, click the blue <strong>ON</strong> slider for the relationship.</p>
+<p>In the Support page, verify that your subscription status shows <code>not registered</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="./media/diagram_modifying_cloud_sync_schedule_auto_sync.png" alt="Auto sync slider">
+<img src="./media/diagram_support_status_not_registered.png" alt="Support status not registered">
 </div>
 </div>
 </li>
 <li>
-<p>To change the sync schedule, click the drop-down list under <strong>Schedule</strong>, select <strong>Day/s</strong> or <strong>Hour/s</strong>, select an interval number, and then click the checkmark.</p>
-<div class="imageblock">
-<div class="content">
-<img src="./media/diagram_modifying_cloud_sync_schedule.png" alt="Modifying the Cloud Sync schedule">
-</div>
+<p>Register your NetApp subscription ID to activate support entitlement:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If you are new to NetApp or do not have an existing NSS account, go to the  <a href="https://register.netapp.com" target="_blank" rel="noopener">Cloud Data Services Support Registration</a> page (register.netapp.com) to create a NetApp Support Site (NSS) account.</p>
+<div class="paragraph">
+<p>You will be prompted to provide your NetApp subscription ID and your AWS customer ID.</p>
 </div>
 </li>
 <li>
-<p>To start Cloud Sync immediately, click <strong>Done</strong> under Action, select <strong>Sync Now</strong>, and click <strong>Sync Now</strong> again to confirm.</p>
+<p>From the Cloud Volumes Service UI, click <strong>Activate support</strong> and enter your NSS credentials (username and password) to activate support entitlement for your NetApp subscription ID.</p>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_support_activate.png" alt="Activate support">
+</div>
+</div>
+<div class="paragraph">
+<p>After your NetApp subscription ID is activated for support entitlement, the Support page shows the <code>registered</code> status, indicating that you have activated support entitlement.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_support_status_registered.png" alt="Support status registered">
+</div>
+</div>
 </li>
 </ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="obtaining-support-information">Obtaining support information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To obtain self-service information or other forms of support information, go to the <strong>Support</strong> page from the Cloud Volumes Service UI.</p>
+</div>
+<div class="paragraph">
+<p>You need your NSS credentials to access technical support chat or create web tickets.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_support_obtain.png" alt="Obtaining support information">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deactivating-support">Deactivating support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you ever need to deactivate support for your subscription, click <strong>Deactivate support</strong> from the Support page, type <code>deactivate</code> as prompted, and click <strong>Deactivate support</strong> again to confirm.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+NetApp recommends that you do not deactivate support for your subscription unless you are certain that you no longer need the service.<br>
+If you mistakenly deactivated support, you can create a web ticket to reactivate the subscription.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_support_deactivate.png" alt="Deactivate support">
+</div>
+</div>
+</div>
 </div>
 
                 </article>
