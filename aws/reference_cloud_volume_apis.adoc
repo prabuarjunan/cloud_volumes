@@ -87,6 +87,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
   }
 ]
 ``
+
 link:media/list-cv.sh[Script to list cloud volumes in an account]
 
 ==== Listing the details for a specific volume
@@ -117,6 +118,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
   "exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
   "labels": ["test"]}'
 ``
+
 link:media/create-cv.sh[Script to create a cloud volume]
 
 ==== Updating a volume
@@ -136,6 +138,7 @@ The following example uses a `DELETE` call to delete a volume specified by `file
 ``
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v1/FileSystems/08b0578d-465f-6c1a-bf8c-f40098b6451b
 ``
+
 link:media/delete-cv.sh[Script to delete a cloud volume by mountpoint]
 
 IMPORTANT: Use with caution. This API call deletes the volume and all its data.
@@ -148,6 +151,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 {"name": "snappy",
  "region": "us-west"}'
 ``
+
 link:media/snap-cv.sh[Script to create snapshots of a cloud volume by mountpoint]
 
 ==== Listing snapshots for a specific volume
@@ -168,6 +172,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 "fileSystemId": "cdef5090-aa5e-c2cf-6bba-f77d259a37f8",
 "region": "us-west"}'
 ``
+
 link:media/revert-snap.sh[Script to revert to a snapshot of a cloud volume by mountpoint and snapshotId]
 
 IMPORTANT: Use with caution.  This API call causes any data written after the snapshot to be lost.
@@ -190,6 +195,7 @@ The following example uses a `DELETE` call to delete a snapshot specified by `sn
 ``
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X DELETE <api_url>/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d
 ``
+
 link:media/delete-snap.sh[Script to delete a snapshot of a cloud volume by mountpoint and snapshotId]
 
 IMPORTANT: Use with caution. This API call deletes the snapshot and all its data.
