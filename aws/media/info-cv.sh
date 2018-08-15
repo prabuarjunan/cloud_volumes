@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# script to display the details of a NetApp Cloud Volumes by mountpoint
+# script to display the details of a NetApp cloud volume by mountpoint
 # Written by Graham Smith, NetApp July 2018
 # requires bash, jr and curl
 # Version 0.0.1
