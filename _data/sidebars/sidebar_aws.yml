@@ -11,19 +11,19 @@ entries:
         url: /task_activating_support_entitlement.html
       - title: Selecting the region
         url: /task_selecting_region.html
-      - title: Creating a Cloud Volume
+      - title: Creating a cloud volume
         url: /task_creating_cloud_volumes_for_aws.html
-      - title: Mounting a Cloud Volume
+      - title: Mounting a cloud volume
         url: /task_mounting_cloud_volumes_for_aws.html
-  - title: Managing Cloud Volumes
+  - title: Managing cloud volumes
     entries:
-      - title: Modifying Cloud Volumes
+      - title: Modifying cloud volumes
         url: /task_modifying_cloud_volumes_for_aws.html
-      - title: Deleting Cloud Volumes
+      - title: Deleting cloud volumes
         url: /task_deleting_cloud_volumes_for_aws.html
-  - title: Managing Cloud Volume snapshots
+  - title: Managing cloud volume snapshots
     entries:
-      - title: Creating an on-demand snapshot for a Cloud Volume
+      - title: Creating an on-demand snapshot for a cloud volume
         url: /task_creating_on_demand_snapshots.html
       - title: Creating or modifying a snapshot policy
         url: /task_creating_modifying_snapshot_policies.html
@@ -39,7 +39,7 @@ entries:
         url: /task_creating_additional_export_policy_rules.html
       - title: Deleting export policy rules
         url: /task_deleting_export_policy_rules.html
-  - title: Managing Cloud Sync for Cloud Volumes
+  - title: Managing Cloud Sync for cloud volumes
     entries:
       - title: Creating a Cloud Sync data broker
         url: /task_creating_cloud_sync_data_broker.html

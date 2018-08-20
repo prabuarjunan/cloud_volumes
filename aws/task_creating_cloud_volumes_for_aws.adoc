@@ -2,10 +2,10 @@
 sidebar: sidebar_aws
 permalink: aws/task_creating_cloud_volumes_for_aws.html
 keywords: Cloud Volumes Service for AWS, volumes, snapshots, service levels, quota, export policy, NFS, SMB, Active Directory, AD, Windows
-summary: You create Cloud Volumes from the NetApp Cloud Orchestrator site.
+summary: You create cloud volumes from the NetApp Cloud Orchestrator site.
 ---
 
-= Creating a Cloud Volume
+= Creating a cloud volume
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -15,7 +15,7 @@ summary: You create Cloud Volumes from the NetApp Cloud Orchestrator site.
 
 
 [.lead]
-You create Cloud Volumes from the NetApp Cloud Orchestrator site.
+You create cloud volumes from the NetApp Cloud Orchestrator site.
 
 .Before you begin
 You must have selected the region where you want to use the service.
@@ -109,7 +109,7 @@ Enter the password for the AD username that you specified in Username.
 +
 image::diagram_create_volume_ad.png[Active Directory]
 +
-IMPORTANT: You should follow the guidance on AWS security group settings to enable Cloud Volumes to integrate with Windows Active Directory servers correctly.
+IMPORTANT: You should follow the guidance on AWS security group settings to enable cloud volumes to integrate with Windows Active Directory servers correctly.
 <<reference_security_groups_windows_ad_servers.adoc#,AWS security group settings for Windows AD servers>>
 
 * *Security style*
