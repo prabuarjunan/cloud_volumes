@@ -143,4 +143,4 @@ The volume you created appears in the Volumes page.
 image:diagram_create_volume_3.png[A volume is created]
 
 .After you finish
-Continue with <<task_mounting_cloud_volumes_for_aws.adoc#,Mounting a Cloud Volume>>.
+Continue with <<task_mounting_cloud_volumes_for_aws.adoc#,Mounting a cloud volume>>.

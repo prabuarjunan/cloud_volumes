@@ -2,10 +2,10 @@
 sidebar: sidebar_aws
 permalink: aws/task_mounting_cloud_volumes_for_aws.html
 keywords: Cloud Volumes Service for AWS, mount targets, Elastic Compute Cloud, EC2, NFSv3, Linux, UNIX, SMB, Windows
-summary: You can mount a Cloud Volume to your AWS instance. Cloud Volumes currently support NFSv3 for Linux and UNIX clients and SMB for Windows clients.
+summary: You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 for Linux and UNIX clients and SMB for Windows clients.
 ---
 
-= Mounting a Cloud Volume
+= Mounting a cloud volume
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -15,7 +15,7 @@ summary: You can mount a Cloud Volume to your AWS instance. Cloud Volumes curren
 
 
 [.lead]
-You can mount a Cloud Volume to your AWS instance. Cloud Volumes currently support NFSv3 for Linux and UNIX clients and SMB for Windows clients.
+You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 for Linux and UNIX clients and SMB for Windows clients.
 
 .Steps
 
@@ -36,4 +36,4 @@ SMB example:
 image:diagram_mount_instructions_smb.png[Mount instructions for SMB]
 . Connect to your Amazon Elastic Compute Cloud (EC2) instance by using an SSH or RDP client, and then follow the mount instructions for your instance.
 +
-After completing the steps in the mount instructions, you have successfully mounted the Cloud Volume to your AWS instance.
+After completing the steps in the mount instructions, you have successfully mounted the cloud volume to your AWS instance.
