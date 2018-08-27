@@ -97,7 +97,7 @@ Enter the IP address of the DNS server that you want to use.
 Enter the domain for the SMB share.
 ** *NetBIOS*
 +
-Enter the NetBIOS name.
+Enter a NetBIOS name for the SMB server that will be created.
 ** *Username*
 +
 Enter a username for your Active Directory server.
@@ -137,7 +137,7 @@ image::diagram_snapshot_policy_1.png[Snapshot policy]
 +
 You can edit export policies and snapshot policies after the volume is created.
 
-. Scroll down the Create Volume page, and then click the *Create Volume* button to create the volume.
+. Scroll down to the Create Volume page, and then click the *Create Volume* button to create the volume.
 +
 The volume you created appears in the Volumes page.
 image:diagram_create_volume_3.png[A volume is created]
