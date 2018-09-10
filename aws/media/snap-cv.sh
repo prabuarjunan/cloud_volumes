@@ -1,8 +1,8 @@
 #! /bin/bash
 
-# script to create snapshots of a NetApp cloud volume by mountpoint
+# script to create a snapshot of a NetApp Cloud Volume by mountpoint
 # Written by Graham Smith, NetApp July 2018
-# requires bash, jr and curl
+# requires bash, jq and curl
 # Version 0.0.1
 
 #set -x

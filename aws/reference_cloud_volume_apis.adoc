@@ -19,16 +19,16 @@ The Cloud Volume capabilities that are available through the web UI are also ava
 
 toc::[]
 
-== Finding the API URL, API key, and secret key
+== Finding the API URL, API key, and Secret key
 [[finding_urL_key_secretKey]]
-You need to obtain the API URL, API key, and secret key for running an API call.
+You need to obtain the Cloud Volumes API URL, API key, and Secret key for running an API call.
 
 .Steps
 . Click **API access** on the storage page or in the drop-down menu under your username.
 +
-. Record the API URL, API key, and secret key.
+. Record the Cloud Volumes API URL, API key, and Secret key.
 
-link:media/test.conf[Sample file showing the API URL, API key, and secret key for an account]
+link:media/test.conf[Sample file showing the API URL, API key, and Secret key for an account]
 
 == Listing the available APIs
 The storage page displays the available APIs that you can use.
@@ -56,7 +56,7 @@ The APIs are listed by function, for example:
 link:media/fsid-cv.sh[Script to find Cloud Volumes Service fileSystemId by mountpoint]
 
 == Using the Cloud Volume APIs
-This section shows you how to use the Cloud Volume APIs.  The examples use curl from a Linux bash shell. You need to replace `<api_url>`, `<api_key>`, and `<secret_key>` with the values you recorded from <<finding_urL_key_secretKey, Finding the API URL, API key, and secret key>>.
+This section shows you how to use the Cloud Volume APIs.  The examples use curl from a Linux bash shell. You need to replace `<api_url>`, `<api_key>`, and `<secret_key>` with the values you recorded from <<finding_urL_key_secretKey, Finding the API URL, API key, and Secret key>>.
 
 === Syntax
 `*curl -s -H  accept:application/json  -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X [GET,POST,PUT,DELETE] <api_url>/v1/<command>*`
@@ -131,6 +131,8 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
   "serviceLevel": "extreme",
   "quotaInBytes": 500000000000}'
 ``
+
+link:media/update-cv.sh[Script to update a cloud volume]
 
 ==== Deleting a volume
 The following example uses a `DELETE` call to delete a volume specified by `fileSystemId`:

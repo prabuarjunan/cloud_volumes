@@ -1,8 +1,8 @@
 #! /bin/bash
 
-# script to delete a snapshot of a NetApp cloud volume by mountpoint and snapshotId
+# script to delete a snapshot of NetApp Cloud Volume by mountpoint and snapshotId
 # Written by Graham Smith, NetApp July 2018
-# requires bash, jr and curl
+# requires bash, jq and curl
 # Version 0.0.1
 
 #set -x
