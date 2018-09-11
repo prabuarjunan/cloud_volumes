@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
+  <head>
+  <title>Cloud Volume APIs | NetApp Cloud Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation">
+  <meta http-equiv="nss-subtype" content="User Guide">
+
+  
+
+  <meta name="description" content="The Cloud Volume capabilities that are available through the web UI  are also available through RESTful APIs.  The APIs enable you to create and manage cloud...">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, APIs">
+
+  <!-- Icons -->
+  <link rel="icon" href="/cloud_volumes/us-en/images/favicon.ico" type="image/x-icon">
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- LUCI CSS Content -->
+  <link rel="stylesheet" href="/cloud_volumes/us-en/common/css/esb.min.css">
+  <link rel="stylesheet" href="/cloud_volumes/us-en/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/cloud_volumes/us-en/common/css/doc.css">
+  <link rel="stylesheet" href="/cloud_volumes/us-en/common/css/doc-components.css">
+
+  <link rel="stylesheet" href='/cloud_volumes/us-en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/clouddocs.css' type='text/css'>
+
+  <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
+  <link rel="stylesheet" type="text/css" href="/cloud_volumes/us-en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloud_volumes/us-en/css/customstyles.css"> -->
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/cloud_volumes/us-en/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/netapp.css' type='text/css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/cloud_volumes/us-en/js/na-search.js'></script>
+  
+
+  <script src='/cloud_volumes/us-en/js/clouddocs.js'></script>
+  <script src='/cloud_volumes/us-en/js/s_code_impl.js'></script>
+  <script src="/cloud_volumes/us-en/js/jquery.navgoco.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+  <script src="/cloud_volumes/us-en/js/toc.js"></script>
+  <script src="/cloud_volumes/us-en/js/customscripts.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco({
+              caretHtml: '',
+              accordion: true,
+              openClass: 'active', // open
+              save: false, // leave false or nav highlighting doesn't work right
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      })
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+
+  <!-- Controls the i18n Browser Redirection -->
+  <script>
+    var siteLocales = [];
+    
+      siteLocales.push("zz");
+    
+      siteLocales.push("en");
+    
+      siteLocales.push("us-en");
+    
+
+    standardizeUrl(siteLocales, "clouddocs.netapp.com", "https://docs.netapp.com");
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class="n-doc__component-detail">
+    <a href="#n-main-content" class="visually-hidden">Skip to main content</a>
+<div class="n-off-canvas-menu">
+  <div class="n-off-canvas-menu__menu">
+    <div class="n-off-canvas-menu__menu-inner">
+      <div class="n-off-canvas-menu__property-title">NetApp Cloud Docs</div>
+      <ul class="n-off-canvas-menu__property-navigation-list">
+        <li class="n-off-canvas-menu__property-navigation-list-item ">
+          <a href="https://docs.netapp.com/us-en/" class="n-off-canvas-menu__property-navigation-link">
+            Home
+          </a>
+          <div class="n-off-canvas-menu__child-menu">
+            <ul class="n-menu__list">
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="n-off-canvas-menu__global-navigation-list">
+         <li class="n-off-canvas-menu__global-navigation-list-header">More From NetApp</li>
+         <li class="n-off-canvas-menu__global-navigation-list-item"><a href="#" class="n-off-canvas-menu__global-navigation-link">Netapp.com</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="n-off-canvas-menu__content-wrap">
+      <!-- Header -->
+      <header>
+  <!-- Top Hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+            <li class="n-top-hat__list-item">
+              <a href="http://www.netapp.com" class="n-top-hat__link">NetApp.com</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Bar -->
+  <div class="n-property-bar n-property-bar--v3">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+          <title>bars</title>
+          <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#bars"></use>
+        </svg></a>
+      </div>
+      <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com/us-en/">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
+              <title>NetApp</title>
+              <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+          <h2 class="n-property-bar__property-name">Cloud Docs</h2>
+        </a>
+      </div>
+
+      <!-- NetApp Search Bar -->
+      
+      <div id="search-demo-container" class="n-property-bar__search">
+        <div id="react-search"></div>
+      </div>
+      
+
+      <div id="ie-i18n-menu" class="n-property-bar__utils">
+        <ul class="n-property-navigation-bar__utils-list">
+          <li class="n-property-navigation-bar__utils-list-item">
+            <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
+              <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
+                <title>globe</title>
+                <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#globe"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End NetApp Search Bar -->
+    </div>
+
+    <div class="n-property-bar__menus">
+      <div id="n-property-navigation-bar__menu--language-selector" class="n-menu n-menu--v3">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list">
+                <li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="/cloud_volumes/us-en/" class="n-menu__header-text">English</a>
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: us-en
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+      <!-- Content -->
+      <main role="main" id="n-main-content" class="n-main-content">
+        <div class="n-container">
+  <div class="n-row">
+    <div class="n-doc n-doc__component-list">
+      <!-- Sidebar Column -->
+      
+      <div class="col-md-3" >
+          
+
+<ul id="mysidebar" class="nav">
+  
+
+  
+    <li><a href="index.html">Cloud Volumes Service for AWS docs</a></li>
+  
+
+  
+    <li><a href="reference_whats_new_cloud_volumes_aws.html">What's new</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Getting started</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_overview.html">Overview</a></li>
+  
+
+  
+    <li><a href="task_activating_support_entitlement.html">Activating support entitlement and accessing support</a></li>
+  
+
+  
+    <li><a href="task_selecting_region.html">Selecting the region</a></li>
+  
+
+  
+    <li><a href="task_creating_cloud_volumes_for_aws.html">Creating a cloud volume</a></li>
+  
+
+  
+    <li><a href="task_mounting_cloud_volumes_for_aws.html">Mounting a cloud volume</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Managing cloud volumes</a>
+      <ul>
+        
+
+  
+    <li><a href="task_modifying_cloud_volumes_for_aws.html">Modifying cloud volumes</a></li>
+  
+
+  
+    <li><a href="task_deleting_cloud_volumes_for_aws.html">Deleting cloud volumes</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Managing cloud volume snapshots</a>
+      <ul>
+        
+
+  
+    <li><a href="task_creating_on_demand_snapshots.html">Creating an on-demand snapshot for a cloud volume</a></li>
+  
+
+  
+    <li><a href="task_creating_modifying_snapshot_policies.html">Creating or modifying a snapshot policy</a></li>
+  
+
+  
+    <li><a href="task_deleting_snapshots.html">Deleting a snapshot</a></li>
+  
+
+  
+    <li><a href="task_restoring_snapshots_to_new_volumes.html">Restoring a snapshot to a new volume</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Managing export policy rules</a>
+      <ul>
+        
+
+  
+    <li><a href="task_modifying_export_policy_rules.html">Modifying an export policy rule</a></li>
+  
+
+  
+    <li><a href="task_creating_additional_export_policy_rules.html">Creating additional export policy rules</a></li>
+  
+
+  
+    <li><a href="task_deleting_export_policy_rules.html">Deleting export policy rules</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Managing Cloud Sync for cloud volumes</a>
+      <ul>
+        
+
+  
+    <li><a href="task_creating_cloud_sync_data_broker.html">Creating a Cloud Sync data broker</a></li>
+  
+
+  
+    <li><a href="task_creating_cloud_sync_relationship.html">Creating a Cloud Sync relationship</a></li>
+  
+
+  
+    <li><a href="task_modifying_cloud_sync_schedule.html">Modifying the Cloud Sync schedule</a></li>
+  
+
+  
+    <li><a href="task_deleting_cloud_sync_relationship.html">Deleting a Cloud Sync relationship</a></li>
+  
+
+  
+    <li><a href="task_deleting_cloud_sync_data_broker.html">Deleting a Cloud Sync data broker</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li class="active"><a href="reference_cloud_volume_apis.html">Cloud Volume APIs</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Reference</a>
+      <ul>
+        
+
+  
+    <li><a href="reference_security_groups_windows_ad_servers.html">AWS security group settings for Windows AD servers</a></li>
+  
+
+  
+    <li><a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and quota</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="reference_notices.html">Notices</a></li>
+  
+
+
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+      </div>
+      
+
+      <div class="n-doc__component-detail-content n-doc__component-detail-content--show-code">
+        <!-- Begin of page container -->
+        <article class="page-content">
+          
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Cloud Volume APIs
+    <span>
+      
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/reference_cloud_volume_apis.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Cloud Volume APIs](https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+      
+    </span>
+  </h1>
+</div>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>The Cloud Volume capabilities that are available through the web UI are also available through RESTful APIs. The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.</p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#finding-the-api-url-api-key-and-secret-key">Finding the API URL, API key, and Secret key</a></li>
+<li><a href="#listing-the-available-apis">Listing the available APIs</a></li>
+<li><a href="#using-the-cloud-volume-apis">Using the Cloud Volume APIs</a>
+<ul class="sectlevel2">
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="finding-the-api-url-api-key-and-secret-key">Finding the API URL, API key, and Secret key</h2>
+<div class="sectionbody">
+<div id="finding_urL_key_secretKey" class="paragraph">
+<p>You need to obtain the Cloud Volumes API URL, API key, and Secret key for running an API call.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>API access</strong> on the storage page or in the drop-down menu under your username.</p>
+</li>
+<li>
+<p>Record the Cloud Volumes API URL, API key, and Secret key.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="media/test.conf">Sample file showing the API URL, API key, and Secret key for an account</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="listing-the-available-apis">Listing the available APIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The storage page displays the available APIs that you can use.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>API documentation</strong> on the storage page.</p>
+<div class="paragraph">
+<p>The page lists the available APIs.</p>
+</div>
+</li>
+<li>
+<p>Scroll through the page to see the available APIs.</p>
+<div class="paragraph">
+<p>The APIs are listed by function, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filesystems</code></p>
+</li>
+<li>
+<p><code>mounttargets</code></p>
+</li>
+<li>
+<p><code>storage</code></p>
+</li>
+<li>
+<p><code>snapshots</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>To obtain details and examples of how to use an API call, select the function and click one of the following actions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GET</code>: reads</p>
+</li>
+<li>
+<p><code>POST</code>: creates</p>
+</li>
+<li>
+<p><code>PUT</code>: updates or modifies</p>
+</li>
+<li>
+<p><code>DELETE</code>: destroys</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="media/fsid-cv.sh">Script to find Cloud Volumes Service fileSystemId by mountpoint</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-the-cloud-volume-apis">Using the Cloud Volume APIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section shows you how to use the Cloud Volume APIs.  The examples use curl from a Linux bash shell. You need to replace <code>&lt;api_url&gt;</code>, <code>&lt;api_key&gt;</code>, and <code>&lt;secret_key&gt;</code> with the values you recorded from <a href="#finding_urL_key_secretKey">Finding the API URL, API key, and Secret key</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="syntax">Syntax</h3>
+<div class="paragraph">
+<p><code><strong>curl -s -H  accept:application/json  -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X [GET,POST,PUT,DELETE] &lt;api_url&gt;/v1/&lt;command&gt;</strong></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="examples">Examples</h3>
+<div class="sect3">
+<h4 id="listing-volumes">Listing volumes</h4>
+<div class="paragraph">
+<p>The following example displays information about all volumes:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Piping the command through <code>jq</code> improves the formatting of the <code>json</code> output. You might need to install <code>jq</code> on your system.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems | jq<br>
+[<br>
+   {<br>
+    "created": "2018-07-05T18:58:23.000Z",<br>
+    "fileSystemId": "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",<br>
+    "lifeCycleState": "available",<br>
+    "lifeCycleStateDetails": "Available for use",<br>
+    "name": "SMB",<br>
+    "ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",<br>
+    "region": "us-west",<br>
+    "creationToken": "prickly-bellicose-archimedes",<br>
+    "quotaInBytes": 1000000000000,<br>
+    "serviceLevel": "basic",<br>
+    "snapReserve": 0,<br>
+    "timezone": "PT",<br>
+    "usedBytes": 0<br>
+  }<br>
+]<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/list-cv.sh">Script to list cloud volumes in an account</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-the-details-for-a-specific-volume">Listing the details for a specific volume</h4>
+<div class="paragraph">
+<p>Each volume has an ID called <code>fileSystemId</code>, for example, <code>07c9ab6c-b655-a9fe-f904-b9b97ef9baaa</code>. Including the ID in the API call provides details for the specific volume:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p>To see the network details for the volume, you can add <code>MountTargets</code> to the <code>GET</code> call:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/MountTargets<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/info-cv.sh">Script to display the details of a cloud volume by mountpoint</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-volume">Creating a volume</h4>
+<div class="paragraph">
+<p>The following example uses a <code>POST</code> call to create a volume called <code>Test</code>, in region <code>us-west</code>, with a <code>quota</code> of 100 GB and exported using <code>nfsv3</code>:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '<br>
+{"name": "Test",<br>
+  "creationToken": "grahams-test-volume3",<br>
+  "region": "us-west",<br>
+  "serviceLevel": "basic",<br>
+  "quotaInBytes": 100000000000,<br>
+  "exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},<br>
+  "labels": ["test"]}'<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/create-cv.sh">Script to create a cloud volume</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="updating-a-volume">Updating a volume</h4>
+<div class="paragraph">
+<p>The following example uses a <code>PUT</code> call to update a volume called <code>Test</code>, change the service level to <code>extreme</code>, and change the quota to 500 GB:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X PUT &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8 -d '<br>
+{"creationToken": "grahams-test-volume4",<br>
+  "region": "us-west",<br>
+  "serviceLevel": "extreme",<br>
+  "quotaInBytes": 500000000000}'<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/update-cv.sh">Script to update a cloud volume</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-volume">Deleting a volume</h4>
+<div class="paragraph">
+<p>The following example uses a <code>DELETE</code> call to delete a volume specified by <code>fileSystemId</code>:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url&gt;/v1/FileSystems/08b0578d-465f-6c1a-bf8c-f40098b6451b<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/delete-cv.sh">Script to delete a cloud volume by mountpoint</a></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Use with caution. This API call deletes the volume and all its data.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-snapshot">Creating a snapshot</h4>
+<div class="paragraph">
+<p>The following example uses a <code>POST</code> call to create a snapshot called <code>snappy</code> for a specific volume:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots -d '<br>
+{"name": "snappy",<br>
+ "region": "us-west"}'<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/snap-cv.sh">Script to create snapshots of a cloud volume by mountpoint</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-snapshots-for-a-specific-volume">Listing snapshots for a specific volume</h4>
+<div class="paragraph">
+<p>The following example uses a <code>GET</code> call to list the snapshots for  a specific volume:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/get-snaps.sh">Script to list snapshots of a cloud volume by mountpoint</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="reverting-a-snapshot">Reverting a snapshot</h4>
+<div class="paragraph">
+<p>The following example uses a <code>POST</code> call to revert a volume from a snapshot specified by <code>snapshotId</code> and <code>fileSystemId</code>:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8/Revert -d '<br>
+{"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",<br>
+"fileSystemId": "cdef5090-aa5e-c2cf-6bba-f77d259a37f8",<br>
+"region": "us-west"}'<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/revert-snap.sh">Script to revert to a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Use with caution.  This API call causes any data written after the snapshot to be lost.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-new-volume-from-a-snapshot">Creating a new volume from a snapshot</h4>
+<div class="paragraph">
+<p>The following example uses a <code>POST</code> call to create a new volume specified by <code>snapshotId</code>:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '<br>
+{"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",<br>
+  "name": "Clone",<br>
+  "creationToken": "perfectly-cloned-volume",<br>
+  "region": "us-west",<br>
+  "serviceLevel": "extreme"}'<br>
+</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-snapshot">Deleting a snapshot</h4>
+<div class="paragraph">
+<p>The following example uses a <code>DELETE</code> call to delete a snapshot specified by <code>snapshotId</code>:</p>
+</div>
+<div class="paragraph">
+<p><code><br>
+curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d<br>
+</code></p>
+</div>
+<div class="paragraph">
+<p><a href="media/delete-snap.sh">Script to delete a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Use with caution. This API call deletes the snapshot and all its data.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+        </article>
+        <!-- Page Container -->
+      </div>
+    </div>
+  </div>
+</div>
+
+      </main>
+
+      <!-- Footer -->
+      
+      <footer class="n-footer n-footer--v1" style="border-top: solid 10px #DFDFDF;">
+        <div class="n-footer__bottom">
+          <div class="n-container">
+            <div class="n-footer__bottom-left">
+              <div class="n-footer__copyright">
+                  <a href="//www.netapp.com/us/legal/copyright.aspx" class="n-footer__copyright-link">© 1994-2018 NetApp, Inc. All rights reserved.</a>
+              </div>
+              <div class="n-footer__copyright">
+                <a href="//www.netapp.com/us/legal/netapptmlist.aspx" class="n-footer__copyright-link">Trademarks</a>
+              </div>
+              <div class="n-footer__social-links">
+                <ul class="n-footer__social-link-list">
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-blog" href="http://blog.netapp.com" target="_blank" title="blog" alt="blog">
+                      <span class="n-footer__social-link-text">blog</span>
+                      <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                        <title>blog@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#blog"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-community" href="http://community.netapp.com/" target="_blank" title="community" alt="community">
+                      <span class="n-footer__social-link-text">community</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>community@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#comments"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netappdoc" target="_blank" title="twitter" alt="twitter">
+                      <span class="n-footer__social-link-text">twitter</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>twitter@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTechCommTV/" target="_blank" title="youtube" alt="youtube">
+                      <span class="n-footer__social-link-text">youtube</span>
+                      <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                        <title>youtube@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="n-footer__bottom-right">
+                <p class="n-footer__fine-print">
+                    Have feedback for our website?
+                    <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+                </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="/cloud_volumes/us-en/common/js/components.js"></script>
+    <script src="/cloud_volumes/us-en/common/js/doc-components.js"></script>
+
+    <!-- i18n script -->
+    <script type="text/javascript" src="/cloud_volumes/us-en/js/responsive.js"></script>
+
+    <!-- Elasticsearch JS -->
+    
+    <script type="text/javascript" src='/cloud_volumes/us-en/js/bundle.js'></script>
+    
+  </body>
+
+  
+</html>
