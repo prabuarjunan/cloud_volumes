@@ -2,10 +2,10 @@
 sidebar: sidebar_aws
 permalink: aws/task_creating_on_demand_snapshots.html
 keywords: Cloud Volumes Service for AWS, snapshots, on-demand
-summary: You can create an on-demand snapshot of a Cloud Volume from either the Volumes or Snapshots page.
+summary: You can create an on-demand snapshot of a cloud volume from either the Volumes or Snapshots page.
 ---
 
-= Creating an on-demand snapshot for a Cloud Volume
+= Creating an on-demand snapshot for a cloud volume
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -15,7 +15,7 @@ summary: You can create an on-demand snapshot of a Cloud Volume from either the 
 
 
 [.lead]
-You can create an on-demand snapshot of a Cloud Volume from either the Volumes or Snapshots page.
+You can create an on-demand snapshot of a cloud volume from either the Volumes or Snapshots page.
 
 toc::[]
 

@@ -2,10 +2,10 @@
 sidebar: sidebar_aws
 permalink: aws/task_deleting_cloud_volumes_for_aws.html
 keywords: Cloud Volumes Service for AWS, delete, unmount
-summary: You can delete a Cloud Volume that is no longer needed.
+summary: You can delete a cloud volume that is no longer needed.
 ---
 
-= Deleting Cloud Volumes
+= Deleting cloud volumes
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -15,7 +15,7 @@ summary: You can delete a Cloud Volume that is no longer needed.
 
 
 [.lead]
-You can delete a Cloud Volume that is no longer needed.
+You can delete a cloud volume that is no longer needed.
 
 .Steps
 

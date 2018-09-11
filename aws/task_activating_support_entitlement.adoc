@@ -2,7 +2,7 @@
 sidebar: sidebar_aws
 permalink: aws/task_activating_support_entitlement.html
 keywords: Cloud Volumes Service for AWS, support entitlement, NetApp ID, ticketing
-summary: Before you create your first Cloud Volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.
+summary: Before you create your first cloud volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.
 ---
 
 = Activating support entitlement and accessing support
@@ -15,12 +15,12 @@ summary: Before you create your first Cloud Volume, it is strongly recommended t
 
 
 [.lead]
-Before you create your first Cloud Volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.
+Before you create your first cloud volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.
 
 toc::[]
 
 == Activating support entitlement
-During the initial subscription process with Cloud Volumes Service for AWS, the Cloud Volumes instance generates a 20-digit NetApp subscription ID that starts with "930". The NetApp subscription ID represents the Cloud Volumes Service that is tied to your AWS account. You register the NetApp subscription ID to activate support entitlement.  You need NetApp Support Site (NSS) credentials for the support activation process.
+During the initial subscription process with Cloud Volumes Service for AWS, the cloud volumes instance generates a 20-digit NetApp subscription ID that starts with "930". The NetApp subscription ID represents the Cloud Volumes Service that is tied to your AWS account. You register the NetApp subscription ID to activate support entitlement.  You need NetApp Support Site (NSS) credentials for the support activation process.
 
 .Steps
 

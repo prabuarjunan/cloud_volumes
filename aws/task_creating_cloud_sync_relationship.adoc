@@ -2,7 +2,7 @@
 sidebar: sidebar_aws
 permalink: aws/task_creating_cloud_sync_relationship.html
 keywords: Cloud Volumes Service for AWS, Cloud Sync relationships, target, source
-summary: A Cloud Sync relationship enables you to sync data to or from the Cloud Volume.
+summary: A Cloud Sync relationship enables you to sync data to or from the cloud volume.
 ---
 
 = Creating a Cloud Sync relationship
@@ -15,7 +15,7 @@ summary: A Cloud Sync relationship enables you to sync data to or from the Cloud
 
 
 [.lead]
-A Cloud Sync relationship enables you to sync data to or from the Cloud Volume.
+A Cloud Sync relationship enables you to sync data to or from the cloud volume.
 
 .Before you begin
 * You must already have a Cloud Sync data broker.

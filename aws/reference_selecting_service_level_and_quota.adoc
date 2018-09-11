@@ -39,8 +39,8 @@ If you consume more storage capacity than the quota you selected for the volume,
 
 Cloud Volumes Service for AWS supports three service levels. You specify your service level when you create or modify the volume.
 
-link:task_creating_cloud_volumes_for_aws.html[Creating Cloud Volumes]
-link:task_modifying_cloud_volumes_for_aws.html[Modifying Cloud Volumes]
+link:task_creating_cloud_volumes_for_aws.html[Creating cloud volumes]
+link:task_modifying_cloud_volumes_for_aws.html[Modifying cloud volumes]
 
 The service levels are catered to different storage capacity and storage bandwidth needs:
 
@@ -68,8 +68,8 @@ The Extreme service level is least expensive in terms of storage bandwidth.  If 
 == Quotas
 You specify your quota for the volume when you create or modify the volume.
 
-link:task_creating_cloud_volumes_for_aws.html[Creating Cloud Volumes]
-link:task_modifying_cloud_volumes_for_aws.html[Modifying Cloud Volumes]
+link:task_creating_cloud_volumes_for_aws.html[Creating cloud volumes]
+link:task_modifying_cloud_volumes_for_aws.html[Modifying cloud volumes]
 
 While you would select your service level based on your general, high-level business needs, you should select your quota size based on the specific needs of applications, for example:
 

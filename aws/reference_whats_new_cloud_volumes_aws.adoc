@@ -16,10 +16,12 @@ summary: NetApp periodically updates Cloud Volumes Service for AWS to bring you 
 [.lead]
 NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.
 
+== September 2018
+* RESTful API support and online examples: link:reference_cloud_volume_apis.html[Cloud Volume APIs]
+
 == August 2018
 
 * Ability to select data encryption for SMB shares
 * Ability to select the security styles of NTFS or UNIX for shares exported via both NFS and SMB
 * Display for NFS and SMB mount instructions for shares exported via both NFS and SMB
 * Support for multiple Active Directory servers
-//* RESTful API support and online examples: link:reference_cloud_volume_apis.html[Cloud Volume APIs]

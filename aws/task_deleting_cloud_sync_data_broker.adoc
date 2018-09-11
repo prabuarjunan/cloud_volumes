@@ -18,7 +18,7 @@ summary: You can delete a Cloud Sync data broker that is no longer needed.
 You can delete a Cloud Sync data broker that is no longer needed.
 
 .About this task
-This task removes the data broker from Cloud Volumes, but it does not delete the data broker instance in AWS.
+This task removes the data broker from cloud volumes, but it does not delete the data broker instance in AWS.
 
 To delete the data broker instance in AWS, you must go to the AWS console for your account, locate the EC2 instance for the broker by name, and then terminate it as needed.
 
