@@ -2,6 +2,17 @@ var s_account = undefined;
 var s_code_src = document.getElementsByTagName("script")[document.getElementsByTagName("script").length-1].src;
 var currentUrl = window.location.href;
 
+function isProductionUrl() {
+  return currentUrl.indexOf("docs.netapp.com") > -1
+    && currentUrl.indexOf("clouddocs.netapp.com") == -1
+    && containsLocale(currentUrl)
+}
+
+function containsLocale(url) {
+  var regex = /[a-zA-Z]{2}\-[a-zA-Z]{2}\/.+$/g;
+  return regex.test(url);
+}
+
 function getApiUrl() {
   var baseEndpoint = s_code_src.indexOf("cssweb") > -1 ? "https://mysupport.netapp.com/css/cssweb/js/" : "https://mysupport.netapp.com/NOW/public/js/";
   return baseEndpoint+'s_code.js';
@@ -32,14 +43,8 @@ function setDefaultParams(cloudParams) {
   cloudParams = cloudParams || {};
   var hrefChunks = window.location.href.split('/');
   var projectId = 'CloudDocs';
-  var productId = hrefChunks[3];
-  var lang = hrefChunks[4];
-
-  // For base site, set product to home
-  if (document.title.indexOf("NetApp Cloud Documentation |") != -1) {
-    productId = "home";
-    lang = hrefChunks[3];
-  }
+  var lang = hrefChunks[3];
+  var productId = hrefChunks[4];
 
   var _date = getTimestamp();
 
@@ -97,15 +102,21 @@ function sendAnalyticsSearchClick(searchParams, cloudParams) {
   });
 }
 
+function qs(key) {
+    key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+    var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+    return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+}
+
 $(document).ready(function() {
   if (currentUrl == null) {
     return;
   }
 
-  if (currentUrl.indexOf('.netapp.com') > -1) {
+  if (isProductionUrl()) {
     s_account = "networkapplsupport-global-dev"; //FIXME: Change to networkapplsupport-global
-  } else if (currentUrl.indexOf('localhost') > -1) {
-    s_account = "networkapplsupport-global-dev";
+  } else {
+    return;
   }
 
   var cloudParams = {};
@@ -117,12 +128,20 @@ $(document).ready(function() {
 
   sendAnalyticsPageLoad(cloudParams);
 
-  $('#results-container').on("click", "a", function(){
+  $('#search-demo-container').on("click", "a", function(){
+    var searchResultUrl = this.href;
+    if (searchResultUrl == null || searchResultUrl.indexOf("http") != 0) {
+      var inputHref = $( this ).attr("href");
+      searchResultUrl = window.location.protocol + "//" + window.location.hostname;
+      searchResultUrl = window.location.port ? searchResultUrl+":"+ window.location.port : searchResultUrl;
+      searchResultUrl = searchResultUrl + (inputHref.indexOf("/") == 0 ? "" : "/") + inputHref;
+    }
+
     var searchParams = {
       "html": $( this ).prop("outerHTML"),
-      "pageName": $( this ).html(),
-      "searchString": $('#search-input').val(),
-      "href": $( this ).attr("href")
+      "pageName": $( this ).children('.sk-hits-hit__title').first().text(),
+      "searchString": qs('q'),
+      "href": searchResultUrl
     };
 
     sendAnalyticsSearchClick(searchParams, cloudParams);
