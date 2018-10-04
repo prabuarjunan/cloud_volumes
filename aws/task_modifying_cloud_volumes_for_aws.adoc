@@ -5,7 +5,7 @@ keywords: Cloud Volumes Service for AWS, volume names, quota, service levels.
 summary: You can modify existing volumes, including changing the volume name, quota, or service level.
 ---
 
-= Modifying Cloud Volumes
+= Modifying a cloud volume
 :toc: macro
 :hardbreaks:
 :nofooter:
