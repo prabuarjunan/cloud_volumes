@@ -5,9 +5,10 @@ entries:
     url: /reference_whats_new_cloud_volumes_aws.html
   - title: Getting started
     entries:
-      - title: Overview
+      - title: Prerequisites
         url: /concept_overview.html
-      - title: Activating support entitlement and accessing support
+      - title: Quick start instructions
+        url: /task_quick_start.html
         url: /task_activating_support_entitlement.html
       - title: Selecting the region
         url: /task_selecting_region.html

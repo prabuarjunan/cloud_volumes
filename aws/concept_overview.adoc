@@ -5,7 +5,7 @@ keywords: Cloud Volumes Service for AWS, overview, concepts, features, use cases
 summary: Cloud volumes are simple to use and fast to deploy. Some prerequisites apply for using Cloud Volumes Service for AWS.
 ---
 
-= Cloud Volumes Service for AWS overview
+= Cloud Volumes Service for AWS prerequisites
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -15,19 +15,6 @@ summary: Cloud volumes are simple to use and fast to deploy. Some prerequisites 
 
 [.lead]
 Cloud volumes are simple to use and fast to deploy.  Some prerequisites apply for using Cloud Volumes Service for AWS.
-
-== Benefits of using Cloud Volumes Service for AWS
-
-Cloud Volumes Service for AWS provides the following benefits:
-
-* Consistent high performance
-* Data protection without performance impacts
-* Instant cloning to support operations, development, and test workflows
-* Secure access to Linux and Windows Elastic Container Service (ECS) instances, with support including the following:
-** Amazon Linux 2, Red Hat Enterprise Linux 7.5, SLES 12 SP3, and Ubuntu 16.04 LTS
-** Windows Server 2008 R2, Windows Server 2012 R2, and Windows Server 2016
-* Fully managed service, therefore no need to configure or manage storage devices
-* Choice of bundled and pay-as-you-go pricing
 
 == Prerequisites
 

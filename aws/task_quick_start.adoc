@@ -1,0 +1,25 @@
+---
+sidebar: sidebar_aws
+permalink: aws/task_quick_start.html
+summary: You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.
+---
+
+= Quick start instructions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+:keywords: cloud volumes, amazon web services, AWS, documentation, help
+
+[.lead]
+You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.
+
+Step 1 - Select the AWS region
+to be filled in
+
+Step 2 - Create a cloud volume
+to be filled in
+
+Step 3 - Mount a cloud volume
+to be filled in
