@@ -15,11 +15,11 @@ summary: You can get started with the Cloud Volumes Service for AWS by completin
 [.lead]
 You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.
 
-Step 1 - Select the AWS region
-to be filled in
+Step 1 - link:task_selecting_region.html[Select the region]
+Specify the AWS region where you plan to use the service.
 
-Step 2 - Create a cloud volume
-to be filled in
+Step 2 - link:task_creating_cloud_volumes_for_aws.html[Create the cloud volume]
+Create the cloud volume in the AWS cloud by specifying the size and service level, and other options.
 
-Step 3 - Mount a cloud volume
-to be filled in
+Step 3 - link:task_mounting_cloud_volumes_for_aws.html[Mount the cloud volume]
+Mount the cloud volume to your AWS instance using NFSv3 for Linux and UNIX clients or SMB for Windows clients.

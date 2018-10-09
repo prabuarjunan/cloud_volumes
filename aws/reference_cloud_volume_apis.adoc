@@ -67,26 +67,25 @@ The following example displays information about all volumes:
 
 NOTE: Piping the command through `jq` improves the formatting of the `json` output. You might need to install `jq` on your system.
 
-``
+[source]
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X GET <api_url>/v1/FileSystems | jq
 [
-   {
-    "created": "2018-07-05T18:58:23.000Z",
-    "fileSystemId": "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",
-    "lifeCycleState": "available",
-    "lifeCycleStateDetails": "Available for use",
-    "name": "SMB",
-    "ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
-    "region": "us-west",
-    "creationToken": "prickly-bellicose-archimedes",
-    "quotaInBytes": 1000000000000,
-    "serviceLevel": "basic",
-    "snapReserve": 0,
-    "timezone": "PT",
-    "usedBytes": 0
-  }
+{
+	"created": "2018-07-05T18:58:23.000Z",
+	"fileSystemId": "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",
+	"lifeCycleState": "available",
+	"lifeCycleStateDetails": "Available for use",
+	"name": "SMB",
+	"ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
+	"region": "us-west",
+	"creationToken": "prickly-bellicose-archimedes",
+	"quotaInBytes": 1000000000000,
+	"serviceLevel": "basic",
+	"snapReserve": 0,
+	"timezone": "PT",
+	"usedBytes": 0
+}
 ]
-``
 
 link:media/list-cv.sh[Script to list cloud volumes in an account]
 
@@ -108,16 +107,17 @@ link:media/info-cv.sh[Script to display the details of a cloud volume by mountpo
 ==== Creating a volume
 The following example uses a `POST` call to create a volume called `Test`, in region `us-west`, with a `quota` of 100 GB and exported using `nfsv3`:
 
-``
+[source]
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v1/FileSystems -d '
-{"name": "Test",
-  "creationToken": "grahams-test-volume3",
-  "region": "us-west",
-  "serviceLevel": "basic",
-  "quotaInBytes": 100000000000,
-  "exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
-  "labels": ["test"]}'
-``
+{
+	"name": "Test",
+	"creationToken": "grahams-test-volume3",
+	"region": "us-west",
+	"serviceLevel": "basic",
+	"quotaInBytes": 100000000000,
+	"exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
+	"labels": ["test"]
+}'
 
 link:media/create-cv.sh[Script to create a cloud volume]
 
