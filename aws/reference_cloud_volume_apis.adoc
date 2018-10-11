@@ -5,6 +5,8 @@ keywords: Cloud Volumes Service for AWS, APIs
 summary: The Cloud Volume capabilities that are available through the web UI  are also available through RESTful APIs.  The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.
 ---
 
+:source-highlighter: highlightjs
+
 = Cloud Volume APIs
 :toc: macro
 :hardbreaks:
@@ -113,13 +115,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 	"region": "us-west",
 	"serviceLevel": "basic",
 	"quotaInBytes": 100000000000,
-	"exportPolicy": {"rules": [{"ruleIndex": 1,
-	"allowedClients": "0.0.0.0/0",
-	"unixReadOnly": false,
-	"unixReadWrite": true,
-	"cifs": false,
-	"nfsv3": true,
-	"nfsv4": false}]},
+	"exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
 	"labels": ["test"]
 }'
 
