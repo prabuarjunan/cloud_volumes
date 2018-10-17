@@ -2,10 +2,10 @@
 sidebar: sidebar_aws
 permalink: aws/reference_cloud_backup_service_intro.html
 keywords: Cloud Volumes Service for AWS, Cloud Backup Service
-summary: Cloud Backup Service expands the data protection capabilities of Cloud Volumes Service by delivering dedicated backups for long-term recovery, archive, and compliance. Backups created by the service are stored in AWS S3 object storage, independent of cloud volume snapshots that are available for near-term recovery or cloning.
+summary: You can back up NFS cloud volumes by using Cloud Backup Service.
 ---
 
-= Cloud Backup Service (beta release)
+= Managing backups using Cloud Backup Service (beta)
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -14,6 +14,8 @@ summary: Cloud Backup Service expands the data protection capabilities of Cloud 
 :imagesdir: ./media/
 
 [.lead]
+You can back up NFS cloud volumes by using Cloud Backup Service.
+
 Cloud Backup Service expands the data protection capabilities of Cloud Volumes Service by delivering dedicated backups for long-term recovery, archive, and compliance. Backups created by the service are stored in AWS S3 object storage, independent of cloud volume snapshots that are available for near-term recovery or cloning.
 
 Cloud Backup Service is currently in a beta release and supports only Cloud Volumes Service in the AWS US-WEST-2 region.
