@@ -17,4 +17,4 @@ summary: The notice files provide information about third-party copyright and li
 The notice files provide information about third-party copyright and licenses that are used in NetApp Cloud Volumes Service for AWS.
 
 * link:media/notice_cloud_volumes_aws_215-13433_A0_UR002.pdf[Notice for NetApp Cloud Volumes Service]
-* link:media/notice_ONTAP_9.3.pdf[Notice for ONTAP]
+* link:media/notice_ONTAP_9.4.pdf[Notice for ONTAP]
