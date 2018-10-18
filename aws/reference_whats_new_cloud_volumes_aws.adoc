@@ -16,6 +16,9 @@ summary: NetApp periodically updates Cloud Volumes Service for AWS to bring you 
 [.lead]
 NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.
 
+== November 2018
+* Beta release of Cloud Backup Service for US-WEST-2: link:reference_cloud_backup_service_intro.html[Managing backups using Cloud Backup Service (beta for US-WEST-2)]
+
 == September 2018
 * RESTful API support and online examples: link:reference_cloud_volume_apis.html[Cloud Volume APIs]
 
