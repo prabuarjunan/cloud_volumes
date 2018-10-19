@@ -5,7 +5,8 @@ keywords: Cloud Volumes Service for AWS, delete, unmount
 summary: You can delete a cloud volume that is no longer needed.
 ---
 
-= Deleting cloud volumes
+= Deleting a cloud volume
+
 :toc: macro
 :hardbreaks:
 :nofooter:

@@ -1,0 +1,31 @@
+---
+sidebar: sidebar_aws
+permalink: aws/task_quick_start.html
+summary: You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.
+---
+
+= Quick start instructions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+:keywords: cloud volumes, amazon web services, AWS, documentation, help
+
+[.lead]
+You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.
+
+[discrete]
+=== image:number1.png[The number 1] link:task_selecting_region.html[Select the region]
+[role="quick-margin-para"]
+Specify the AWS region where you plan to create cloud volumes.
+
+[discrete]
+=== image:number2.png[The number 2] link:task_creating_cloud_volumes_for_aws.html[Create the cloud volume]
+[role="quick-margin-para"]
+Create the cloud volume in the AWS cloud by specifying the size and service level, and define other options.
+
+[discrete]
+=== image:number3.png[The number 3] link:task_mounting_cloud_volumes_for_aws.html[Mount the cloud volume]
+[role="quick-margin-para"]
+Mount the cloud volume to your AWS instance using NFSv3 for Linux and UNIX clients, or SMB for Windows clients.
