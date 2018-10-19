@@ -44,6 +44,8 @@
   <!-- NetApp CSS controls the technical content -->
   <link rel='stylesheet' href='/cloud_volumes/us-en/css/netapp.css' type='text/css'>
 
+  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!-- Used to import Promise for IE. Required for SearchKit -->
@@ -281,7 +283,11 @@
         
 
   
-    <li><a href="concept_overview.html">Overview</a></li>
+    <li><a href="concept_overview.html">Prerequisites</a></li>
+  
+
+  
+    <li><a href="task_quick_start.html">Quick start instructions</a></li>
   
 
   
@@ -290,14 +296,6 @@
 
   
     <li><a href="task_selecting_region.html">Selecting the region</a></li>
-  
-
-  
-    <li><a href="task_creating_cloud_volumes_for_aws.html">Creating a cloud volume</a></li>
-  
-
-  
-    <li><a href="task_mounting_cloud_volumes_for_aws.html">Mounting a cloud volume</a></li>
   
 
 
@@ -313,11 +311,19 @@
         
 
   
-    <li><a href="task_modifying_cloud_volumes_for_aws.html">Modifying cloud volumes</a></li>
+    <li><a href="task_creating_cloud_volumes_for_aws.html">Creating a cloud volume</a></li>
   
 
   
-    <li><a href="task_deleting_cloud_volumes_for_aws.html">Deleting cloud volumes</a></li>
+    <li><a href="task_mounting_cloud_volumes_for_aws.html">Mounting a cloud volume</a></li>
+  
+
+  
+    <li><a href="task_modifying_cloud_volumes_for_aws.html">Modifying a cloud volume</a></li>
+  
+
+  
+    <li><a href="task_deleting_cloud_volumes_for_aws.html">Deleting a cloud volume</a></li>
   
 
 
@@ -598,27 +604,27 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems | jq<br>
-[<br>
-   {<br>
-    "created": "2018-07-05T18:58:23.000Z",<br>
-    "fileSystemId": "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",<br>
-    "lifeCycleState": "available",<br>
-    "lifeCycleStateDetails": "Available for use",<br>
-    "name": "SMB",<br>
-    "ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",<br>
-    "region": "us-west",<br>
-    "creationToken": "prickly-bellicose-archimedes",<br>
-    "quotaInBytes": 1000000000000,<br>
-    "serviceLevel": "basic",<br>
-    "snapReserve": 0,<br>
-    "timezone": "PT",<br>
-    "usedBytes": 0<br>
-  }<br>
-]<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems | jq
+[
+{
+	"created": "2018-07-05T18:58:23.000Z",
+	"fileSystemId": "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",
+	"lifeCycleState": "available",
+	"lifeCycleStateDetails": "Available for use",
+	"name": "SMB",
+	"ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
+	"region": "us-west",
+	"creationToken": "prickly-bellicose-archimedes",
+	"quotaInBytes": 1000000000000,
+	"serviceLevel": "basic",
+	"snapReserve": 0,
+	"timezone": "PT",
+	"usedBytes": 0
+}
+]</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/list-cv.sh">Script to list cloud volumes in an account</a></p>
@@ -629,18 +635,18 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 <div class="paragraph">
 <p>Each volume has an ID called <code>fileSystemId</code>, for example, <code>07c9ab6c-b655-a9fe-f904-b9b97ef9baaa</code>. Including the ID in the API call provides details for the specific volume:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>To see the network details for the volume, you can add <code>MountTargets</code> to the <code>GET</code> call:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/MountTargets<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/MountTargets</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/info-cv.sh">Script to display the details of a cloud volume by mountpoint</a></p>
@@ -651,17 +657,19 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 <div class="paragraph">
 <p>The following example uses a <code>POST</code> call to create a volume called <code>Test</code>, in region <code>us-west</code>, with a <code>quota</code> of 100 GB and exported using <code>nfsv3</code>:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '<br>
-{"name": "Test",<br>
-  "creationToken": "grahams-test-volume3",<br>
-  "region": "us-west",<br>
-  "serviceLevel": "basic",<br>
-  "quotaInBytes": 100000000000,<br>
-  "exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},<br>
-  "labels": ["test"]}'<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '
+{
+	"name": "Test",
+	"creationToken": "grahams-test-volume3",
+	"region": "us-west",
+	"serviceLevel": "basic",
+	"quotaInBytes": 100000000000,
+	"exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
+	"labels": ["test"]
+}'</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/create-cv.sh">Script to create a cloud volume</a></p>
@@ -672,14 +680,16 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 <div class="paragraph">
 <p>The following example uses a <code>PUT</code> call to update a volume called <code>Test</code>, change the service level to <code>extreme</code>, and change the quota to 500 GB:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X PUT &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8 -d '<br>
-{"creationToken": "grahams-test-volume4",<br>
-  "region": "us-west",<br>
-  "serviceLevel": "extreme",<br>
-  "quotaInBytes": 500000000000}'<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X PUT &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8 -d '
+{
+	"creationToken": "grahams-test-volume4",
+	"region": "us-west",
+	"serviceLevel": "extreme",
+	"quotaInBytes": 500000000000
+}'</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/update-cv.sh">Script to update a cloud volume</a></p>
@@ -690,10 +700,10 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 <div class="paragraph">
 <p>The following example uses a <code>DELETE</code> call to delete a volume specified by <code>fileSystemId</code>:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url&gt;/v1/FileSystems/08b0578d-465f-6c1a-bf8c-f40098b6451b<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url&gt;/v1/FileSystems/08b0578d-465f-6c1a-bf8c-f40098b6451b</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/delete-cv.sh">Script to delete a cloud volume by mountpoint</a></p>
@@ -716,12 +726,14 @@ Use with caution. This API call deletes the volume and all its data.
 <div class="paragraph">
 <p>The following example uses a <code>POST</code> call to create a snapshot called <code>snappy</code> for a specific volume:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots -d '<br>
-{"name": "snappy",<br>
- "region": "us-west"}'<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots -d '
+{
+	"name": "snappy",
+	"region": "us-west"
+}</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/snap-cv.sh">Script to create snapshots of a cloud volume by mountpoint</a></p>
@@ -732,10 +744,10 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 <div class="paragraph">
 <p>The following example uses a <code>GET</code> call to list the snapshots for  a specific volume:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/get-snaps.sh">Script to list snapshots of a cloud volume by mountpoint</a></p>
@@ -746,13 +758,15 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 <div class="paragraph">
 <p>The following example uses a <code>POST</code> call to revert a volume from a snapshot specified by <code>snapshotId</code> and <code>fileSystemId</code>:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8/Revert -d '<br>
-{"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",<br>
-"fileSystemId": "cdef5090-aa5e-c2cf-6bba-f77d259a37f8",<br>
-"region": "us-west"}'<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8/Revert -d '
+{
+	"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
+	"fileSystemId": "cdef5090-aa5e-c2cf-6bba-f77d259a37f8",
+	"region": "us-west"
+}'</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/revert-snap.sh">Script to revert to a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
@@ -775,15 +789,17 @@ Use with caution.  This API call causes any data written after the snapshot to b
 <div class="paragraph">
 <p>The following example uses a <code>POST</code> call to create a new volume specified by <code>snapshotId</code>:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '<br>
-{"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",<br>
-  "name": "Clone",<br>
-  "creationToken": "perfectly-cloned-volume",<br>
-  "region": "us-west",<br>
-  "serviceLevel": "extreme"}'<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '
+{
+	"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
+	"name": "Clone",
+	"creationToken": "perfectly-cloned-volume",
+	"region": "us-west",
+	"serviceLevel": "extreme"
+}'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -791,10 +807,10 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 <div class="paragraph">
 <p>The following example uses a <code>DELETE</code> call to delete a snapshot specified by <code>snapshotId</code>:</p>
 </div>
-<div class="paragraph">
-<p><code><br>
-curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d<br>
-</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p><a href="media/delete-snap.sh">Script to delete a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
