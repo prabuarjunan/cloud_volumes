@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/reference_selecting_service_level_and_quota.html
-keywords: Cloud Volumes Service for AWS, security levels, quotas, bandwidth, capacity
-summary: The cost for Cloud Volumes Service for AWS is based on the service level and the capacity allocated by the quota that you select.  Selecting the appropriate service level and quota helps you meet your storage needs at the lowest cost.
+keywords: Cloud Volumes Service for AWS, security levels, bandwidth, capacity
+summary: The cost for Cloud Volumes Service for AWS is based on the service level and the allocated capacity that you select.  Selecting the appropriate service level and capacity helps you meet your storage needs at the lowest cost.
 ---
 
-= Selecting the appropriate service level and quota
+= Selecting the appropriate service level and allocated capacity
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -15,7 +15,7 @@ summary: The cost for Cloud Volumes Service for AWS is based on the service leve
 
 
 [.lead]
-The cost for Cloud Volumes Service for AWS is based on the _service level_ and the capacity allocated by the _quota_ that you select.  Selecting the appropriate service level and quota helps you meet your storage needs at the lowest cost.
+The cost for Cloud Volumes Service for AWS is based on the _service level_ and the _allocated capacity_ that you select.  Selecting the appropriate service level and capacity helps you meet your storage needs at the lowest cost.
 
 
 IMPORTANT: _All pricing information in this article is based on the list prices as of September 12, 2018.  The information is provided for example purposes only and is subject to change._
@@ -29,11 +29,11 @@ Storage needs include two fundamental aspects:
 * The storage _capacity_ for holding data
 * The storage _bandwidth_ for interacting with data
 
-If you consume more storage capacity than the quota you selected for the volume, the following considerations apply:
+If you consume more storage space than the capacity you selected for the volume, the following considerations apply:
 
 * You will be billed for the additional storage capacity that you consume at the price defined by your service level.
 
-* The amount of storage bandwidth available to the volume does not increase until you increase the quota size or change the service level.
+* The amount of storage bandwidth available to the volume does not increase until you increase the allocated capacity size or change the service level.
 
 == Service levels
 
@@ -65,32 +65,32 @@ The Extreme service level is least expensive in terms of storage bandwidth.  If 
 ** List Price: $0.30 per GB per month  (as of September 12, 2018)
 ** Bandwidth: 128 KB of bandwidth per GB provisioned capacity
 
-== Quotas
-You specify your quota for the volume when you create or modify the volume.
+== Allocated capacity
+You specify your allocated capacity for the volume when you create or modify the volume.
 
 link:task_creating_cloud_volumes_for_aws.html[Creating cloud volumes]
 link:task_modifying_cloud_volumes_for_aws.html[Modifying cloud volumes]
 
-While you would select your service level based on your general, high-level business needs, you should select your quota size based on the specific needs of applications, for example:
+While you would select your service level based on your general, high-level business needs, you should select your allocated capacity size based on the specific needs of applications, for example:
 
 * How much storage space the applications need
 * How much storage bandwidth per second the applications or the users require
 
-Quotas are specified in GBs.  A volume's quota can be set within the range of 1 GB to 100,000 GB (equivalent to 100 TBs).
+Allocated capacity is specified in GBs.  A volume's allocated capacity can be set within the range of 1 GB to 100,000 GB (equivalent to 100 TBs).
 
 == Bandwidth
 
-The combination of both the service level and the quota you select determines the maximum bandwidth for the volume.
+The combination of both the service level and the allocated capacity you select determines the maximum bandwidth for the volume.
 
-If your applications or users need more bandwidth than your selections, you can change the service level or increase the quota.  The changes do not disrupt data access.
+If your applications or users need more bandwidth than your selections, you can change the service level or increase the allocated capacity.  The changes do not disrupt data access.
 
-== Selecting the service level and the quota
+== Selecting the service level and the allocated capacity
 
-To select the most appropriate service level and quota for your needs, you need to know how much capacity and bandwidth you require at the peak or the edge.
+To select the most appropriate service level and allocated capacity for your needs, you need to know how much capacity and bandwidth you require at the peak or the edge.
 
-=== Cost comparison for service levels and quotas
+=== Cost comparison for service levels and allocated capacity
 
-The table below compares cost for different service levels and quota sizes.  In the table, the leftmost column indicates the capacity, and the other columns define the MB/s available at each capacity point and its cost.
+The table below compares cost for different service levels and allocated capacity sizes.  In the table, the leftmost column indicates the capacity, and the other columns define the MB/s available at each capacity point and its cost.
 
 IMPORTANT: _All pricing information is based on the list prices as of September 12, 2018.  The information is provided for example purposes only and is subject to change._
 
@@ -207,10 +207,10 @@ IMPORTANT: _All pricing information is based on the list prices as of September 
 
 For example, your application requires 25 TB of capacity and 100 MB/s of bandwidth. At 25 TB of capacity, the Standard service level would provide 400 MB/s of bandwidth at a cost of $2,500, making Standard the most suitable service level in this case.
 
-image:diagram_service_level_quota_example1.png[Service level and quota selection, example 1]
+image:diagram_service_level_quota_example1.png[Service level and capacity selection, example 1]
 
 === Example 2
 
 For example, your application requires 12 TB of capacity and 800 MB/s of peak bandwidth.  Although the Extreme service level can meet the demands of the application at the 12 TB mark, it is more cost-effective to select 13 TB at the Premium service level.
 
-image:diagram_service_level_quota_example2.png[Service level and quota selection, example 2]
+image:diagram_service_level_quota_example2.png[Service level and capacity selection, example 2]

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/task_modifying_cloud_volumes_for_aws.html
-keywords: Cloud Volumes Service for AWS, volume names, quota, service levels.
-summary: You can modify existing volumes, including changing the volume name, quota, or service level.
+keywords: Cloud Volumes Service for AWS, volume names, allocated capacity, service levels.
+summary: You can modify existing volumes, including changing the volume name, allocated capacity, or service level.
 ---
 
 = Modifying a cloud volume
@@ -15,7 +15,7 @@ summary: You can modify existing volumes, including changing the volume name, qu
 
 
 [.lead]
-You can modify existing volumes, including changing the volume name, quota, or service level.
+You can modify existing volumes, including changing the volume name, allocated capacity, or service level.
 
 .Steps
 
@@ -25,9 +25,9 @@ You can modify existing volumes, including changing the volume name, quota, or s
 +
 * Name
 * Tags
-* Quota
+* Allocated capacity
 * Service level
 +
 Changing the service level is not disruptive and does not affect client data access.
 +
-link:reference_selecting_service_level_and_quota.html[Selecting the appropriate service level and quota]
+link:reference_selecting_service_level_and_quota.html[Selecting the appropriate service level and allocated capacity]
