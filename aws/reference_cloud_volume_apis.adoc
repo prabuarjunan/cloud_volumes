@@ -2,7 +2,7 @@
 sidebar: sidebar_aws
 permalink: aws/reference_cloud_volume_apis.html
 keywords: Cloud Volumes Service for AWS, APIs
-summary: The Cloud Volume capabilities that are available through the web UI  are also available through RESTful APIs.  The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.
+summary: The Cloud Volume capabilities that are available through the web UI are also available through RESTful APIs.  The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.
 ---
 
 = Cloud Volume APIs
@@ -102,7 +102,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 link:media/info-cv.sh[Script to display the details of a cloud volume by mountpoint]
 
 ==== Creating a volume
-The following example uses a `POST` call to create a volume called `Test`, in region `us-west`, with a `quota` of 100 GB and exported using `nfsv3`:
+The following example uses a `POST` call to create a volume called `Test`, in region `us-west`, with an `allocated capacity` of 100 GB and exported using `nfsv3`:
 
 [source]
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X POST <api_url>/v1/FileSystems -d '
@@ -119,7 +119,7 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 link:media/create-cv.sh[Script to create a cloud volume]
 
 ==== Updating a volume
-The following example uses a `PUT` call to update a volume called `Test`, change the service level to `extreme`, and change the quota to 500 GB:
+The following example uses a `PUT` call to update a volume called `Test`, change the service level to `extreme`, and change the allocated capacity to 500 GB:
 
 [source]
 curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<api_key> -H secret-key:<secret_key> -X PUT <api_url>/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8 -d '
@@ -189,6 +189,8 @@ curl -s -H accept:application/json -H "Content-type: application/json" -H api-ke
 	"region": "us-west",
 	"serviceLevel": "extreme"
 }'
+
+link:media/create-cv.sh[Script to create a cloud volume]
 
 ==== Deleting a snapshot
 The following example uses a `DELETE` call to delete a snapshot specified by `snapshotId`:
