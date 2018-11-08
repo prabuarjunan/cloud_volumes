@@ -406,3 +406,4 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .show-for-print{display:inherit!important}}
 div.paragraph.quick-margin-para p {margin-left: 58px;}
 div.olist.quick-margin-list ol {margin-left: 75px;}
+div.ulist.quick-margin-list ul {margin-left: 75px;}

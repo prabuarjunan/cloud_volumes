@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Selecting the appropriate service level and quota | NetApp Cloud Docs</title>
+  <title>Selecting the appropriate service level and allocated capacity | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
 
   
 
-  <meta name="description" content="The cost for Cloud Volumes Service for AWS is based on the service level and the capacity allocated by the quota that you select.  Selecting the appropriate ...">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, security levels, quotas, bandwidth, capacity">
+  <meta name="description" content="The cost for Cloud Volumes Service for AWS is based on the service level and the allocated capacity that you select.  Selecting the appropriate service level...">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, security levels, bandwidth, capacity">
 
   <!-- Icons -->
   <link rel="icon" href="/cloud_volumes/us-en/images/favicon.ico" type="image/x-icon">
@@ -431,7 +431,7 @@
   
 
   
-    <li class="active"><a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and quota</a></li>
+    <li class="active"><a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and allocated capacity</a></li>
   
 
 
@@ -458,11 +458,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Selecting the appropriate service level and quota
+  <h1 class="n-doc__component-detail-heading">Selecting the appropriate service level and allocated capacity
     <span>
       
         <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/reference_selecting_service_level_and_quota.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Selecting the appropriate service level and quota](https://docs.netapp.com/us-en/cloud_volumes/aws/reference_selecting_service_level_and_quota.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Selecting the appropriate service level and allocated capacity](https://docs.netapp.com/us-en/cloud_volumes/aws/reference_selecting_service_level_and_quota.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -471,7 +471,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The cost for Cloud Volumes Service for AWS is based on the <em>service level</em> and the capacity allocated by the <em>quota</em> that you select.  Selecting the appropriate service level and quota helps you meet your storage needs at the lowest cost.</p>
+<p>The cost for Cloud Volumes Service for AWS is based on the <em>service level</em> and the <em>allocated capacity</em> that you select.  Selecting the appropriate service level and capacity helps you meet your storage needs at the lowest cost.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -490,11 +490,11 @@
 <ul class="sectlevel1">
 <li><a href="#considerations">Considerations</a></li>
 <li><a href="#service-levels">Service levels</a></li>
-<li><a href="#quotas">Quotas</a></li>
+<li><a href="#allocated-capacity">Allocated capacity</a></li>
 <li><a href="#bandwidth">Bandwidth</a></li>
-<li><a href="#selecting-the-service-level-and-the-quota">Selecting the service level and the quota</a>
+<li><a href="#selecting-the-service-level-and-the-allocated-capacity">Selecting the service level and the allocated capacity</a>
 <ul class="sectlevel2">
-<li><a href="#cost-comparison-for-service-levels-and-quotas">Cost comparison for service levels and quotas</a></li>
+<li><a href="#cost-comparison-for-service-levels-and-allocated-capacity">Cost comparison for service levels and allocated capacity</a></li>
 <li><a href="#example-1">Example 1</a></li>
 <li><a href="#example-2">Example 2</a></li>
 </ul>
@@ -520,7 +520,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>If you consume more storage capacity than the quota you selected for the volume, the following considerations apply:</p>
+<p>If you consume more storage space than the capacity you selected for the volume, the following considerations apply:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -528,7 +528,7 @@
 <p>You will be billed for the additional storage capacity that you consume at the price defined by your service level.</p>
 </li>
 <li>
-<p>The amount of storage bandwidth available to the volume does not increase until you increase the quota size or change the service level.</p>
+<p>The amount of storage bandwidth available to the volume does not increase until you increase the allocated capacity size or change the service level.</p>
 </li>
 </ul>
 </div>
@@ -602,17 +602,17 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="quotas">Quotas</h2>
+<h2 id="allocated-capacity">Allocated capacity</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You specify your quota for the volume when you create or modify the volume.</p>
+<p>You specify your allocated capacity for the volume when you create or modify the volume.</p>
 </div>
 <div class="paragraph">
 <p><a href="task_creating_cloud_volumes_for_aws.html">Creating cloud volumes</a><br>
 <a href="task_modifying_cloud_volumes_for_aws.html">Modifying cloud volumes</a></p>
 </div>
 <div class="paragraph">
-<p>While you would select your service level based on your general, high-level business needs, you should select your quota size based on the specific needs of applications, for example:</p>
+<p>While you would select your service level based on your general, high-level business needs, you should select your allocated capacity size based on the specific needs of applications, for example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -625,7 +625,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Quotas are specified in GBs.  A volume&#8217;s quota can be set within the range of 1 GB to 100,000 GB (equivalent to 100 TBs).</p>
+<p>Allocated capacity is specified in GBs.  A volume&#8217;s allocated capacity can be set within the range of 1 GB to 100,000 GB (equivalent to 100 TBs).</p>
 </div>
 </div>
 </div>
@@ -633,23 +633,23 @@
 <h2 id="bandwidth">Bandwidth</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The combination of both the service level and the quota you select determines the maximum bandwidth for the volume.</p>
+<p>The combination of both the service level and the allocated capacity you select determines the maximum bandwidth for the volume.</p>
 </div>
 <div class="paragraph">
-<p>If your applications or users need more bandwidth than your selections, you can change the service level or increase the quota.  The changes do not disrupt data access.</p>
+<p>If your applications or users need more bandwidth than your selections, you can change the service level or increase the allocated capacity.  The changes do not disrupt data access.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="selecting-the-service-level-and-the-quota">Selecting the service level and the quota</h2>
+<h2 id="selecting-the-service-level-and-the-allocated-capacity">Selecting the service level and the allocated capacity</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To select the most appropriate service level and quota for your needs, you need to know how much capacity and bandwidth you require at the peak or the edge.</p>
+<p>To select the most appropriate service level and allocated capacity for your needs, you need to know how much capacity and bandwidth you require at the peak or the edge.</p>
 </div>
 <div class="sect2">
-<h3 id="cost-comparison-for-service-levels-and-quotas">Cost comparison for service levels and quotas</h3>
+<h3 id="cost-comparison-for-service-levels-and-allocated-capacity">Cost comparison for service levels and allocated capacity</h3>
 <div class="paragraph">
-<p>The table below compares cost for different service levels and quota sizes.  In the table, the leftmost column indicates the capacity, and the other columns define the MB/s available at each capacity point and its cost.</p>
+<p>The table below compares cost for different service levels and allocated capacity sizes.  In the table, the leftmost column indicates the capacity, and the other columns define the MB/s available at each capacity point and its cost.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1600,7 +1600,7 @@
 <p>For example, your application requires 25 TB of capacity and 100 MB/s of bandwidth. At 25 TB of capacity, the Standard service level would provide 400 MB/s of bandwidth at a cost of $2,500, making Standard the most suitable service level in this case.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/diagram_service_level_quota_example1.png" alt="Service level and quota selection" width="example 1"></span></p>
+<p><span class="image"><img src="./media/diagram_service_level_quota_example1.png" alt="Service level and capacity selection" width="example 1"></span></p>
 </div>
 </div>
 <div class="sect2">
@@ -1609,7 +1609,7 @@
 <p>For example, your application requires 12 TB of capacity and 800 MB/s of peak bandwidth.  Although the Extreme service level can meet the demands of the application at the 12 TB mark, it is more cost-effective to select 13 TB at the Premium service level.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="./media/diagram_service_level_quota_example2.png" alt="Service level and quota selection" width="example 2"></span></p>
+<p><span class="image"><img src="./media/diagram_service_level_quota_example2.png" alt="Service level and capacity selection" width="example 2"></span></p>
 </div>
 </div>
 </div>

@@ -14,7 +14,7 @@
 
   
 
-  <meta name="description" content="The Cloud Volume capabilities that are available through the web UI  are also available through RESTful APIs.  The APIs enable you to create and manage cloud...">
+  <meta name="description" content="The Cloud Volume capabilities that are available through the web UI are also available through RESTful APIs.  The APIs enable you to create and manage cloud ...">
   <meta name="keywords" content=" Cloud Volumes Service for AWS, APIs">
 
   <!-- Icons -->
@@ -431,7 +431,7 @@
   
 
   
-    <li><a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and quota</a></li>
+    <li><a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and allocated capacity</a></li>
   
 
 
@@ -655,7 +655,7 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 <div class="sect3">
 <h4 id="creating-a-volume">Creating a volume</h4>
 <div class="paragraph">
-<p>The following example uses a <code>POST</code> call to create a volume called <code>Test</code>, in region <code>us-west</code>, with a <code>quota</code> of 100 GB and exported using <code>nfsv3</code>:</p>
+<p>The following example uses a <code>POST</code> call to create a volume called <code>Test</code>, in region <code>us-west</code>, with an <code>allocated capacity</code> of 100 GB and exported using <code>nfsv3</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -678,7 +678,7 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 <div class="sect3">
 <h4 id="updating-a-volume">Updating a volume</h4>
 <div class="paragraph">
-<p>The following example uses a <code>PUT</code> call to update a volume called <code>Test</code>, change the service level to <code>extreme</code>, and change the quota to 500 GB:</p>
+<p>The following example uses a <code>PUT</code> call to update a volume called <code>Test</code>, change the service level to <code>extreme</code>, and change the allocated capacity to 500 GB:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -800,6 +800,9 @@ Use with caution.  This API call causes any data written after the snapshot to b
 	"serviceLevel": "extreme"
 }'</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p><a href="media/create-cv.sh">Script to create a cloud volume</a></p>
 </div>
 </div>
 <div class="sect3">
