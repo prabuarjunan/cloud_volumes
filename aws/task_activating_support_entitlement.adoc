@@ -1,8 +1,9 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/task_activating_support_entitlement.html
-keywords: Cloud Volumes Service for AWS, support entitlement, NetApp ID, ticketing
-summary: Before you create your first cloud volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.
+keywords: Cloud Volumes Service for AWS, support entitlement, NetApp serial number, ticketing
+summary: Once you have access to Cloud Volumes Service shortly after subscribing in AWS marketplace, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over online chat, web ticketing system, and phone. The default support level is self-service until serial number activation and registration is completed.
+
 ---
 
 = Activating support entitlement and accessing support
@@ -15,47 +16,117 @@ summary: Before you create your first cloud volume, it is strongly recommended t
 
 
 [.lead]
-Before you create your first cloud volume, it is strongly recommended that you activate support entitlement.  Activating support entitlement enables you to access technical support over the online chat, the web ticketing system, and the phone.
+Once you have access to Cloud Volumes Service shortly after subscribing in AWS marketplace, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over online chat, web ticketing system, and phone. The default support level is self-service until serial number activation and registration is completed.
+
 
 toc::[]
 
 == Activating support entitlement
-During the initial subscription process with Cloud Volumes Service for AWS, the cloud volumes instance generates a 20-digit NetApp subscription ID that starts with "930". The NetApp subscription ID represents the Cloud Volumes Service that is tied to your AWS account. You register the NetApp subscription ID to activate support entitlement.  You need NetApp Support Site (NSS) credentials for the support activation process.
+During the initial subscription process with Cloud Volumes Service for AWS, your cloud volumes instance generates a 20-digit NetApp serial number that starts with "930". The NetApp serial number represents the Cloud Volumes Service subscription associated to your AWS account. You must register the NetApp serial number to activate support entitlement. We offer 2 options for support registration:
+
+. Current NetApp customer with pre-existing NetApp Support Site (NSS) SSO account
+. New NetApp customer with no pre-existing NetApp Support Site (NSS) SSO account
+
+=== Option 1: Current NetApp customer with pre-existing NetApp Support Site (NSS) SSO account
 
 .Steps
 
-. Navigate to the https://cds-aws-bundles.netapp.com/storage/volumes[NetApp Cloud Orchestrator^] site, and then log in with the email address that you provided during your subscription.
-. Display your NetApp subscription ID by clicking **Support** in the Cloud Volumes Service user interface (UI).
+. Navigate to the Cloud Volumes Service URL, or access this service through the https://cds-aws-bundles.netapp.com/storage/volumes[NetApp Cloud Central portal^]. Then login with your NetApp Cloud Central credentials.
+. Display your NetApp serial number by selecting **Support** in the Cloud Volumes Service user interface (UI).
 +
 image::diagram_support_page.png[Display Support page]
 
-. In the Support page, verify that your subscription status shows `not registered`.
-+
-If you do not see the subscription status and your NetApp subscription ID, refresh the browser page.
+. In the **Support** page, verify that your Support status shows `Not registered`.
 +
 image::diagram_support_status_not_registered.png[Support status not registered]
-. Register your NetApp subscription ID to activate support entitlement:
 +
-** If you are new to NetApp or do not have an existing NSS account, go to the  https://register.netapp.com[Cloud Data Services Support Registration^] page (register.netapp.com) to create an NSS account and activate support for the service.
+If you do not see the Support status and your NetApp serial number, refresh the browser page.
+. Click **Activate support** to register your NetApp serial number:
 +
-You will be prompted to provide your NetApp subscription ID and your AWS customer ID.
-** If you have an NSS account, click **Activate support** and enter your NSS credentials (username and password) from the Cloud Volumes Service UI to activate support entitlement for your NetApp subscription ID.
+** If you have an NSS account, enter your NSS credentials (username and password) in the **Activate support** page and click **Activate** to activate support entitlement for your NetApp serial number.
 +
 image::diagram_support_activate.png[Activate support]
 +
-After your NetApp subscription ID is activated for support entitlement, the Support page shows the `registered` status, indicating that you have activated support entitlement.
+** If you are an existing NetApp customer, but you do not have NSS SSO credentials, go to the http://now.netapp.com/newuser/[NetApp Support Registration site] to create your account first. Then return here to register with your NSS credentials.
++
+** If you are a new NetApp customer, see the instructions for Option 2 below.
++
+After your NetApp serial number is activated, the **Support** page shows the status `Registered`, indicating that you have activated support entitlement.
 +
 image::diagram_support_status_registered.png[Support status registered]
 
+This is a one time support registration for the applicable Cloud Volumes Service serial number. Any new Cloud Volumes Service subscription and subsequent new serial number requires support activation as well.
+
+=== Option 2: New NetApp customer with no pre-existing NetApp Support Site (NSS) SSO account
+
+.Steps
+
+. Navigate to the https://register.netapp.com[Cloud Data Services Support Registration^] page to create an NSS account.
++
+. Select **I am not a registered NetApp Customer** and the New Customer Registration form is displayed.
++
+image::diagram_support_new_customer_reg.png[New Customer Registration Form]
++
+. Complete the required information on the form:
++
+.. Enter your name and company information.
++
+.. Select **Cloud Volumes Service** as the Product Line and **Amazon Web Services** as the Cloud Service Provider.
++
+.. Enter your **NetApp serial number** and **AWS Customer ID** from the Cloud Volumes Service **Support** page into the next two fields.
++
+.. Click **Submit Registration**.
++
+. You will receive a confirmation email from your submitted registration. If no errors occur, you will be re-directed to a “Registration Submitted Successfully” page. You will also receive an email within an hour stating that “your product is now eligible for support”.
++
+. As a new NetApp customer, you also need to create a NetApp Support Site (NSS) user account for future support activations and for access to the support portal for technical support chat and web ticketing. Go to the http://now.netapp.com/newuser/[NetApp Support Registration site] to perform this task. You can provide your newly registered Cloud Volumes Service serial number to expedite the process.
+
+This is a one time support registration for the applicable Cloud Volumes Service serial number. Any new Cloud Volumes Service subscription and subsequent new serial number requires support activation as well.
 
 == Obtaining support information
 
-To obtain self-service information or other forms of support information, go to the **Support** page from the Cloud Volumes Service UI.
+NetApp provides support for Cloud Volumes Service in a variety of ways. Extensive free self-support options are available 24x7, such as knowledgebase (KB) articles or the NetApp community. The Cloud Volumes Service subscription purchased from the AWS SaaS marketplace includes software warranty support that includes technical support chat, phone, or web ticketing. You must activate support for each NetApp serial number in order to use these non self-service support options. A NetApp Support Site (NSS) SSO account is required for chat and web ticketing along with case management.
 
-You need your NSS credentials to access technical support chat or create web tickets.
+You can access support options from the Cloud Volumes Service UI by selecting the **Support** tab from the main menu. The support options available to you depend on whether you are in Trial mode or Subscription mode.
 
 image::diagram_support_obtain.png[Obtaining support information]
 
+=== Self support
+
+These options are available in Trial mode and are available for free 24x7:
+
+* https://kb.netapp.com/[Knowledge base]
+Selecting the links in this section takes you to the NetApp Knowledgebase, where you can search for articles, How-to’s, FAQ’s, or Break Fix information related to Cloud Volumes Service.
+
+* https://docs.netapp.com/us-en/cloud_volumes/aws/[User manual]
+Selecting on the **Click here** link takes you to the Cloud Volumes Service for AWS documentation center.
+
+* http://community.netapp.com/t5/Cloud-Volumes/bd-p/CloudVolumes[Communities]
+Selecting on the **Click here** link takes you to the Cloud Volumes Service community, where you can connect with peers and experts.
+
+=== Subscription Support
+
+In addition to the self-support options above, if you have a Cloud Volumes Service paid subscription, you can work with a NetApp Support Engineer to resolve any issues.
+
+Once your Cloud Volumes Service serial number is activated, you can access NetApp technical support resources by any of the following methods. You must have an active Cloud Volumes subscription to use these support options.
+
+* https://mysupport.netapp.com/gchat/cloudvolume[Chat]
+This will open a support ticket as well.
+
+* https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase[Support Ticket]
+Select Cloud Data Services > Cloud Volumes Service AWS
+
+* https://www.netapp.com/us/contact-us/support.aspx[Phone]
+For P1 issues on original call or existing tickets
+
+You can also request sales support by clicking on the https://www.netapp.com/us/forms/sales-contact.aspx[Contact sales] link.
+
+Your Cloud Volumes Service serial number is visible within the service from the Support menu option. If you are experiencing issues accessing the service and have registered a serial number with NetApp previously, you can also view your list of Cloud Volumes Service serial numbers from the NetApp Support Site as follows:
+
+. Login to https://mysupport.netapp.com/[mysupport.netapp.com].
+.	From the Products > My Products menu tab, select the Product Family **SaaS Cloud Volume** to locate all your registered serial numbers:
+
+image::diagram_support_list_registered_systems.png[View Installed Systems]
 
 == Deactivating support
 
