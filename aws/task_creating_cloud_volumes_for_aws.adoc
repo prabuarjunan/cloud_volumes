@@ -94,6 +94,8 @@ image::diagram_create_volume_4.png[Add export policy rule]
 * *Enable data encryption*
 +
 For SMB or Dual-protocol, you can enable SMB session encryption by checking this box.
++
+*Note:* Do not enable encryption if SMB 2.1 clients need to mount the volume.
 
 * *Active Directory*
 +
