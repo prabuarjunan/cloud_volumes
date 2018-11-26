@@ -15,7 +15,7 @@
   
 
   <meta name="description" content="NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, what's new, features, enhancements">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, what's new, features, enhancements, limitations, known issues">
 
   <!-- Icons -->
   <link rel="icon" href="/cloud_volumes/en/images/favicon.ico" type="image/x-icon">
@@ -478,8 +478,23 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="september-2018">September 2018</h2>
+<h2 id="new-features-and-updates">New features and updates</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>NetApp periodically updates the Cloud Volumes Service to bring you new features, enhancements, and bug fixes.</p>
+</div>
+<div class="sect2">
+<h3 id="november-2018">November 2018</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Support for SMB 2.1 protocol</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="september-2018">September 2018</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -488,10 +503,8 @@
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="august-2018">August 2018</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="august-2018">August 2018</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -505,6 +518,43 @@
 </li>
 <li>
 <p>Support for multiple Active Directory servers</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="known-problems-and-limitations">Known problems and limitations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These known limitations identify platforms or features that are not supported.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Issue</strong>: An error message "There was a problem listing volumes: Authentication failure" and "There was a problem listing mount targets: [object Object]" may be intermittently displayed.</p>
+<div class="paragraph">
+<p><strong>Workaround</strong>: Retry the task or refresh the screen to correctly list the objects.</p>
+</div>
+</li>
+<li>
+<p><strong>Issue</strong>: Sync capabilities between source and target volumes are not available from the Cloud Volumes Service user interface in all regions.</p>
+<div class="paragraph">
+<p><strong>Workaround</strong>: Sync relationships can be set up for Cloud Volumes by directly accessing the NetApp Cloud Sync service. Contact <a href="mailto:aws-bundles-support@netapp.com">aws-bundles-support@netapp.com</a> for any Cloud Sync related billing questions.</p>
+</div>
+</li>
+<li>
+<p><strong>Issue</strong>: New Cloud Volumes Sync relationships cannot be created from the Cloud Volumes user interface (version v1.0.120) as the Cloud Volume export is not discovered correctly.</p>
+<div class="paragraph">
+<p><strong>Workaround</strong>: New Sync relationships can be set up for Cloud Volumes by directly accessing the NetApp Cloud Sync service. Contact <a href="mailto:aws-bundles-support@netapp.com">aws-bundles-support@netapp.com</a> for any Cloud Sync related billing questions.</p>
+</div>
+</li>
+<li>
+<p><strong>Issue</strong>: 403 errors are intermittently received in response to an API call.</p>
+<div class="paragraph">
+<p><strong>Workaround</strong>: Retry the API call.</p>
+</div>
 </li>
 </ul>
 </div>
