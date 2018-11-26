@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/reference_whats_new_cloud_volumes_aws.html
-keywords: Cloud Volumes Service for AWS, what's new, features, enhancements
+keywords: Cloud Volumes Service for AWS, what's new, features, enhancements, limitations, known issues
 summary: NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.
 ---
 
@@ -16,12 +16,39 @@ summary: NetApp periodically updates Cloud Volumes Service for AWS to bring you 
 [.lead]
 NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.
 
-== September 2018
+== New features and updates
+
+NetApp periodically updates the Cloud Volumes Service to bring you new features, enhancements, and bug fixes.
+
+=== November 2018
+* Support for SMB 2.1 protocol
+
+=== September 2018
 * RESTful API support and online examples: link:reference_cloud_volume_apis.html[Cloud Volume APIs]
 
-== August 2018
+=== August 2018
 
 * Ability to select data encryption for SMB shares
 * Ability to select the security styles of NTFS or UNIX for shares exported via both NFS and SMB
 * Display for NFS and SMB mount instructions for shares exported via both NFS and SMB
 * Support for multiple Active Directory servers
+
+== Known problems and limitations
+
+These known limitations identify platforms or features that are not supported.
+
+* *Issue*: An error message "There was a problem listing volumes: Authentication failure" and "There was a problem listing mount targets: [object Object]" may be intermittently displayed.
++
+*Workaround*: Retry the task or refresh the screen to correctly list the objects.
+
+* *Issue*: Sync capabilities between source and target volumes are not available from the Cloud Volumes Service user interface in all regions.
++
+*Workaround*: Sync relationships can be set up for Cloud Volumes by directly accessing the NetApp Cloud Sync service. Contact aws-bundles-support@netapp.com for any Cloud Sync related billing questions.
+
+* *Issue*: New Cloud Volumes Sync relationships cannot be created from the Cloud Volumes user interface (version v1.0.120) as the Cloud Volume export is not discovered correctly.
++
+*Workaround*: New Sync relationships can be set up for Cloud Volumes by directly accessing the NetApp Cloud Sync service. Contact aws-bundles-support@netapp.com for any Cloud Sync related billing questions.
+
+* *Issue*: 403 errors are intermittently received in response to an API call.
++
+*Workaround*: Retry the API call.
