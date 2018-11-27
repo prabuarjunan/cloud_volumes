@@ -2,13 +2,19 @@ $(document).ready(function() {
   const MASTHEAD_OFFSET = 165;
   const SECTIONS = $("main h2, main h3");
   // PAGE NAV - Init
-  for (var i = 0; i < SECTIONS.length; i++) {
-    var sectionId = $(SECTIONS[i]).attr('id');
-    var sectionName = $(SECTIONS[i]).text();
-    var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
-    $("#page-menu").append('<li class="page-nav-item"><a href="#'+sectionId+'" class="page-nav__link'+subClass+'">'+sectionName+'</a></li>');
+  if(SECTIONS.length == 0) {
+    $(".page-nav-container").css('display','none');
+    $("#pagenav-css").attr("disabled", "disabled");
+  } else {
+    $(".page-nav-title").css('display','block');
+    for (var i = 0; i < SECTIONS.length; i++) {
+      var sectionId = $(SECTIONS[i]).attr('id');
+      var sectionName = $(SECTIONS[i]).text();
+      var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+      $("#page-menu").append('<li class="page-nav-item"><a href="#'+sectionId+'" class="page-nav__link'+subClass+'">'+sectionName+'</a></li>');
+    }
+    $(".page-nav__link").first().addClass('page-nav__link--active');
   }
-  $(".page-nav__link").first().addClass('page-nav__link--active');
 
   // PAGE NAV - Click
   $(".page-nav__link").click(function(event) {
