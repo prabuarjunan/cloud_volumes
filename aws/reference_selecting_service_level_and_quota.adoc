@@ -6,7 +6,6 @@ summary: The cost for Cloud Volumes Service for AWS is based on the service leve
 ---
 
 = Selecting the appropriate service level and allocated capacity
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -19,8 +18,6 @@ The cost for Cloud Volumes Service for AWS is based on the _service level_ and t
 
 
 IMPORTANT: _All pricing information in this article is based on the list prices as of September 12, 2018.  The information is provided for example purposes only and is subject to change._
-
-toc::[]
 
 == Considerations
 
