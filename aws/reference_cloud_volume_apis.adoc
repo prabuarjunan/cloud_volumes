@@ -6,7 +6,6 @@ summary: The Cloud Volume capabilities that are available through the web UI are
 ---
 
 = Cloud Volume APIs
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,8 +14,6 @@ summary: The Cloud Volume capabilities that are available through the web UI are
 
 [.lead]
 The Cloud Volume capabilities that are available through the web UI are also available through RESTful APIs. The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.
-
-toc::[]
 
 == Finding the API URL, API key, and Secret key
 [[finding_urL_key_secretKey]]
