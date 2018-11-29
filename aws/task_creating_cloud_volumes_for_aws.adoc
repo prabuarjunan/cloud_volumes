@@ -19,7 +19,6 @@ You create cloud volumes from the NetApp Cloud Orchestrator site.
 
 .Before you begin
 You must have selected the region where you want to use the service.
-
 link:task_selecting_region.html[Selecting the region]
 
 .Steps
@@ -94,6 +93,8 @@ image::diagram_create_volume_4.png[Add export policy rule]
 * *Enable data encryption*
 +
 For SMB or Dual-protocol, you can enable SMB session encryption by checking this box.
++
+*Note:* Do not enable encryption if SMB 2.1 clients need to mount the volume.
 
 * *Active Directory*
 +

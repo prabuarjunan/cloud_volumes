@@ -2,12 +2,10 @@
 sidebar: sidebar_aws
 permalink: aws/task_activating_support_entitlement.html
 keywords: Cloud Volumes Service for AWS, support entitlement, NetApp serial number, ticketing
-summary: Once you have access to Cloud Volumes Service shortly after subscribing in AWS marketplace, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over online chat, web ticketing system, and phone. The default support level is self-service until serial number activation and registration is completed.
-
+summary: Once you have access to Cloud Volumes Service shortly after subscribing in AWS marketplace, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over online chat, web ticketing system, and phone.
 ---
 
 = Activating support entitlement and accessing support
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,18 +14,18 @@ summary: Once you have access to Cloud Volumes Service shortly after subscribing
 
 
 [.lead]
-Once you have access to Cloud Volumes Service shortly after subscribing in AWS marketplace, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over online chat, web ticketing system, and phone. The default support level is self-service until serial number activation and registration is completed.
 
+Once you have access to Cloud Volumes Service shortly after subscribing in AWS marketplace, it is strongly recommended that you activate support entitlement. Activating support entitlement enables you to access technical support over online chat, web ticketing system, and phone.
 
-toc::[]
+The default support level is self-service until serial number activation and registration is completed.
 
 == Activating support entitlement
 During the initial subscription process with Cloud Volumes Service for AWS, your cloud volumes instance generates a 20-digit NetApp serial number that starts with "930". The NetApp serial number represents the Cloud Volumes Service subscription associated to your AWS account. You must register the NetApp serial number to activate support entitlement. We offer 2 options for support registration:
 
-. Current NetApp customer with pre-existing NetApp Support Site (NSS) SSO account
-. New NetApp customer with no pre-existing NetApp Support Site (NSS) SSO account
+. Current NetApp customer with existing NetApp Support Site (NSS) SSO account
+. New NetApp customer with no existing NetApp Support Site (NSS) SSO account
 
-=== Option 1: Current NetApp customer with pre-existing NetApp Support Site (NSS) SSO account
+=== Option 1: Current NetApp customer with existing NetApp Support Site (NSS) SSO account
 
 .Steps
 
@@ -57,7 +55,7 @@ image::diagram_support_status_registered.png[Support status registered]
 
 This is a one time support registration for the applicable Cloud Volumes Service serial number. Any new Cloud Volumes Service subscription and subsequent new serial number requires support activation as well.
 
-=== Option 2: New NetApp customer with no pre-existing NetApp Support Site (NSS) SSO account
+=== Option 2: New NetApp customer with no existing NetApp Support Site (NSS) SSO account
 
 .Steps
 

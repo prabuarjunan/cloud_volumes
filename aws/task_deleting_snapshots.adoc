@@ -6,7 +6,6 @@ summary: You can delete a snapshot from the Volumes or Snapshots page.
 ---
 
 = Deleting a snapshot
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +15,6 @@ summary: You can delete a snapshot from the Volumes or Snapshots page.
 
 [.lead]
 You can delete a snapshot from the Volumes or Snapshots page.
-
-toc::[]
 
 == Deleting a snapshot from the Volumes page
 
