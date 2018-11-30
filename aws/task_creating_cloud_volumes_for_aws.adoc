@@ -28,8 +28,8 @@ Your AWS environment must meet certain requirements before you can create your f
 You must have the following information available when creating your first volume in a region:
 
 * AWS account ID: A 12-digit Amazon account identifier with no dashes.
-* Classless Inter-Domain Routing (CIDR): IPv4 range for the region in the /28 range (255.255.255.240). This CIDR must only contain RFC 1918 (private) addresses.
-* User owned Autonomous System Number (ASN): When using a VGW, use that  ASN. When using a Direct Connect Gateway, use that ASN.
+* Classless Inter-Domain Routing (CIDR): IPv4 range for the region in the /28 range. This CIDR must only contain RFC 1918 (private) addresses.
+* User owned Autonomous System Number (ASN): When using a VGW, use that ASN. When using a Direct Connect Gateway, use that ASN.
 *	Desired name for the virtual interfaces (for example, NetApp_CVS_XXX; the default names are NetApp-CV-A and NetApp-CV-B)
 * You must have selected the correct region where you want to use the service.  link:task_selecting_region.html[Selecting the region]
 
