@@ -16,7 +16,7 @@ summary: You create cloud volumes from the NetApp Cloud Orchestrator site.
 [.lead]
 You create cloud volumes from the NetApp Cloud Orchestrator site.
 
-.Before you begin
+== Before you begin
 
 Your AWS environment must meet certain requirements before you can create your first cloud volume. For each AWS region where you plan to deploy cloud volumes, you must have a:
 
@@ -25,30 +25,24 @@ Your AWS environment must meet certain requirements before you can create your f
 * Subnet for the VPC
 * Routes defined that include the network on which cloud volumes will run
 
-You must have the following information available when creating your first volume in a region:
+You must have the following information available when creating your first cloud volume in a region:
 
-* AWS account ID: A 12-digit Amazon account identifier with no dashes.
-* Classless Inter-Domain Routing (CIDR): IPv4 range for the region in the /28 range. This CIDR must only contain RFC 1918 (private) addresses.
-* User owned Autonomous System Number (ASN): When using a VGW, use that ASN. When using a Direct Connect Gateway, use that ASN.
+* *AWS account ID*: A 12-digit Amazon account identifier with no dashes.
+* *Classless Inter-Domain Routing (CIDR)*: IPv4 range for the region in the /28 range. This CIDR must only contain RFC 1918 (private) addresses.
+* *User owned Autonomous System Number (ASN)*: When using a VGW, use that ASN. When using a Direct Connect Gateway, use that ASN.
 *	Desired name for the virtual interfaces (for example, NetApp_CVS_XXX; the default names are NetApp-CV-A and NetApp-CV-B)
 * You must have selected the correct region where you want to use the service.  link:task_selecting_region.html[Selecting the region]
 
-If you have not configured the required AWS networking components, see the link:media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup] guide.
+If you have not configured the required AWS networking components, see the link:media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup] guide for details.
 
-.Steps
+== Enter volume details
 
-. Navigate to the https://cds-aws-bundles.netapp.com/storage/volumes[NetApp Cloud Orchestrator^] site, and then log in with the email address that you provided during your subscription.
-. Click the *Create new volume* button.
-+
-The Create Volume page appears.
+Complete the fields at the top of the Create Volume page to define the volume name, size, service level, and more.
+
+. After you have logged in to the https://cds-aws-bundles.netapp.com/storage/volumes[NetApp Cloud Orchestrator^] site with the email address that you provided during your subscription, and you have link:task_selecting_region.html[selected the region], click the *Create new volume* button.
 +
 image::diagram_create_volume_1.png[Create Volume page]
-
-=== Enter volume details
-
-Complete the fields at the top of the page to define the volume name, size, service level, and more.
-
-. Select *NFS*, *SMB*, or *Dual-protocol* as the protocol for the volume you want to create.
+. From the Create Volume page, select *NFS*, *SMB*, or *Dual-protocol* as the protocol for the volume you want to create.
 . In the *Name* field, specify the name you want to use for the volume.
 . In the  *Region* field, select the AWS region where you want to create the volume. This region must match the region you configured on AWS.
 . In the *Timezone* field, select your time zone.
@@ -71,17 +65,17 @@ Security styles affect the file permission type used and how permissions can be 
 ** UNIX uses NFSv3 mode bits, and only NFS clients can modify permissions.
 ** NTFS uses NTFS ACLs, and only SMB clients can modify permissions.
 
-=== Enter network details (one-time setting per AWS region)
+== Enter network details (one-time setting per AWS region)
 
 If this is the first time you have created a cloud volume in this AWS region, the *Network* section is displayed so you can connect your Cloud Volumes account to your AWS account:
 
 . In the *CIDR (IPv4)* field, enter an IPv4 range for the region in the /28 range (255.255.255.240). This CIDR must only contain RFC 1918 (private) addresses.
-. In the *Autonomous System Number (ASN)* field, enter the ASN. When using a VGW, use that ASN. When using a Direct Connect Gateway, use that ASN.
+. In the *Autonomous System Number (ASN)* field, enter the ASN. When using a VGW in your AWS configuration, use that ASN. When using a Direct Connect Gateway, use that ASN.
 . In the *AWS account ID* field, enter your 12-digit Amazon account identifier with no dashes.
 +
 image::diagram_create_volume_network.png[Configure network settings]
 
-=== Enter export policy rules (optional)
+== Enter export policy rules (optional)
 
 If you selected NFS or Dual-protocol, you can create an export policy in the *Export policy* section to identify the clients that can access the volume:
 
@@ -91,13 +85,13 @@ If you selected NFS or Dual-protocol, you can create an export policy in the *Ex
 +
 image::diagram_create_volume_4.png[Add export policy rule]
 
-=== Enable data encryption (optional)
+== Enable data encryption (optional)
 
 . If you selected SMB or Dual-protocol, you can enable SMB session encryption by checking the box for the *Enable data encryption* field.
 +
 *Note:* Do not enable encryption if SMB 2.1 clients need to mount the volume.
 
-=== Integrate the volume with an Active Directory server (optional)
+== Integrate the volume with an Active Directory server (optional)
 
 If you selected SMB or Dual-protocol, you can choose to integrate the volume with a Windows Active Directory server in the *Active Directory* section.
 
@@ -114,7 +108,7 @@ image::diagram_create_volume_ad.png[Active Directory]
 IMPORTANT: You should follow the guidance on AWS security group settings to enable cloud volumes to integrate with Windows Active Directory servers correctly.
 <<reference_security_groups_windows_ad_servers.adoc#,AWS security group settings for Windows AD servers>>
 
-=== Create a Snapshot policy (optional)
+== Create a Snapshot policy (optional)
 
 If you want to create a snapshot policy for this volume, enter the details in the *Snapshot policy* section:
 
@@ -130,16 +124,16 @@ You can create additional snapshot policies by repeating the steps above.
 +
 image::diagram_snapshot_policy_1.png[Snapshot policy]
 
-=== Create the volume
+== Create the volume
 . Scroll down to the bottom of the page and click *Create Volume*.
 +
 If you have previously created a cloud volume in this region, the new volume appears in the Volumes page.
 +
-If this is the first cloud volume you have created in this AWS region and you have entered the networking information in the Networking section of this page, a Progress dialog is displayed that identifies the next steps you must follow to connect the volume with AWS interfaces.
+If this is the first cloud volume you have created in this AWS region and you have entered the networking information in the Network section of this page, a Progress dialog is displayed that identifies the next steps you must follow to connect the volume with AWS interfaces.
 +
 image:diagram_create_volume_interfaces_dialog.png[Accept virtual interfaces dialog]
 +
-. Accept the virtual interfaces as described in the link:media/cvs_aws_account_setup.pdf#accept_interfaces[NetApp Cloud Volumes Service for AWS Account Setup] guide. You must perform this task within 10 minutes or the system may time out.
+. Accept the virtual interfaces as described in the link:media/cvs_aws_account_setup.pdf#page=13[NetApp Cloud Volumes Service for AWS Account Setup] guide. You must perform this task within 10 minutes or the system may time out.
 +
 If the interfaces do not appear within 10 minutes there may be a configuration issue; in which case you should contact support.
 +
