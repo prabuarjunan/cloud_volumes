@@ -2,7 +2,7 @@
 sidebar: sidebar_aws
 permalink: aws/task_selecting_region.html
 keywords: Cloud Volumes Service for AWS, regions
-summary: Cloud Volumes Service is available in several AWS regions, but the user interface (UI) is specific to a region. You must specify the region where you want to use the service before you create a cloud volume.
+summary: Cloud Volumes Service is available in many AWS regions. You must specify the region where you want to use the service before you create a cloud volume.
 ---
 
 = Selecting the region
@@ -15,7 +15,7 @@ summary: Cloud Volumes Service is available in several AWS regions, but the user
 
 
 [.lead]
-Cloud Volumes Service is available in several AWS regions, but the user interface (UI) is specific to a region. You must specify the region where you want to use the service before you create a cloud volume.
+Cloud Volumes Service is available in many AWS regions. You must specify the region where you want to use the service before you create a cloud volume.
 
 .Steps
 
@@ -26,5 +26,7 @@ You should bookmark this URL. You will need to return to it later.
 +
 This selection process is similar to how you change regions in the AWS console.
 +
-image::diagram_selecting_region.png[Sync relationships]
-. Repeat the above step for each additional region you want to use.
+image::diagram_selecting_region.png[Selecting the region]
+. Repeat the above step for each additional region when you want to create a cloud volume.
+
+*Note:* The regions displayed in the Cloud Volumes user interface may use a different format than the region you selected in the AWS user interface. For example _us-east-1_ in the Cloud Volumes UI corresponds to the _N.Virginia_ region selected in the AWS console. See https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html[Regions and Availability Zones] for a mapping of the region names to make sure you select the same region in both interfaces.

@@ -120,7 +120,7 @@ If you want to create a snapshot policy for this volume, enter the details in th
 *	Select *Weekday(s)*, *Hour*, and *Minutes* for weekly snapshots.
 *	Select *Day(s)* of month, *Hour*, and *Minutes* for monthly snapshots.
 +
-You can create additional snapshot policies by repeating the steps above.
+You can create additional snapshot policies by repeating the steps above, or by selecting the Snapshots tab from the left navigation area.
 +
 image::diagram_snapshot_policy_1.png[Snapshot policy]
 
@@ -133,7 +133,7 @@ If this is the first cloud volume you have created in this AWS region and you ha
 +
 image:diagram_create_volume_interfaces_dialog.png[Accept virtual interfaces dialog]
 +
-. Accept the virtual interfaces as described in the link:media/cvs_aws_account_setup.pdf#page=13[NetApp Cloud Volumes Service for AWS Account Setup] guide. You must perform this task within 10 minutes or the system may time out.
+. Accept the virtual interfaces as described in the link:media/cvs_aws_account_setup.pdf#accept_interfaces[NetApp Cloud Volumes Service for AWS Account Setup] guide. You must perform this task within 10 minutes or the system may time out.
 +
 If the interfaces do not appear within 10 minutes there may be a configuration issue; in which case you should contact support.
 +
