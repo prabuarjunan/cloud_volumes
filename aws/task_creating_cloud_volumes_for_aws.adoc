@@ -32,7 +32,7 @@ You must have the following information available when creating your first cloud
 * *Autonomous System Number (ASN)*: When using a Virtual Private Gateway, use that ASN. When using a Direct Connect Gateway, use that ASN. We support AS numbers in the range 1 – 65535.
 *	You must have selected the correct region where you want to use the service.  link:task_selecting_region.html[Selecting the region]
 
-If you have not configured the required AWS networking components, see the link:media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup] guide for details.
+If you have not configured the required AWS networking components, see the link:media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup^] guide for details.
 
 == Enter volume details
 
@@ -132,7 +132,7 @@ If this is the first cloud volume you have created in this AWS region and you ha
 +
 image:diagram_create_volume_interfaces_dialog.png[Accept virtual interfaces dialog]
 +
-. Accept the virtual interfaces as described in section 6.4 of the link:media/cvs_aws_account_setup.pdf#page=14[NetApp Cloud Volumes Service for AWS Account Setup] guide. You must perform this task within 10 minutes or the system may time out.
+. Accept the virtual interfaces as described in section 6.4 of the link:media/cvs_aws_account_setup.pdf#page=14[NetApp Cloud Volumes Service for AWS Account Setup^] guide. You must perform this task within 10 minutes or the system may time out.
 +
 If the interfaces do not appear within 10 minutes there may be a configuration issue; in which case you should contact support.
 +
