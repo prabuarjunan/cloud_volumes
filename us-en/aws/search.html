@@ -377,8 +377,9 @@
     <script type="text/javascript" src="/cloud_volumes/us-en/js/responsive.js"></script>
 
     <!-- Elasticsearch JS -->
-    
+    <script type="text/javascript" src='/cloud_volumes/us-en/js/bundle.js'></script>
 
+    <!-- Syntax Highlighting -->
     <script type="text/javascript" src='/cloud_volumes/us-en/js/prism.js'></script>
     <script type="text/javascript" src='/cloud_volumes/us-en/js/prism-curl.js'></script>
 
@@ -387,8 +388,20 @@
   
   <script>
       if(hasParameter(window.location.search,'q')) {
-        var queryString = decodeURI(params.get('q'));
+        var queryString = decodeURI(getParameter(window.location.search, 'q'));
         document.getElementsByClassName("sk-search-box__text")[0].setAttribute("value", queryString);
+      }
+
+      function getParameter(searchString,param) {
+        var params = searchString.split('?&');
+        for(var i=0;i<params.length;i++) {
+          var paramIndex = params[i].indexOf(param+"=");
+          if(paramIndex != -1) {
+            return params[i].substring(paramIndex+param.length+1);
+          }
+        }
+
+        return "";
       }
 
       function hasParameter(searchString,param) {
