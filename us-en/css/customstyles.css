@@ -892,11 +892,6 @@ span.soft {
     }
 }
 
-*:hover > .anchorjs-link {
-    transition: color .25s linear;
-    text-decoration: none;
-}
-
 .kbCaption {
     color: white;
     background-color: #444;

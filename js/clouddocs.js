@@ -1,4 +1,5 @@
-function netapp_mailto() {
+function netapp_mailto(subjectType) {
+	subjectType = subjectType || "";
 	var pageurl = "" + window.location;
 
   if(pageurl.indexOf('?') > -1) {
