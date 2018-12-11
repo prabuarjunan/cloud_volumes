@@ -16,13 +16,14 @@ summary: You create cloud volumes from the NetApp Cloud Orchestrator site.
 [.lead]
 You create cloud volumes from the NetApp Cloud Orchestrator site.
 
-== Before you begin
+== Prerequisites
 
 Your AWS environment must meet certain requirements before you can create your first cloud volume. For each AWS region where you plan to deploy cloud volumes, you must have a:
 
 * Virtual Private Cloud (VPC)
 * Virtual Private Gateway (VGW) that is connected to your VPC
 * Subnet for the VPC
+* Optionally, a Direct Connect Gateway
 * Routes defined that include the network on which cloud volumes will run
 
 You must have the following information available when creating your first cloud volume in a region:
