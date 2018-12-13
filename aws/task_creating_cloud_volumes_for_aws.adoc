@@ -91,7 +91,7 @@ image::diagram_create_volume_4.png[Add export policy rule]
 +
 *Note:* Do not enable encryption if SMB 2.1 clients need to mount the volume.
 
-== Integrate the volume with an Active Directory server (optional)
+== Integrate the volume with an Active Directory server
 
 If you selected SMB or Dual-protocol, you can choose to integrate the volume with a Windows Active Directory server in the *Active Directory* section.
 
@@ -133,7 +133,7 @@ If this is the first cloud volume you have created in this AWS region and you ha
 +
 image:diagram_create_volume_interfaces_dialog.png[Accept virtual interfaces dialog]
 +
-. Accept the virtual interfaces as described in section 6.4 of the link:media/cvs_aws_account_setup.pdf#page=17[NetApp Cloud Volumes Service for AWS Account Setup^] guide. You must perform this task within 10 minutes or the system may time out.
+. Accept the virtual interfaces as described in section 6.4 of the link:media/cvs_aws_account_setup.pdf#page=20[NetApp Cloud Volumes Service for AWS Account Setup^] guide. You must perform this task within 10 minutes or the system may time out.
 +
 If the interfaces do not appear within 10 minutes there may be a configuration issue; in which case you should contact support.
 +
