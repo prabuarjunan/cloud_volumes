@@ -71,7 +71,7 @@ code .token.header {
 pre.language-curl .line-numbers>span:before{content:">"}
 pre.language-bash .line-numbers>span:first-child:before,pre.language-curl .line-numbers>span:first-child:before {content:"$"}
 .language-bash .token.function,code .token.curl,code .token.option,code .token.variable {color:teal;font-weight:600}
-.language-bash .token.option,code.language-css .property,code .token.parameter,code .token.symbol {font-weight: 500;color: #d14}
+.language-bash .token.option,code.language-http .token.method,code.language-css .property,code .token.parameter,code .token.symbol {font-weight: 500;color: #d14}
 .language-bash .token.function,code .token.curl,code .token.option {font-weight:500}
 
 /* CSS for code-header */

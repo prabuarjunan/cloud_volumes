@@ -1,5 +1,5 @@
 /* PrismJS 1.15.0
-https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+json+powershell+puppet+python+yaml&plugins=line-numbers+toolbar+copy-to-clipboard */
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+http+json+powershell+puppet+python+yaml&plugins=line-numbers+toolbar+copy-to-clipboard */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -156,7 +156,7 @@ pre[class*="language-"].line-numbers > code {
 	top: 0;
 	font-size: 100%;
 	left: -3.8em;
-	width: 3em;
+	width: 3em; /* works for line-numbers below 1000 lines */
 	letter-spacing: -1px;
 	border-right: 1px solid #999;
 

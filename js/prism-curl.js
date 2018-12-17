@@ -48,3 +48,9 @@ Prism.languages.curl = {
   }],
   'option': / *-[a-zA-Z]*\b/,
 };
+
+// Prism HTTP
+Prism.languages.http = {
+  'method': /(HEAD|POST|GET|PUT|DELETE|OPTIONS|PATCH|TRACE|CONNECT)/,
+  'url': /(?:http:|https:|\s\/)[a-zA-Z0-9:.\?=\/\-\_{}\<\>\&]*/
+};
