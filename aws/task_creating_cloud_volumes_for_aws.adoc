@@ -23,17 +23,19 @@ Your AWS environment must meet certain requirements before you can create your f
 * Virtual Private Cloud (VPC)
 * Virtual Private Gateway (VGW) that is connected to your VPC
 * Subnet for the VPC
-* Optionally, a Direct Connect Gateway
 * Routes defined that include the network on which cloud volumes will run
+* Optionally, a Direct Connect Gateway
 
 You must have the following information available when creating your first cloud volume in a region:
 
 * *AWS account ID*: A 12-digit Amazon account identifier with no dashes.
-* *Classless Inter-Domain Routing (CIDR) Block*: An unused IPv4 CIDR block. The network must be a /28. The network must also fall within the ranges reserved for private networks (RFC 1918). Do not choose a network that overlaps your VPC CIDR allocations.
-* *Autonomous System Number (ASN)*: When using a Virtual Private Gateway, use that ASN. When using a Direct Connect Gateway, use that ASN. We support AS numbers in the range 1 – 65535.
-*	You must have selected the correct region where you want to use the service.  link:task_selecting_region.html[Selecting the region]
+* *Classless Inter-Domain Routing (CIDR) Block*: An unused IPv4 CIDR block. The network must be a /28, and it must also fall within the ranges reserved for private networks (RFC 1918). Do not choose a network that overlaps your VPC CIDR allocations.
+* *Autonomous System Number (ASN)*: When using a Virtual Private Gateway, use that ASN. When using a Direct Connect Gateway, use that ASN.
+*	You must have selected the correct region where you want to use the service. See  link:task_selecting_region.html[Selecting the region].
 
 If you have not configured the required AWS networking components, see the link:media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup^] guide for details.
+
+*Note:* When planning to create an SMB volume, you must have a Windows Active Directory server available to which you can connect. You will enter this information when creating the volume.
 
 == Enter volume details
 
@@ -48,14 +50,10 @@ image::diagram_create_volume_1.png[Create Volume page]
 . In the *Timezone* field, select your time zone.
 . In the *Volume path* field, specify the path you want to use or accept the automatically generated path.
 . (Optional) In the *Create from snapshot* field, select the name of an existing snapshot that will be used to create a volume.
-. In the *Service level* field, select *Standard*, *Premium*, or *Extreme*.
+. In the *Service level* field, select the level of performance for the volume: *Standard*, *Premium*, or *Extreme*.
 +
-** _Standard_ provides 1000 IOPS per TB (16k IO) and 16 MB/s of throughput per TB.
-** _Premium_ provides 4000 IOPS per TB (16k IO) and 64 MB/s of throughput per TB.
-** _Extreme_ provides 8000 IOPS per TB (16k IO) and 128 MB/s of throughput per TB.
-+
-link:reference_selecting_service_level_and_quota.html[Selecting the appropriate service level and allocated capacity]
-. In the *Allocated capacity* field, select the allocated capacity for the volume.
+See link:reference_selecting_service_level_and_quota.html[Selecting the appropriate service level and allocated capacity] for details.
+. In the *Allocated capacity* field, select the size of the volume.
 +
 link:reference_selecting_service_level_and_quota.html[Selecting the appropriate service level and allocated capacity]
 . If you selected Dual-protocol, you can select the security style in the *Security style* field by selecting *NTFS* or *UNIX* from the drop-down menu.
@@ -81,9 +79,10 @@ If you selected NFS or Dual-protocol, you can create an export policy in the *Ex
 
 . In the *Allowed clients* field, specify the allowed clients by using an IP address or Classless Inter-Domain Routing (CIDR).
 . In the *Access* field, select *Read & Write* or *Read only*.
-. If you want to define additional export policy rules, click *+ Add export policy rule*.
 +
 image::diagram_create_volume_4.png[Add export policy rule]
+
+Click *+ Add export policy rule* if you want to define additional export policy rules.
 
 == Enable data encryption (optional)
 
@@ -91,7 +90,7 @@ image::diagram_create_volume_4.png[Add export policy rule]
 +
 *Note:* Do not enable encryption if SMB 2.1 clients need to mount the volume.
 
-== Integrate the volume with an Active Directory server
+== Integrate the volume with an Active Directory server (SMB only)
 
 If you selected SMB or Dual-protocol, you can choose to integrate the volume with a Windows Active Directory server in the *Active Directory* section.
 
@@ -105,8 +104,7 @@ You can use any username that is authorized to create machine accounts in the Ac
 +
 image::diagram_create_volume_ad.png[Active Directory]
 +
-IMPORTANT: You should follow the guidance on AWS security group settings to enable cloud volumes to integrate with Windows Active Directory servers correctly.
-<<reference_security_groups_windows_ad_servers.adoc#,AWS security group settings for Windows AD servers>>
+IMPORTANT: You should follow the guidance on AWS security group settings to enable cloud volumes to integrate with Windows Active Directory servers correctly. See <<reference_security_groups_windows_ad_servers.adoc#,AWS security group settings for Windows AD servers>> for more information.
 
 == Create a Snapshot policy (optional)
 
@@ -114,15 +112,11 @@ If you want to create a snapshot policy for this volume, enter the details in th
 
 . Select the snapshot frequency: *Hourly*, *Daily*, *Weekly*, or *Monthly*.
 . Select the number of snapshots to keep.
-. Select the time when the snapshot should be taken:
-*	Select *Minute* for hourly snapshots.
-*	Select *Hour* and *Minute* for daily snapshots.
-*	Select *Weekday(s)*, *Hour*, and *Minutes* for weekly snapshots.
-*	Select *Day(s)* of month, *Hour*, and *Minutes* for monthly snapshots.
-+
-You can create additional snapshot policies by repeating the steps above, or by selecting the Snapshots tab from the left navigation area.
+. Select the time when the snapshot should be taken.
 +
 image::diagram_snapshot_policy_1.png[Snapshot policy]
+
+You can create additional snapshot policies by repeating the steps above, or by selecting the Snapshots tab from the left navigation area.
 
 == Create the volume
 . Scroll down to the bottom of the page and click *Create Volume*.
