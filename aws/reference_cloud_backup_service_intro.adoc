@@ -20,4 +20,4 @@ Cloud Backup Service expands the data protection capabilities of Cloud Volumes S
 
 Cloud Backup Service is currently in a beta release and supports only Cloud Volumes Service in the AWS US-WEST-2 region.
 
-Before using Cloud Backup Service, you must understand and accept the terms, requirements, and considerations for using the beta software.  See link:media/cloud_backup_service_beta.pdf[Setting Up Cloud Backup Service for NetApp Cloud Volumes Service for AWS] for details and instructions about using the service.
+Before using Cloud Backup Service, you must understand and accept the terms, requirements, and considerations for using the beta software.  See link:media/cloud_backup_service_beta.pdf[Setting Up Cloud Backup Service for NetApp Cloud Volumes Service for AWS^] for details and instructions about using the service.
