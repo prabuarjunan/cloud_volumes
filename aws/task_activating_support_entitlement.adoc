@@ -127,7 +127,7 @@ image::diagram_support_list_registered_systems.png[View Installed Systems]
 
 ==  Obtaining support for Cloud Backup Service beta feature
 
-You must have accepted the terms and conditions for using the Cloud Backup Service beta software.  Because this is a beta feature, all questions or technical support issues related to Cloud Backup Service must be directed through email at mailto:aws-bundles-support@netapp.com[aws-bundles-support@netapp.com]. A NetApp engineer will then assist with any problems you are experiencing.
+You must have accepted the terms and conditions for using the Cloud Backup Service beta software.  Because this is a beta feature, all questions or technical support issues related to Cloud Backup Service must be directed through email at mailto:cvs-support@netapp.com[cvs-support@netapp.com]. A NetApp engineer will then assist with any problems you are experiencing.
 
 == Deactivating support
 
