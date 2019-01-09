@@ -2,7 +2,7 @@
 <!--[if IE 9]>         <html class="ie9"> <![endif]-->
 <!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
   <head>
-  <title>Cloud Volume APIs | NetApp Cloud Docs</title>
+  <title>Cloud Volumes APIs | NetApp Cloud Docs</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 
   
 
-  <meta name="description" content="The Cloud Volume capabilities that are available through the web UI are also available through RESTful APIs.  The APIs enable you to create and manage cloud ...">
+  <meta name="description" content="The Cloud Volumes capabilities that are available through the web UI are also available through RESTful APIs.  The APIs enable you to create and manage cloud...">
   <meta name="keywords" content=" Cloud Volumes Service for AWS, APIs">
 
   <!-- Icons -->
@@ -422,7 +422,7 @@
   
 
   
-    <li class="active"><a href="reference_cloud_volume_apis.html">Cloud Volume APIs</a></li>
+    <li class="active"><a href="reference_cloud_volume_apis.html">Cloud Volumes APIs</a></li>
   
 
   
@@ -446,7 +446,7 @@
   
 
   
-    <li><a href="reference_notices.html">Notices</a></li>
+    <li><a href="reference_notices.html">Legal notices</a></li>
   
 
 
@@ -464,11 +464,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Cloud Volume APIs
+  <h1 class="n-doc__component-detail-heading">Cloud Volumes APIs
     <span>
       
         <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/reference_cloud_volume_apis.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Cloud Volume APIs](https://docs.netapp.com/en/cloud_volumes/aws/reference_cloud_volume_apis.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Cloud Volumes APIs](https://docs.netapp.com/en/cloud_volumes/aws/reference_cloud_volume_apis.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -477,7 +477,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The Cloud Volume capabilities that are available through the web UI are also available through RESTful APIs. The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.</p>
+<p>The Cloud Volumes capabilities that are available through the web UI are also available through RESTful APIs. The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.</p>
 </div>
 </div>
 </div>
@@ -567,10 +567,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="using-the-cloud-volume-apis">Using the Cloud Volume APIs</h2>
+<h2 id="using-the-cloud-volumes-apis">Using the Cloud Volumes APIs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section shows you how to use the Cloud Volume APIs.  The examples use curl from a Linux bash shell. You need to replace <code>&lt;api_url&gt;</code>, <code>&lt;api_key&gt;</code>, and <code>&lt;secret_key&gt;</code> with the values you recorded from <a href="#finding_urL_key_secretKey">Finding the API URL, API key, and Secret key</a>.</p>
+<p>This section shows you how to use the Cloud Volumes APIs.  The examples use curl from a Linux bash shell. You need to replace <code>&lt;api_url&gt;</code>, <code>&lt;api_key&gt;</code>, and <code>&lt;secret_key&gt;</code> with the values you recorded from <a href="#finding_urL_key_secretKey">Finding the API URL, API key, and Secret key</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="syntax">Syntax</h3>
@@ -725,7 +725,7 @@ Use with caution. This API call deletes the volume and all its data.
 {
 	"name": "snappy",
 	"region": "us-west"
-}</code></pre>
+}'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -780,7 +780,7 @@ Use with caution.  This API call causes any data written after the snapshot to b
 <div class="sect3">
 <h4 id="creating-a-new-volume-from-a-snapshot">Creating a new volume from a snapshot</h4>
 <div class="paragraph">
-<p>The following example uses a <code>POST</code> call to create a new volume specified by <code>snapshotId</code>:</p>
+<p>The following example uses a <code>POST</code> call to create a new volume based on a snapshot of an existing volume, specified by <code>snapshotId</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -795,7 +795,7 @@ Use with caution.  This API call causes any data written after the snapshot to b
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/create-cv.sh">Script to create a cloud volume</a></p>
+<p><a href="media/clone-cv.sh">Script to clone a cloud volume</a></p>
 </div>
 </div>
 <div class="sect3">

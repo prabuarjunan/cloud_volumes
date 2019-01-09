@@ -1,9 +1,9 @@
 #! /bin/bash
 
 # Script to create a NetApp Cloud Volume
-# Written by Graham Smith, NetApp November 2018
-# requires bash, jq and curl
-# Version 0.0.2
+# Written by Graham Smith, NetApp January 2019
+# requires bash, jq (optional) and curl
+# Version 0.2
 
 #set -x
 
@@ -71,9 +71,9 @@ if [ $l = "premium" ]; then
     l=standard
 fi
 
-if [[ $a != ?(-)+([0-9]) ]]; then
-    usage
-fi
+#if [[ $a != ?(-)+([0-9]) ]]; then
+#    usage
+#fi
 
 if (( $a < 100 || $a > 1000000 )); then
     usage
@@ -105,7 +105,7 @@ fi
 source $c
 
 # Create volume
-volume=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X POST $url/v1/FileSystems -d '
+volume=$(curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:$apikey -H secret-key:$secretkey -X POST $url/FileSystems -d '
 {"name": "'$n'",
 "creationToken": "'$m'",
 "region": "'$r'",
@@ -116,5 +116,11 @@ volume=$(curl -s -H accept:application/json -H "Content-type: application/json" 
 "labels": ["'$t'"]}'
 )
 
-echo $volume | jq 
+# Show info
+
+if [ $(command -v jq) ]; then
+	echo $volume |jq -r ''
+else
+	echo $volume
+fi
 

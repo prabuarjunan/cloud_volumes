@@ -422,7 +422,7 @@
   
 
   
-    <li><a href="reference_cloud_volume_apis.html">Cloud Volume APIs</a></li>
+    <li><a href="reference_cloud_volume_apis.html">Cloud Volumes APIs</a></li>
   
 
   
@@ -446,7 +446,7 @@
   
 
   
-    <li><a href="reference_notices.html">Notices</a></li>
+    <li><a href="reference_notices.html">Legal notices</a></li>
   
 
 
@@ -486,6 +486,16 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>NetApp periodically updates the Cloud Volumes Service to bring you new features, enhancements, and bug fixes.</p>
+</div>
+<div class="sect2">
+<h3 id="december-2018">December 2018</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>NetApp Cloud Sync support is now available from the Cloud Volumes Service user interface in all supported regions</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="november-2018">November 2018</h3>
@@ -552,15 +562,9 @@
 </div>
 </li>
 <li>
-<p><strong>Issue</strong>: Sync capabilities between source and target volumes are not available from the Cloud Volumes Service user interface in all regions.</p>
+<p><strong>Issue</strong>: The AWS Directory Service cannot be used as the Active Directory service for SMB Cloud Volumes. The message "Error when creating - Failed to create the Active Directory machine account" will be displayed.</p>
 <div class="paragraph">
-<p><strong>Workaround</strong>: Cloud Volumes Sync relationships can be set up for Cloud Volumes by directly accessing the NetApp Cloud Sync service. Contact <a href="mailto:aws-bundles-support@netapp.com">aws-bundles-support@netapp.com</a> for any Cloud Sync related billing questions.</p>
-</div>
-</li>
-<li>
-<p><strong>Issue</strong>: Cloud Volumes Sync relationships cannot be created from the Cloud Volumes user interface (version v1.0.120) as the Cloud Volume export is not discovered correctly.</p>
-<div class="paragraph">
-<p><strong>Workaround</strong>: Sync relationships can be set up for Cloud Volumes by directly accessing the NetApp Cloud Sync service. Contact <a href="mailto:aws-bundles-support@netapp.com">aws-bundles-support@netapp.com</a> for any Cloud Sync related billing questions.</p>
+<p><strong>Workaround</strong>: Integrate to a Windows Active Directory server when using SMB Cloud Volumes. The AWS Directory Service is planned to be supported at a later date.</p>
 </div>
 </li>
 <li>

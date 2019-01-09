@@ -422,7 +422,7 @@
   
 
   
-    <li><a href="reference_cloud_volume_apis.html">Cloud Volume APIs</a></li>
+    <li><a href="reference_cloud_volume_apis.html">Cloud Volumes APIs</a></li>
   
 
   
@@ -446,7 +446,7 @@
   
 
   
-    <li><a href="reference_notices.html">Notices</a></li>
+    <li><a href="reference_notices.html">Legal notices</a></li>
   
 
 
@@ -474,25 +474,75 @@
   </h1>
 </div>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>You create cloud volumes from the NetApp Cloud Orchestrator site.</p>
 </div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You must have selected the region where you want to use the service.<br>
-<a href="task_selecting_region.html">Selecting the region</a></p>
 </div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
+</div>
+<div class="sect1">
+<h2 id="prerequisites">Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your AWS environment must meet certain requirements before you can create your first cloud volume. For each AWS region where you plan to deploy cloud volumes, you must have a:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>Navigate to the <a href="https://cds-aws-bundles.netapp.com/storage/volumes" target="_blank" rel="noopener">NetApp Cloud Orchestrator</a> site, and then log in with the email address that you provided during your subscription.</p>
+<p>Virtual Private Cloud (VPC)</p>
 </li>
 <li>
-<p>Click the <strong>Create new volume</strong> button.</p>
-<div class="paragraph">
-<p>The Create Volume page appears.</p>
+<p>Virtual Private Gateway (VGW) that is connected to your VPC</p>
+</li>
+<li>
+<p>Subnet for the VPC</p>
+</li>
+<li>
+<p>Routes defined that include the network on which cloud volumes will run</p>
+</li>
+<li>
+<p>Optionally, a Direct Connect Gateway</p>
+</li>
+</ul>
 </div>
+<div class="paragraph">
+<p>You must have the following information available when creating your first cloud volume in a region:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>AWS account ID</strong>: A 12-digit Amazon account identifier with no dashes.</p>
+</li>
+<li>
+<p><strong>Classless Inter-Domain Routing (CIDR) Block</strong>: An unused IPv4 CIDR block. The network must be a /28, and it must also fall within the ranges reserved for private networks (RFC 1918). Do not choose a network that overlaps your VPC CIDR allocations.</p>
+</li>
+<li>
+<p><strong>Autonomous System Number (ASN)</strong>: When using a Virtual Private Gateway, use that ASN. When using a Direct Connect Gateway, use that ASN.</p>
+</li>
+<li>
+<p>You must have selected the correct region where you want to use the service. See  <a href="task_selecting_region.html">Selecting the region</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you have not configured the required AWS networking components, see the <a href="media/cvs_aws_account_setup.pdf" target="_blank" rel="noopener">NetApp Cloud Volumes Service for AWS Account Setup</a> guide for details.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> When planning to create an SMB volume, you must have a Windows Active Directory server available to which you can connect. You will enter this information when creating the volume.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enter-volume-details">Enter volume details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Complete the fields at the top of the Create Volume page to define the volume name, size, service level, and more.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After you have logged in to the <a href="https://cds-aws-bundles.netapp.com/storage/volumes" target="_blank" rel="noopener">NetApp Cloud Orchestrator</a> site with the email address that you provided during your subscription, and you have <a href="task_selecting_region.html">selected the region</a>, click the <strong>Create new volume</strong> button.</p>
 <div class="imageblock">
 <div class="content">
 <img src="./media/diagram_create_volume_1.png" alt="Create Volume page">
@@ -500,75 +550,37 @@
 </div>
 </li>
 <li>
-<p>Select <strong>NFS</strong>, <strong>SMB</strong>, or <strong>Dual-protocol</strong> in the Create Volume page, and provide information for the following fields:</p>
-<div class="ulist">
-<ul>
+<p>From the Create Volume page, select <strong>NFS</strong>, <strong>SMB</strong>, or <strong>Dual-protocol</strong> as the protocol for the volume you want to create.</p>
+</li>
 <li>
-<p><strong>Name</strong></p>
+<p>In the <strong>Name</strong> field, specify the name you want to use for the volume.</p>
+</li>
+<li>
+<p>In the  <strong>Region</strong> field, select the AWS region where you want to create the volume. This region must match the region you configured on AWS.</p>
+</li>
+<li>
+<p>In the <strong>Timezone</strong> field, select your time zone.</p>
+</li>
+<li>
+<p>In the <strong>Volume path</strong> field, specify the path you want to use or accept the automatically generated path.</p>
+</li>
+<li>
+<p>(Optional) In the <strong>Create from snapshot</strong> field, select the name of an existing snapshot that will be used to create a volume.</p>
+</li>
+<li>
+<p>In the <strong>Service level</strong> field, select the level of performance for the volume: <strong>Standard</strong>, <strong>Premium</strong>, or <strong>Extreme</strong>.</p>
 <div class="paragraph">
-<p>Specify the name you want to use for the volume.</p>
+<p>See <a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and allocated capacity</a> for details.</p>
 </div>
 </li>
 <li>
-<p><strong>Region</strong></p>
-<div class="paragraph">
-<p>Select the AWS region where you want to create the volume.</p>
-</div>
-</li>
-<li>
-<p><strong>Timezone</strong></p>
-<div class="paragraph">
-<p>Select your time zone.</p>
-</div>
-</li>
-<li>
-<p><strong>Volume path</strong></p>
-<div class="paragraph">
-<p>Specify the path you want to use or accept the automatically generated path.</p>
-</div>
-</li>
-<li>
-<p><strong>Create from snapshot</strong> (Optional)</p>
-<div class="paragraph">
-<p>Select an existing snapshot to create a volume.</p>
-</div>
-</li>
-<li>
-<p><strong>Service level</strong></p>
-<div class="paragraph">
-<p>Select <strong>Standard</strong>, <strong>Premium</strong>, or <strong>Extreme</strong>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Standard</em> provides 1000 IOPS per TB (16k IO) and 16 MB/s of throughput per TB.</p>
-</li>
-<li>
-<p><em>Premium</em> provides 4000 IOPS per TB (16k IO) and 64 MB/s of throughput per TB.</p>
-</li>
-<li>
-<p><em>Extreme</em> provides 8000 IOPS per TB (16k IO) and 128 MB/s of throughput per TB.</p>
-<div class="paragraph">
-<p><a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and allocated capacity</a></p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Allocated capacity</strong></p>
-<div class="paragraph">
-<p>Select the allocated capacity for the volume.</p>
-</div>
+<p>In the <strong>Allocated capacity</strong> field, select the size of the volume.</p>
 <div class="paragraph">
 <p><a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service level and allocated capacity</a></p>
 </div>
 </li>
 <li>
-<p><strong>Security style</strong></p>
-<div class="paragraph">
-<p>If you selected Dual-protocol, you can change the security style by selecting <strong>NTFS</strong> or <strong>UNIX</strong> from the drop-down menu.</p>
-</div>
+<p>If you selected Dual-protocol, you can select the security style in the <strong>Security style</strong> field by selecting <strong>NTFS</strong> or <strong>UNIX</strong> from the drop-down menu.</p>
 <div class="paragraph">
 <p>Security styles affect the file permission type used and how permissions can be modified.</p>
 </div>
@@ -583,87 +595,105 @@
 </ul>
 </div>
 </li>
-<li>
-<p><strong>Export policy</strong></p>
-<div class="paragraph">
-<p>If you selected NFS or Dual-protocol, you can create an export policy by providing information for the following fields:</p>
+</ol>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Allowed clients</strong></p>
-<div class="paragraph">
-<p>Specify the allowed clients by using an IP address or Classless Inter-Domain Routing (CIDR).</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="enter-network-details-one-time-setting-per-aws-region">Enter network details (one-time setting per AWS region)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If this is the first time you have created a cloud volume in this AWS region, the <strong>Network</strong> section is displayed so you can connect your Cloud Volumes account to your AWS account:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>CIDR (IPv4)</strong> field, enter the desired IPv4 range for the region. The network must be a /28. The network must also fall within the ranges reserved for private networks (RFC 1918).  Do not choose a network that overlaps your VPC CIDR allocations.</p>
 </li>
 <li>
-<p><strong>Access</strong></p>
-<div class="paragraph">
-<p>Select <strong>Read &amp; Write</strong> or <strong>Read only</strong>.</p>
-</div>
+<p>In the <strong>Autonomous System Number (ASN)</strong> field, enter the ASN. When using a VGW in your AWS configuration, use that ASN. When using a Direct Connect Gateway, use that ASN.</p>
 </li>
 <li>
-<p><strong>Add export policy rule</strong> (optional)</p>
-<div class="paragraph">
-<p>Click to add additional export policy rules.</p>
+<p>In the <strong>AWS account ID</strong> field, enter your 12-digit Amazon account identifier with no dashes.</p>
+<div class="imageblock">
+<div class="content">
+<img src="./media/diagram_create_volume_network.png" alt="Configure network settings">
 </div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enter-export-policy-rules-optional">Enter export policy rules (optional)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you selected NFS or Dual-protocol, you can create an export policy in the <strong>Export policy</strong> section to identify the clients that can access the volume:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Allowed clients</strong> field, specify the allowed clients by using an IP address or Classless Inter-Domain Routing (CIDR).</p>
+</li>
+<li>
+<p>In the <strong>Access</strong> field, select <strong>Read &amp; Write</strong> or <strong>Read only</strong>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="./media/diagram_create_volume_4.png" alt="Add export policy rule">
 </div>
 </div>
 </li>
-</ul>
+</ol>
 </div>
-</li>
-<li>
-<p><strong>Enable data encryption</strong></p>
 <div class="paragraph">
-<p>For SMB or Dual-protocol, you can enable SMB session encryption by checking this box.</p>
+<p>Click <strong>+ Add export policy rule</strong> if you want to define additional export policy rules.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enable-data-encryption-optional">Enable data encryption (optional)</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you selected SMB or Dual-protocol, you can enable SMB session encryption by checking the box for the <strong>Enable data encryption</strong> field.</p>
 <div class="paragraph">
 <p><strong>Note:</strong> Do not enable encryption if SMB 2.1 clients need to mount the volume.</p>
 </div>
 </li>
-<li>
-<p><strong>Active Directory</strong></p>
-<div class="paragraph">
-<p>For SMB or Dual-protocol, you can integrate the volume with a Windows Active Directory server by providing the following information:</p>
+</ol>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>DNS server</strong></p>
-<div class="paragraph">
-<p>Enter the IP address of the DNS server that you want to use.</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="integrate-the-volume-with-an-active-directory-server-smb-only">Integrate the volume with an Active Directory server (SMB only)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you selected SMB or Dual-protocol, you can choose to integrate the volume with a Windows Active Directory server in the <strong>Active Directory</strong> section.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> The AWS Directory Service is currently not supported for Cloud Volumes. You must select a Windows AD server.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>DNS server</strong> field, enter the IP address of the DNS server that you want to use.</p>
 </li>
 <li>
-<p><strong>Domain</strong></p>
-<div class="paragraph">
-<p>Enter the domain for the SMB share.</p>
-</div>
+<p>In the <strong>Domain</strong> field, enter the domain for the SMB share.</p>
 </li>
 <li>
-<p><strong>NetBIOS</strong></p>
-<div class="paragraph">
-<p>Enter a NetBIOS name for the SMB server that will be created.</p>
-</div>
+<p>In the <strong>NetBIOS</strong> field, enter a NetBIOS name for the SMB server that will be created.</p>
 </li>
 <li>
-<p><strong>Username</strong></p>
-<div class="paragraph">
-<p>Enter a username for your Active Directory server.</p>
-</div>
+<p>In the <strong>Username</strong> field, enter a username for your Active Directory server.</p>
 <div class="paragraph">
 <p>You can use any username that is authorized to create machine accounts in the Active Directory domain to which you are joining the SMB server.</p>
 </div>
 </li>
 <li>
-<p><strong>Password</strong></p>
-<div class="paragraph">
-<p>Enter the password for the AD username that you specified in Username.</p>
-</div>
+<p>In the <strong>Password</strong> field, enter the password for the AD username that you specified in Username.</p>
 <div class="imageblock">
 <div class="content">
 <img src="./media/diagram_create_volume_ad.png" alt="Active Directory">
@@ -676,20 +706,24 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-You should follow the guidance on AWS security group settings to enable cloud volumes to integrate with Windows Active Directory servers correctly.<br>
-<a href="reference_security_groups_windows_ad_servers.html">AWS security group settings for Windows AD servers</a>
+You should follow the guidance on AWS security group settings to enable cloud volumes to integrate with Windows Active Directory servers correctly. See <a href="reference_security_groups_windows_ad_servers.html">AWS security group settings for Windows AD servers</a> for more information.
 </td>
 </tr>
 </table>
 </div>
 </li>
-</ul>
+</ol>
 </div>
-</li>
-<li>
-<p><strong>Snapshot policy</strong> (Optional)</p>
-<div class="ulist">
-<ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-a-snapshot-policy-optional">Create a Snapshot policy (optional)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to create a snapshot policy for this volume, enter the details in the <strong>Snapshot policy</strong> section:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Select the snapshot frequency: <strong>Hourly</strong>, <strong>Daily</strong>, <strong>Weekly</strong>, or <strong>Monthly</strong>.</p>
 </li>
@@ -697,45 +731,44 @@ You should follow the guidance on AWS security group settings to enable cloud vo
 <p>Select the number of snapshots to keep.</p>
 </li>
 <li>
-<p>Select the time when the snapshot should be taken:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Select <strong>Minute</strong> for hourly snapshots.</p>
-</li>
-<li>
-<p>Select <strong>Hour</strong> and <strong>Minute</strong> for daily snapshots.</p>
-</li>
-<li>
-<p>Select <strong>Weekday(s)</strong>, <strong>Hour</strong>, and <strong>Minutes</strong> for weekly snapshots.</p>
-</li>
-<li>
-<p>Select <strong>Day(s)</strong> of month, <strong>Hour</strong>, and <strong>Minutes</strong> for monthly snapshots.</p>
-<div class="paragraph">
-<p>You can create additional snapshot policies by repeating the steps above.</p>
-</div>
+<p>Select the time when the snapshot should be taken.</p>
 <div class="imageblock">
 <div class="content">
 <img src="./media/diagram_snapshot_policy_1.png" alt="Snapshot policy">
 </div>
 </div>
+</li>
+</ol>
+</div>
 <div class="paragraph">
-<p>You can edit export policies and snapshot policies after the volume is created.</p>
+<p>You can create additional snapshot policies by repeating the steps above, or by selecting the Snapshots tab from the left navigation area.</p>
 </div>
-</li>
-</ul>
 </div>
-</li>
-</ul>
 </div>
-</li>
-</ul>
-</div>
-</li>
+<div class="sect1">
+<h2 id="create-the-volume">Create the volume</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Scroll down to the bottom of the page and click <strong>Create Volume</strong>.</p>
 <div class="paragraph">
-<p>The volume you created appears in the Volumes page.<br>
+<p>If you have previously created a cloud volume in this region, the new volume appears in the Volumes page.</p>
+</div>
+<div class="paragraph">
+<p>If this is the first cloud volume you have created in this AWS region and you have entered the networking information in the Network section of this page, a Progress dialog is displayed that identifies the next steps you must follow to connect the volume with AWS interfaces.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_create_volume_interfaces_dialog.png" alt="Accept virtual interfaces dialog"></span></p>
+</div>
+</li>
+<li>
+<p>Accept the virtual interfaces as described in section 6.4 of the <a href="media/cvs_aws_account_setup.pdf#page=21" target="_blank" rel="noopener">NetApp Cloud Volumes Service for AWS Account Setup</a> guide. You must perform this task within 10 minutes or the system may time out.</p>
+<div class="paragraph">
+<p>If the interfaces do not appear within 10 minutes there may be a configuration issue; in which case you should contact support.</p>
+</div>
+<div class="paragraph">
+<p>After the interfaces and other networking components are created, the volume you created appears in the Volumes page and the Actions field is listed as Available.<br>
 <span class="image"><img src="./media/diagram_create_volume_3.png" alt="A volume is created"></span></p>
 </div>
 </li>
@@ -744,6 +777,8 @@ You should follow the guidance on AWS security group settings to enable cloud vo
 <div class="paragraph">
 <div class="title">After you finish</div>
 <p>Continue with <a href="task_mounting_cloud_volumes_for_aws.html">Mounting a cloud volume</a>.</p>
+</div>
+</div>
 </div>
 
         </article>
