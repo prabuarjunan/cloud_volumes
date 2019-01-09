@@ -114,9 +114,9 @@ $(document).ready(function() {
   }
 
   if (isProductionUrl()) {
-    s_account = "networkapplsupport-global-dev"; //FIXME: Change to networkapplsupport-global
+    s_account = "networkapplsupport-global";
   } else {
-    return;
+    s_account="networkapplsupport-global-dev";
   }
 
   var cloudParams = {};
