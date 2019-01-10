@@ -116,9 +116,6 @@ volume=$(curl -s -H accept:application/json -H "Content-type: application/json" 
 "labels": ["'$t'"]}'
 )
 
-<<<<<<< HEAD
-echo $volume | jq
-=======
 # Show info
 
 if [ $(command -v jq) ]; then
@@ -127,4 +124,3 @@ else
 	echo $volume
 fi
 
->>>>>>> 7491a24d50b4fc2abbf52336d1a95a842326171d
