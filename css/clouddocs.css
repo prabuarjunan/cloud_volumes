@@ -229,3 +229,12 @@
 .n-search-form__input {
   border-radius: 6px;
 }
+
+.page-details {
+  color: #5e5e5e;
+  font-size: .875rem;
+}
+
+h1.n-doc__component-detail-heading {
+  margin-bottom: .1em;
+}

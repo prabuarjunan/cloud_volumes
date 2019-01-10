@@ -21,6 +21,7 @@ $(document).ready(function() {
     $(".page-nav__link").removeClass('page-nav__link--active');
     var target = $(event.target);
     target.addClass('page-nav__link--active');
+    location.hash = event.target.hash;
   });
 
   // PAGE NAV - Scroll
@@ -28,8 +29,13 @@ $(document).ready(function() {
     var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
     if(activeSection) {
       var activeHref = $(activeSection).attr('id');
-      $(".page-nav__link").removeClass('page-nav__link--active');
-      $("#page-menu a[href=#"+activeHref+"]").addClass('page-nav__link--active');
+      if(location.hash != "#"+activeHref) {
+        $(".page-nav__link").removeClass('page-nav__link--active');
+        $("#page-menu a[href=#"+activeHref+"]").addClass('page-nav__link--active');
+        if(history.replaceState) {
+          history.replaceState(null, null, "#"+activeHref);
+        }
+      }
     }
   });
 });
