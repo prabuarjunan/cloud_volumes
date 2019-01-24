@@ -41,8 +41,9 @@
 /* Misc */
 @media (min-width: 48em) {
   .n-layout-flex__item:nth-child(7) {
-    margin: left: .83333%;
-    margin: right: .83333%;
+    margin-left: .83333%;
+    margin-right: .83333%;
+    margin-top: 0;
   }
 }
 
