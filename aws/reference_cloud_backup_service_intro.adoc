@@ -16,8 +16,6 @@ summary: You can back up NFS cloud volumes by using Cloud Backup Service.
 [.lead]
 You can back up NFS cloud volumes by using Cloud Backup Service.
 
-Cloud Backup Service expands the data protection capabilities of Cloud Volumes Service by delivering dedicated backups for long-term recovery, archive, and compliance. Backups created by the service are stored in AWS S3 object storage, independent of cloud volume snapshots that are available for near-term recovery or cloning.
-
-Cloud Backup Service is currently in a beta release and supports only Cloud Volumes Service in the AWS US-WEST-2 region.
+Cloud Backup Service expands the data protection capabilities of Cloud Volumes Service by delivering dedicated backups for long-term recovery, archive, and compliance. Backups created by the service are stored in AWS S3 object storage, independent of cloud volume snapshots that are available for near-term recovery or cloning.  Cloud Backup Service is currently in a beta release and supports only Cloud Volumes Service in the AWS US-WEST-2 region.
 
 Before using Cloud Backup Service, you must understand and accept the terms, requirements, and considerations for using the beta software.  See link:media/cloud_backup_service_beta.pdf[Setting Up Cloud Backup Service for NetApp Cloud Volumes Service for AWS^] for details and instructions about using the service.
