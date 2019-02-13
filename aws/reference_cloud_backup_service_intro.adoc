@@ -6,7 +6,6 @@ summary: You can back up NFS cloud volumes by using Cloud Backup Service.
 ---
 
 = Managing backups using Cloud Backup Service (beta for US-WEST-2)
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
