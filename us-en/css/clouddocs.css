@@ -25,6 +25,18 @@ time+span {
   padding-left: 12px;
 }
 
+.n-footer__copyright {
+  border-right: 0px;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+.n-footer__copyright+.n-footer__copyright {
+  border-left: solid 1px #686868;
+  margin-left: 12px;
+  padding-left: 12px;
+}
+
 /* i18n */
 .n-globe__icon {
   top: 0px;
