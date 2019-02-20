@@ -19,6 +19,12 @@
   border-color: #ccc;
 }
 
+time+span {
+  border-left: solid 1px #686868;
+  margin-left: 12px;
+  padding-left: 12px;
+}
+
 /* i18n */
 .n-globe__icon {
   top: 0px;
