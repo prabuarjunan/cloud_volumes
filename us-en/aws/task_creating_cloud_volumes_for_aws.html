@@ -480,7 +480,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-03-06 21:45:21 +0000">03/06/2019</time>
+<time datetime="2019-03-15 14:40:57 +0000">03/15/2019</time>
 
 
 <span>Contributors
@@ -698,7 +698,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="integrate-the-volume-with-an-active-directory-server-smb-only">Integrate the volume with an Active Directory server (SMB only)</h2>
+<h2 id="integrate-the-volume-with-an-active-directory-server-smb-and-dual-protocol">Integrate the volume with an Active Directory server (SMB and Dual Protocol)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you selected SMB or Dual-protocol, you can choose to integrate the volume with a Windows Active Directory server or an AWS Managed Microsoft AD in the <strong>Active Directory</strong> section.</p>
@@ -759,6 +759,9 @@ You should follow the guidance on AWS security group settings to enable cloud vo
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> UNIX users mounting the volume using NFS will be authenticated as Windows user "root" for UNIX root and "pcuser" for all other users. Make sure that these user accounts exist in your Active Directory prior to mounting a dual protocol volume when using NFS.</p>
 </div>
 </li>
 </ol>
