@@ -19,6 +19,11 @@
   border-color: #ccc;
 }
 
+.rss {
+  font-size: 13px;
+  padding: 6px 12px;
+}
+
 time+span {
   border-left: solid 1px #686868;
   margin-left: 12px;
