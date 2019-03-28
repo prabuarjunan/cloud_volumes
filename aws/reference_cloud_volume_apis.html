@@ -489,7 +489,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-01-09 21:05:49 +0000">01/09/2019</time>
+<time datetime="2019-03-28 17:48:46 +0000">03/28/2019</time>
 
 
 <span>Contributors
@@ -602,7 +602,7 @@
 </ol>
 </div>
 <div class="paragraph">
-<p><a href="media/fsid-cv.sh">Script to find Cloud Volumes Service fileSystemId by mountpoint</a></p>
+<p><a href="media/fsid.py">Script to find Cloud Volumes Service fileSystemId by mountpoint</a></p>
 </div>
 </div>
 </div>
@@ -648,7 +648,7 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 	"lifeCycleStateDetails": "Available for use",
 	"name": "SMB",
 	"ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
-	"region": "us-west",
+	"region": "us-west-1",
 	"creationToken": "prickly-bellicose-archimedes",
 	"quotaInBytes": 1000000000000,
 	"serviceLevel": "basic",
@@ -660,7 +660,7 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/list-cv.sh">Script to list cloud volumes in an account</a></p>
+<p><a href="media/list-cv.py">Script to list cloud volumes in an account</a></p>
 </div>
 </div>
 <div class="sect3">
@@ -682,13 +682,13 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/info-cv.sh">Script to display the details of a cloud volume by mountpoint</a></p>
+<p><a href="media/info-cv.py">Script to display the details of a cloud volume by mountpoint</a></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="creating-a-volume">Creating a volume</h4>
 <div class="paragraph">
-<p>The following example uses a <code>POST</code> call to create a volume called <code>Test</code>, in region <code>us-west</code>, with an <code>allocated capacity</code> of 100 GB and exported using <code>nfsv3</code>:</p>
+<p>The following example uses a <code>POST</code> call to create a volume called <code>Test</code>, in region <code>us-west-1</code>, with an <code>allocated capacity</code> of 100 GB and exported using <code>nfsv3</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -696,7 +696,7 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 {
 	"name": "Test",
 	"creationToken": "grahams-test-volume3",
-	"region": "us-west",
+	"region": "us-west-1",
 	"serviceLevel": "basic",
 	"quotaInBytes": 100000000000,
 	"exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
@@ -705,7 +705,7 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/create-cv.sh">Script to create a cloud volume</a></p>
+<p><a href="media/create-cv.py">Script to create a cloud volume</a></p>
 </div>
 </div>
 <div class="sect3">
@@ -718,14 +718,14 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 <pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X PUT &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8 -d '
 {
 	"creationToken": "grahams-test-volume4",
-	"region": "us-west",
+	"region": "us-west-1",
 	"serviceLevel": "extreme",
 	"quotaInBytes": 500000000000
 }'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/update-cv.sh">Script to update a cloud volume</a></p>
+<p><a href="media/update-cv.py">Script to update a cloud volume</a></p>
 </div>
 </div>
 <div class="sect3">
@@ -739,7 +739,7 @@ Piping the command through <code>jq</code> improves the formatting of the <code>
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/delete-cv.sh">Script to delete a cloud volume by mountpoint</a></p>
+<p><a href="media/delete-cv.py">Script to delete a cloud volume by mountpoint</a></p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -764,12 +764,55 @@ Use with caution. This API call deletes the volume and all its data.
 <pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots -d '
 {
 	"name": "snappy",
-	"region": "us-west"
+	"region": "us-west-1"
 }'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/snap-cv.sh">Script to create snapshots of a cloud volume by mountpoint</a></p>
+<p><a href="media/snap-cv.py">Script to create snapshots of a cloud volume by mountpoint</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-snapshot-policy">Creating a snapshot policy</h4>
+<div class="paragraph">
+<p>The following example uses a <code>PUT</code> call to create snapshot policies for a specific volume:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X PUT &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/ -d '
+{
+	"creationToken": "nfs1",
+	"region": "us-west-1",
+	"snapshotPolicy": {
+        "hourlySchedule": {
+            "minute": 10,
+            "snapshotsToKeep": 12
+		        },
+        "dailySchedule": {
+            "hour": 10,
+            "minute": 20,
+            "snapshotsToKeep": 20
+		        },
+        "enabled": True,
+        "weeklySchedule": {
+            "day": Monday,Thursday,Saturday,
+            "hour": 12,
+            "minute": 30,
+            "snapshotsToKeep": 4
+				},
+        "monthlySchedule": {
+            "daysOfMonth": 1,14,28,
+            "hour": 00,
+            "minute": 00,
+            "snapshotsToKeep": 12
+		        }
+			}
+		}
+}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="media/snapshot-policy.py">Script to create snapshot policies for a cloud volume by mountpoint</a></p>
 </div>
 </div>
 <div class="sect3">
@@ -783,7 +826,7 @@ Use with caution. This API call deletes the volume and all its data.
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/get-snaps.sh">Script to list snapshots of a cloud volume by mountpoint</a></p>
+<p><a href="media/get-snaps.py">Script to list snapshots of a cloud volume by mountpoint</a></p>
 </div>
 </div>
 <div class="sect3">
@@ -797,12 +840,12 @@ Use with caution. This API call deletes the volume and all its data.
 {
 	"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
 	"fileSystemId": "cdef5090-aa5e-c2cf-6bba-f77d259a37f8",
-	"region": "us-west"
+	"region": "us-west-1"
 }'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/revert-snap.sh">Script to revert to a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
+<p><a href="media/revert-snap.py">Script to revert to a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -829,7 +872,7 @@ Use with caution.  This API call causes any data written after the snapshot to b
 	"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
 	"name": "Clone",
 	"creationToken": "perfectly-cloned-volume",
-	"region": "us-west",
+	"region": "us-west-1",
 	"serviceLevel": "extreme"
 }'</code></pre>
 </div>
@@ -849,7 +892,7 @@ Use with caution.  This API call causes any data written after the snapshot to b
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/delete-snap.sh">Script to delete a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
+<p><a href="media/delete-snap.py">Script to delete a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
 </div>
 <div class="admonitionblock important">
 <table>
