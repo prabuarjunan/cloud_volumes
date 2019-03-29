@@ -8,15 +8,15 @@
     <language>en-us</language>
     <ttl>60</ttl>
     <atom:link href="https://docs.netapp.com/cloud_volumes/us-en/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Mar 2019 18:07:08 +0000</pubDate>
-    <lastBuildDate>Thu, 28 Mar 2019 18:07:08 +0000</lastBuildDate>
+    <pubDate>Fri, 29 Mar 2019 18:26:36 +0000</pubDate>
+    <lastBuildDate>Fri, 29 Mar 2019 18:26:36 +0000</lastBuildDate>
     
     
     
     <item>
       <title>What&amp;#8217;s new in Cloud Volumes Service for AWS</title>
       <description>NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.</description>
-      <pubDate>Thu, 07 Mar 2019 18:58:46 +0000</pubDate>
+      <pubDate>Fri, 29 Mar 2019 18:22:01 +0000</pubDate>
       <link>https://docs.netapp.com/us-en/cloud_volumes/aws/reference_whats_new_cloud_volumes_aws.html</link>
     </item>
     
