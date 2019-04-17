@@ -44,11 +44,11 @@ time+span {
 
 /* i18n */
 .n-globe__icon {
-  top: 0px;
-  left: 0px;
+  pointer-events: none;
+  top: 7.5px;
   display: inline-block;
   height: 25px;
-  position: relative;
+  position: absolute;
   width: 28px;
   vertical-align: middle;
 }
@@ -63,6 +63,10 @@ time+span {
 
 /* Misc */
 @media (min-width: 48em) {
+  .n-property-bar__property-mark--has-property-name{
+    padding-top: 6px;
+  }
+
   .n-layout-flex__item:nth-child(7) {
     margin-left: .83333%;
     margin-right: .83333%;

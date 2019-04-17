@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 9]>         <html class="ie9"> <![endif]-->
-<!--[if gt IE 9]><!--> <html>         <!--<![endif]-->
+<html lang="en">
   <head>
   <title>Mounting a cloud volume | NetApp Cloud Docs</title>
   <meta charset="utf-8">
@@ -15,11 +14,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="encoding" content="utf-8">
-  <meta http-equiv="nss-type" content="Product Documentation">
-  <meta http-equiv="nss-subtype" content="User Guide">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
   
   <meta name="description" content="You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 for Linux and UNIX clients and SMB 2.1, 3.0, and 3.1.1 for Windows c...">
   <meta name="keywords" content=" Cloud Volumes Service for AWS, mount targets, Elastic Compute Cloud, EC2, NFSv3, Linux, UNIX, SMB, Windows">
+  
 
   <!-- Icons -->
   <link rel="icon" href="/cloud_volumes/us-en/images/favicon.ico" type="image/x-icon">
@@ -111,11 +111,6 @@
 
   </script>
   <script>
-      $(function () {
-          $('[data-toggle="tooltip"]').tooltip()
-      })
-  </script>
-  <script>
       $(document).ready(function() {
           $("#tg-sb-link").click(function() {
               $("#tg-sb-sidebar").toggle();
@@ -130,10 +125,6 @@
   <!-- Controls the i18n Browser Redirection -->
   <script>
     var siteLocales = [];
-    
-      siteLocales.push("zz");
-    
-      siteLocales.push("en");
     
       siteLocales.push("us-en");
     
@@ -212,7 +203,7 @@
               <title>netapp-mark</title>
               <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
-            <svg viewBox="0 0 1008 181.537" class="n-property-bar__logo-svg" aria-labelledby="title">
+            <svg class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
               <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
@@ -232,11 +223,11 @@
         <ul class="n-property-navigation-bar__utils-list">
           <li class="n-property-navigation-bar__utils-list-item">
             <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle" data-menu-id="n-property-navigation-bar__menu--language-selector">
-              <svg class="n-icon-globe n-globe__icon" aria-labelledby="title">
-                <title>globe</title>
-                <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#globe"></use>
-              </svg>
+              <span>globe</span>
             </a>
+            <svg class="n-icon-globe n-globe__icon" aria-labelledby="title" style="pointer-events: none;">
+              <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#globe"></use>
+            </svg>
           </li>
         </ul>
       </div>
@@ -255,6 +246,7 @@
                 <li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="/cloud_volumes/us-en/" class="n-menu__header-text">English</a>
                 </li>
+                
               </ul>
             </li>
           </ul>

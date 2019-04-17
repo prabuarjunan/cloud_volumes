@@ -3,21 +3,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cloud_volumes | NetApp Cloud Docs</title>
-    <description>The latest updates from NetApp Cloud Docs</description>
-    <link>https://docs.netapp.com/cloud_volumes</link>
-    <language>zz</language>
-    <ttl>60</ttl>
     <atom:link href="https://docs.netapp.com/cloud_volumes/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Apr 2019 15:08:00 +0000</pubDate>
-    <lastBuildDate>Wed, 17 Apr 2019 15:08:00 +0000</lastBuildDate>
+    <link>https://docs.netapp.com/cloud_volumes</link>
+    <description>The latest updates from NetApp Cloud Docs</description>
+    <language>en-us</language>
+    <ttl>60</ttl>
+    <pubDate>Wed, 24 Apr 2019 15:00:22 +0000</pubDate>
+    <lastBuildDate>Wed, 24 Apr 2019 15:00:22 +0000</lastBuildDate>
     
     
     
     <item>
-      <title>What&amp;#8217;s new in Cloud Volumes Service for AWS</title>
-      <description>NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.</description>
+      <title>What&amp;#8217;s new in Cloud Volumes Service for AWS (10 Apr 2019)</title>
       <pubDate>Wed, 10 Apr 2019 17:33:55 +0000</pubDate>
-      <link>https://docs.netapp.com/zz/cloud_volumes/aws/reference_whats_new_cloud_volumes_aws.html</link>
+      <link>https://docs.netapp.com/us-en/cloud_volumes/aws/reference_whats_new_cloud_volumes_aws.html?time=1554917635</link>
+      <guid isPermaLink="false">Wed, 10 Apr 2019 17:33:55 +0000</guid>
+      <description><![CDATA[ NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements. ]]></description>
     </item>
     
     
