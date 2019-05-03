@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar_aws
 permalink: aws/reference_whats_new_cloud_volumes_aws.html
-keywords: Cloud Volumes Service for AWS, what's new, features, enhancements, limitations, known issues
+keywords: Cloud Volumes Service for AWS, what's new, features, enhancements
 summary: NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.
 ---
 
@@ -45,17 +45,8 @@ NetApp periodically updates the Cloud Volumes Service to bring you new features,
 * Support in the following AWS regions: eu-central-1 (Frankfurt) and eu-west-1 (Ireland)
 
 === August 2018
-
 * Ability to select data encryption for SMB shares
 * Ability to select the security styles of NTFS or UNIX for shares exported via both NFS and SMB
 * Display for NFS and SMB mount instructions for shares exported via both NFS and SMB
 * Support for multiple Active Directory servers
 * Support in the following AWS regions: us-east-1 (N. Virginia), us-west-1 (N. California), and us-west-2 (Oregon)
-
-== Known problems and limitations
-
-These known limitations identify platforms or features that are not fully supported.
-
-* *Issue*: In release v1.1.81 the API endpoint is no longer listed on the API access page.
-+
-*Workaround*: You can determine the endpoint from the URL in the browser window appended with ":8080/v1/"; meaning port *8080*, path */v1/*. For example, for the us-west-1 region, the API endpoint is https://cv.us-west-1.netapp.com:8080/v1/
