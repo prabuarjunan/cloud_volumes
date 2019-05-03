@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Quick start instructions | NetApp Cloud Docs</title>
+  <title>Known Issues and limitations | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Quick start instructions | NetApp Cloud Docs" />
+  <meta property="og:title" content="Known Issues and limitations | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/task_quick_start.html" />
-	<meta property="og:description" content="You can get started with the Cloud Volumes Service for AWS by completing a few quick steps." />
-  <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/images/logo-tophat-social.png" />
+	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/us-en/aws/reference_known_issues.html" />
+	<meta property="og:description" content="The following known issues and limitations exist in Cloud Volumes Service for AWS." />
+  <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/us-en/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -17,16 +17,16 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.">
-  <meta name="keywords" content=" ">
+  <meta name="description" content="The following known issues and limitations exist in Cloud Volumes Service for AWS.">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS limitations and known issues">
   
 
   <!-- Icons -->
-  <link rel="icon" href="/cloud_volumes/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/cloud_volumes/us-en/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed -->
   
-  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/cloud_volumes/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/cloud_volumes/us-en/feed.xml">
   
 
   <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -35,23 +35,23 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
 
   <!-- LUCI CSS Content -->
-  <link rel="stylesheet" href="/cloud_volumes/common/css/esb.min.css">
-  <link rel="stylesheet" href="/cloud_volumes/common/css/netapp-library.min.css">
-  <link rel="stylesheet" href="/cloud_volumes/common/css/doc.css">
-  <link rel="stylesheet" href="/cloud_volumes/common/css/doc-components.css">
+  <link rel="stylesheet" href="/cloud_volumes/us-en/common/css/esb.min.css">
+  <link rel="stylesheet" href="/cloud_volumes/us-en/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/cloud_volumes/us-en/common/css/doc.css">
+  <link rel="stylesheet" href="/cloud_volumes/us-en/common/css/doc-components.css">
 
-  <link rel="stylesheet" href='/cloud_volumes/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/cloud_volumes/css/na-search.css' type='text/css'>
-  <link rel='stylesheet' href='/cloud_volumes/css/clouddocs.css' type='text/css'>
+  <link rel="stylesheet" href='/cloud_volumes/us-en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/clouddocs.css' type='text/css'>
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
-  <link rel="stylesheet" type="text/css" href="/cloud_volumes/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/cloud_volumes/css/customstyles.css"> -->
+  <link rel="stylesheet" type="text/css" href="/cloud_volumes/us-en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/cloud_volumes/us-en/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/cloud_volumes/css/boxshadowproperties.css">
+  <link rel="stylesheet" href="/cloud_volumes/us-en/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
-  <link rel='stylesheet' href='/cloud_volumes/css/netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/netapp.css' type='text/css'>
 
   
 
@@ -60,23 +60,23 @@
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
   
-    <script src='/cloud_volumes/js/na-search.js'></script>
+    <script src='/cloud_volumes/us-en/js/na-search.js'></script>
   
 
   
-  <link rel='stylesheet' href='/cloud_volumes/css/na-pagenav.css' type='text/css' id="pagenav-css">
-  <script src='/cloud_volumes/js/na-pagenav.js'></script>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/na-pagenav.css' type='text/css' id="pagenav-css">
+  <script src='/cloud_volumes/us-en/js/na-pagenav.js'></script>
   
 
-  <link rel='stylesheet' href='/cloud_volumes/css/prism.css' type='text/css'>
-  <link rel='stylesheet' href='/cloud_volumes/css/prism-netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/cloud_volumes/us-en/css/prism-netapp.css' type='text/css'>
 
-  <script src='/cloud_volumes/js/clouddocs.js'></script>
-  <script src='/cloud_volumes/js/s_code_impl.js'></script>
-  <script src='/cloud_volumes/js/jquery.navgoco.min.js'></script>
+  <script src='/cloud_volumes/us-en/js/clouddocs.js'></script>
+  <script src='/cloud_volumes/us-en/js/s_code_impl.js'></script>
+  <script src='/cloud_volumes/us-en/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src='/cloud_volumes/js/toc.js'></script>
-  <script src='/cloud_volumes/js/customscripts.js'></script>
+  <script src='/cloud_volumes/us-en/js/toc.js'></script>
+  <script src='/cloud_volumes/us-en/js/customscripts.js'></script>
 
   <script>
       $(document).ready(function() {
@@ -193,7 +193,7 @@
       <div class="n-property-bar__menu-toggle">
         <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
           <title>bars</title>
-          <use xlink:href="/cloud_volumes/common/svg/sprite.svg#bars"></use>
+          <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#bars"></use>
         </svg></a>
       </div>
       <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
@@ -201,11 +201,11 @@
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
             <svg class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
-              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
           <h2 class="n-property-bar__property-name">Cloud Docs</h2>
@@ -226,7 +226,7 @@
               <span>globe</span>
             </a>
             <svg class="n-icon-globe n-globe__icon" aria-labelledby="title" style="pointer-events: none;">
-              <use xlink:href="/cloud_volumes/common/svg/sprite.svg#globe"></use>
+              <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#globe"></use>
             </svg>
           </li>
         </ul>
@@ -290,7 +290,7 @@
   
 
   
-    <li><a href="reference_known_issues.html">Known Issues</a></li>
+    <li class="active"><a href="reference_known_issues.html">Known Issues</a></li>
   
 
 
@@ -310,7 +310,7 @@
   
 
   
-    <li class="active"><a href="task_quick_start.html">Quick start instructions</a></li>
+    <li><a href="task_quick_start.html">Quick start instructions</a></li>
   
 
   
@@ -485,11 +485,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Quick start instructions
+  <h1 class="n-doc__component-detail-heading">Known Issues and limitations
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_quick_start.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Quick start instructions](https://docs.netapp.com/us-en/cloud_volumes/aws/task_quick_start.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/reference_known_issues.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Known Issues and limitations](https://docs.netapp.com/us-en/cloud_volumes/aws/reference_known_issues.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -497,7 +497,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-01-09 21:05:49 +0000">01/09/2019</time>
+<time datetime="2019-05-03 15:39:12 +0000">05/03/2019</time>
 
 
 <span>Contributors
@@ -510,35 +510,54 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-juliec">
-    <img  class="avatar avatar-small"
-          alt="netapp-juliec"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/35970435?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 </p>
 
 <div class="paragraph lead">
-<p>You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.</p>
+<p>The following known issues and limitations exist in Cloud Volumes Service for AWS.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Issue</strong>: In release v1.1.81 the API endpoint is no longer listed on the API access page.</p>
 <div class="paragraph">
-<p><strong>Note:</strong> You must have configured the required AWS networking components prior to creating a cloud volume. See the <a href="media/cvs_aws_account_setup.pdf" target="_blank" rel="noopener">NetApp Cloud Volumes Service for AWS Account Setup</a> guide if you have not yet completed these steps.</p>
+<p><strong>Workaround</strong>: You can determine the endpoint from the URL in the browser window appended with ":8080/v1/"; meaning port <strong>8080</strong>, path <strong>/v1/</strong>. For example, for the us-west-1 region, the API endpoint is <a href="https://cv.us-west-1.netapp.com:8080/v1/" class="bare">https://cv.us-west-1.netapp.com:8080/v1/</a></p>
 </div>
-<h3 id="select-the-region" class="discrete"><span class="image"><img src="./media/number1.png" alt="The number 1"></span> <a href="task_selecting_region.html">Select the region</a></h3>
-<div class="paragraph quick-margin-para">
-<p>Specify the AWS region where you plan to create cloud volumes.</p>
+</li>
+<li>
+<p><strong>Issue</strong>: The service level names in the RESTful APIs do not match the names defined in the user interface. Use the correct name when defining the service level using the APIs.</p>
+</li>
+</ul>
 </div>
-<h3 id="create-the-cloud-volume" class="discrete"><span class="image"><img src="./media/number2.png" alt="The number 2"></span> <a href="task_creating_cloud_volumes_for_aws.html">Create the cloud volume</a></h3>
-<div class="paragraph quick-margin-para">
-<p>Create the cloud volume in the AWS cloud by specifying the size and service level, and define other options.</p>
-</div>
-<h3 id="mount-the-cloud-volume" class="discrete"><span class="image"><img src="./media/number3.png" alt="The number 3"></span> <a href="task_mounting_cloud_volumes_for_aws.html">Mount the cloud volume</a></h3>
-<div class="paragraph quick-margin-para">
-<p>Mount the cloud volume to your AWS instance using NFSv3 for Linux and UNIX clients, or SMB for Windows clients.</p>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">UI Service Level Name</th>
+<th class="tableblock halign-left valign-top">API Service Level Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Premium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extreme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extreme</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>See <a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service levels</a> for more information on service levels.</p>
 </div>
 
         </article>
@@ -582,7 +601,7 @@
                       <span class="n-footer__social-link-text">blog</span>
                       <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                         <title>blog@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#blog"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#blog"></use>
                       </svg>
                     </a>
                   </li>
@@ -591,7 +610,7 @@
                       <span class="n-footer__social-link-text">community</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>community@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#comments"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#comments"></use>
                       </svg>
                     </a>
                   </li>
@@ -601,7 +620,7 @@
                       <span class="n-footer__social-link-text">twitter</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>twitter@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#twitter"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#twitter"></use>
                       </svg>
                     </a>
                   </li>
@@ -610,7 +629,7 @@
                       <span class="n-footer__social-link-text">youtube</span>
                       <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                         <title>youtube@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/common/svg/sprite.svg#youtube"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#youtube"></use>
                       </svg>
                     </a>
                   </li>
@@ -631,15 +650,15 @@
 
     </div>
 
-    <script src="/cloud_volumes/common/js/components.js"></script>
-    <script src="/cloud_volumes/common/js/doc-components.js"></script>
+    <script src="/cloud_volumes/us-en/common/js/components.js"></script>
+    <script src="/cloud_volumes/us-en/common/js/doc-components.js"></script>
 
     <!-- Elasticsearch JS -->
-    <script type="text/javascript" src='/cloud_volumes/js/bundle.js'></script>
+    <script type="text/javascript" src='/cloud_volumes/us-en/js/bundle.js'></script>
 
     <!-- Syntax Highlighting -->
-    <script type="text/javascript" src='/cloud_volumes/js/prism.js'></script>
-    <script type="text/javascript" src='/cloud_volumes/js/prism-curl.js'></script>
+    <script type="text/javascript" src='/cloud_volumes/us-en/js/prism.js'></script>
+    <script type="text/javascript" src='/cloud_volumes/us-en/js/prism-curl.js'></script>
 
   </body>
 

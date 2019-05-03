@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Quick start instructions | NetApp Cloud Docs</title>
+  <title>Known Issues and limitations | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Quick start instructions | NetApp Cloud Docs" />
+  <meta property="og:title" content="Known Issues and limitations | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/task_quick_start.html" />
-	<meta property="og:description" content="You can get started with the Cloud Volumes Service for AWS by completing a few quick steps." />
+	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/reference_known_issues.html" />
+	<meta property="og:description" content="The following known issues and limitations exist in Cloud Volumes Service for AWS." />
   <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.">
-  <meta name="keywords" content=" ">
+  <meta name="description" content="The following known issues and limitations exist in Cloud Volumes Service for AWS.">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS limitations and known issues">
   
 
   <!-- Icons -->
@@ -290,7 +290,7 @@
   
 
   
-    <li><a href="reference_known_issues.html">Known Issues</a></li>
+    <li class="active"><a href="reference_known_issues.html">Known Issues</a></li>
   
 
 
@@ -310,7 +310,7 @@
   
 
   
-    <li class="active"><a href="task_quick_start.html">Quick start instructions</a></li>
+    <li><a href="task_quick_start.html">Quick start instructions</a></li>
   
 
   
@@ -485,11 +485,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Quick start instructions
+  <h1 class="n-doc__component-detail-heading">Known Issues and limitations
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_quick_start.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Quick start instructions](https://docs.netapp.com/us-en/cloud_volumes/aws/task_quick_start.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/reference_known_issues.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Known Issues and limitations](https://docs.netapp.com/us-en/cloud_volumes/aws/reference_known_issues.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -497,7 +497,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-01-09 21:05:49 +0000">01/09/2019</time>
+<time datetime="2019-05-03 15:39:12 +0000">05/03/2019</time>
 
 
 <span>Contributors
@@ -510,35 +510,54 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-juliec">
-    <img  class="avatar avatar-small"
-          alt="netapp-juliec"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/35970435?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 </p>
 
 <div class="paragraph lead">
-<p>You can get started with the Cloud Volumes Service for AWS by completing a few quick steps.</p>
+<p>The following known issues and limitations exist in Cloud Volumes Service for AWS.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Issue</strong>: In release v1.1.81 the API endpoint is no longer listed on the API access page.</p>
 <div class="paragraph">
-<p><strong>Note:</strong> You must have configured the required AWS networking components prior to creating a cloud volume. See the <a href="media/cvs_aws_account_setup.pdf" target="_blank" rel="noopener">NetApp Cloud Volumes Service for AWS Account Setup</a> guide if you have not yet completed these steps.</p>
+<p><strong>Workaround</strong>: You can determine the endpoint from the URL in the browser window appended with ":8080/v1/"; meaning port <strong>8080</strong>, path <strong>/v1/</strong>. For example, for the us-west-1 region, the API endpoint is <a href="https://cv.us-west-1.netapp.com:8080/v1/" class="bare">https://cv.us-west-1.netapp.com:8080/v1/</a></p>
 </div>
-<h3 id="select-the-region" class="discrete"><span class="image"><img src="./media/number1.png" alt="The number 1"></span> <a href="task_selecting_region.html">Select the region</a></h3>
-<div class="paragraph quick-margin-para">
-<p>Specify the AWS region where you plan to create cloud volumes.</p>
+</li>
+<li>
+<p><strong>Issue</strong>: The service level names in the RESTful APIs do not match the names defined in the user interface. Use the correct name when defining the service level using the APIs.</p>
+</li>
+</ul>
 </div>
-<h3 id="create-the-cloud-volume" class="discrete"><span class="image"><img src="./media/number2.png" alt="The number 2"></span> <a href="task_creating_cloud_volumes_for_aws.html">Create the cloud volume</a></h3>
-<div class="paragraph quick-margin-para">
-<p>Create the cloud volume in the AWS cloud by specifying the size and service level, and define other options.</p>
-</div>
-<h3 id="mount-the-cloud-volume" class="discrete"><span class="image"><img src="./media/number3.png" alt="The number 3"></span> <a href="task_mounting_cloud_volumes_for_aws.html">Mount the cloud volume</a></h3>
-<div class="paragraph quick-margin-para">
-<p>Mount the cloud volume to your AWS instance using NFSv3 for Linux and UNIX clients, or SMB for Windows clients.</p>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">UI Service Level Name</th>
+<th class="tableblock halign-left valign-top">API Service Level Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Premium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standard</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extreme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extreme</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>See <a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service levels</a> for more information on service levels.</p>
 </div>
 
         </article>
