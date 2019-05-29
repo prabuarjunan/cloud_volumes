@@ -499,7 +499,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-05-21 17:23:22 +0000">05/21/2019</time>
+<time datetime="2019-05-29 13:45:43 +0000">05/29/2019</time>
 
 
 <span>Contributors
@@ -521,6 +521,21 @@
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><strong>Issue</strong>: When creating a Cloud Volume, the export path specified in the <strong>Volume path</strong> field cannot include an underscore '_'.</p>
+<div class="paragraph">
+<p><strong>Workaround</strong>: At this time, specify an export path without an underscore.</p>
+</div>
+</li>
+<li>
+<p><strong>Issue</strong>: Creating a volume from an existing snapshot may take over an hour if the parent volume has a lot of data (100s of GBs). In some cases the process could time out.</p>
+</li>
+<li>
+<p><strong>Issue</strong>: The amount of space a Cloud Volume is currently using is not reported in the API response. The <strong>usedBytes</strong> key currently will always have a value of '0'.</p>
+<div class="paragraph">
+<p><strong>Workaround</strong>: You can determine the used capacity per volume from an EC2 client using the <strong>df</strong> command from a Linux command, or by viewing the properties from a Windows client.</p>
+</div>
+</li>
 <li>
 <p><strong>Issue</strong>: The service level names in the RESTful APIs do not match the names defined in the user interface. Use the correct name when defining the service level using the APIs.</p>
 <table class="tableblock frame-all grid-all" style="width: 50%;">
