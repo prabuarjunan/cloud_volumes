@@ -6,7 +6,7 @@
   <meta property="og:title" content="Creating or modifying a snapshot policy | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/task_creating_modifying_snapshot_policies.html" />
-	<meta property="og:description" content="You can create or modify a snapshot policy as necessary for a cloud volume." />
+	<meta property="og:description" content="You can create or modify a snapshot policy as necessary for a cloud volume. You can also temporarily disable snapshots from being created while retaining you..." />
   <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="You can create or modify a snapshot policy as necessary for a cloud volume.">
+  <meta name="description" content="You can create or modify a snapshot policy as necessary for a cloud volume. You can also temporarily disable snapshots from being created while retaining you...">
   <meta name="keywords" content=" Cloud Volumes Service for AWS, snapshot policies">
   
 
@@ -499,7 +499,7 @@
 
 <p class="page-details">
 
-<time datetime="2018-09-11 11:11:17 +0000">09/11/2018</time>
+<time datetime="2019-06-04 12:38:41 +0000">06/04/2019</time>
 
 
 <span>Contributors
@@ -525,50 +525,37 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can create or modify a snapshot policy as necessary for a cloud volume.</p>
+<p>You can create or modify a snapshot policy as necessary for a cloud volume. You can also temporarily disable snapshots from being created while retaining your defined policy settings.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
 <p>From the Volumes page, click the volume name, and then select <strong>Snapshot policy</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Enabled</strong> button to <strong>ON</strong> to create a policy or to re-enable a policy that had been temporarily disabled.</p>
 <div class="paragraph">
-<p>Snapshot policies can be Hourly, Daily, Weekly, or Monthly.</p>
-</div>
-<div class="paragraph">
-<p>Active policies are marked with a green dot. Inactive policies are marked with a red dot.</p>
+<p>Click the <strong>Enabled</strong> button to <strong>OFF</strong> to temporarily disable snapshots from being created.</p>
 </div>
 </li>
 <li>
 <p>Select <strong>Hourly</strong>, <strong>Daily</strong>, <strong>Weekly</strong>, or <strong>Monthly</strong> to specify the frequency for creating snapshots.</p>
+<div class="paragraph">
+<p>Configured policies are marked with a green dot. Undefined policies are marked with a red dot.</p>
+</div>
 </li>
 <li>
 <p>Select the number of snapshots to keep.</p>
 </li>
 <li>
-<p>Select the time when the snapshot should be taken:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Select <strong>Minute</strong> for hourly snapshots.</p>
-</li>
-<li>
-<p>Select <strong>Hour</strong> and <strong>Minute</strong> for daily snapshots.</p>
-</li>
-<li>
-<p>Select <strong>Weekday/s</strong>, <strong>Hour</strong>, and <strong>Minutes</strong> for weekly snapshots.</p>
-</li>
-<li>
-<p>Select <strong>Day/s</strong> of month, <strong>Hour</strong>, and <strong>Minutes</strong> for monthly snapshots.</p>
+<p>Select the day, hour, and minute when the snapshots should be taken.</p>
 <div class="paragraph">
-<p><span class="image"><img src="./media/diagram_snapshot_policy_1.png" alt="Snapshot policy"></span></p>
-</div>
-</li>
-</ul>
+<p><span class="image"><img src="./media/diagram_snapshot_policy_modify.png" alt="Snapshot policy"></span></p>
 </div>
 </li>
 <li>
-<p>If you need to create additional snapshot policies, repeat steps 2 through 4.</p>
+<p>If you need to create additional snapshot policies for this volume, repeat steps 3 through 5.</p>
 </li>
 <li>
 <p>Click <strong>Save changes</strong>.</p>
