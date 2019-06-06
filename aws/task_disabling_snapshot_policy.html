@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>NetApp Cloud Volumes Service for AWS documentation | NetApp Cloud Docs</title>
+  <title>Disabling a snapshot policy | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="NetApp Cloud Volumes Service for AWS documentation | NetApp Cloud Docs" />
+  <meta property="og:title" content="Disabling a snapshot policy | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/index.html" />
-	<meta property="og:description" content="Welcome to the documentation portal for NetApp Cloud Volumes Service for AWS." />
+	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/task_disabling_snapshot_policy.html" />
+	<meta property="og:description" content="If you want to stop snapshots from being created for a short period of time while retaining your snapshot policy settings, you can disable the snapshot policy." />
   <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="Welcome to the documentation portal for NetApp Cloud Volumes Service for AWS.">
-  <meta name="keywords" content=" ">
+  <meta name="description" content="If you want to stop snapshots from being created for a short period of time while retaining your snapshot policy settings, you can disable the snapshot policy.">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, snapshot policies">
   
 
   <!-- Icons -->
@@ -277,7 +277,7 @@
   
 
   
-    <li class="active"><a href="index.html">Cloud Volumes Service for AWS docs</a></li>
+    <li><a href="index.html">Cloud Volumes Service for AWS docs</a></li>
   
 
   
@@ -372,7 +372,7 @@
   
 
   
-    <li><a href="task_disabling_snapshot_policy.html">Disabling a snapshot policy</a></li>
+    <li class="active"><a href="task_disabling_snapshot_policy.html">Disabling a snapshot policy</a></li>
   
 
   
@@ -491,11 +491,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">NetApp Cloud Volumes Service for AWS documentation
+  <h1 class="n-doc__component-detail-heading">Disabling a snapshot policy
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/index.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[NetApp Cloud Volumes Service for AWS documentation](https://docs.netapp.com/us-en/cloud_volumes/aws/index.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_disabling_snapshot_policy.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Disabling a snapshot policy](https://docs.netapp.com/us-en/cloud_volumes/aws/task_disabling_snapshot_policy.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -503,18 +503,10 @@
 
 <p class="page-details">
 
-<time datetime="2019-01-24 18:13:19 +0000">01/24/2019</time>
+<time datetime="2019-06-06 12:33:12 +0000">06/06/2019</time>
 
 
 <span>Contributors
-  
-  <a target="_blank" href="https://github.com/netapp-juliec">
-    <img  class="avatar avatar-small"
-          alt="netapp-juliec"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/35970435?v=4"
-          style="border-radius: 50%;"/>
-  </a>
   
   <a target="_blank" href="https://github.com/netapp-tonacki">
     <img  class="avatar avatar-small"
@@ -524,121 +516,32 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/b-juche">
-    <img  class="avatar avatar-small"
-          alt="b-juche"
-          width="20" height="20"
-          src="https://avatars1.githubusercontent.com/u/37817957?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/akseldavis">
-    <img  class="avatar avatar-small"
-          alt="akseldavis"
-          width="20" height="20"
-          src="https://avatars2.githubusercontent.com/u/33839009?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
-<p>NetApp Cloud Volumes Service for AWS is a cloud native file service that provides NAS volumes over NFS and SMB with all-flash performance. This service enables any workload, including legacy applications, to run in the AWS cloud.</p>
+<p>You can disable a snapshot policy to stop snapshots from being created for a short period of time while retaining your snapshot policy settings.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="benefits-of-using-cloud-volumes-service-for-aws">Benefits of using Cloud Volumes Service for AWS</h2>
-<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>From the Volumes page, click the volume name, and then select <strong>Snapshot policy</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Enabled</strong> button to <strong>OFF</strong> to disable snapshots from being created.</p>
 <div class="paragraph">
-<p>Cloud Volumes Service for AWS provides the following benefits:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Consistent high performance</p>
-</li>
-<li>
-<p>Data protection without performance impacts</p>
-</li>
-<li>
-<p>Instant cloning to support operations, development, and test workflows</p>
-</li>
-<li>
-<p>Support for NFSv3 and SMB 2.1, 3.0, and 3.1.1 NAS protocols</p>
-</li>
-<li>
-<p>Secure access to Linux and Windows Elastic Container Service (ECS) instances, with support including the following:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Amazon Linux 2, Red Hat Enterprise Linux 7.5, SLES 12 SP3, and Ubuntu 16.04 LTS</p>
-</li>
-<li>
-<p>Windows Server 2008 R2, Windows Server 2012 R2, and Windows Server 2016</p>
-</li>
-</ul>
+<p><span class="image"><img src="./media/diagram_snapshot_policy_button.png" alt="Snapshot policy Enable button"></span></p>
 </div>
 </li>
 <li>
-<p>Fully managed service, therefore no need to configure or manage storage devices</p>
+<p>Click <strong>Save changes</strong>.</p>
 </li>
-<li>
-<p>Choice of bundled and pay-as-you-go pricing</p>
-</li>
-</ul>
+</ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="perform-top-tasks">Perform top tasks</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="task_selecting_region.html">Selecting the region</a></p>
-</li>
-<li>
-<p><a href="task_creating_cloud_volumes_for_aws.html">Creating a cloud volume</a></p>
-</li>
-<li>
-<p><a href="task_mounting_cloud_volumes_for_aws.html">Mounting a cloud volume</a></p>
-</li>
-<li>
-<p><a href="task_creating_on_demand_snapshots.html">Creating an on-demand snapshot for a cloud volume</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="learn-about-cloud-volumes-service-for-aws">Learn about Cloud Volumes Service for AWS</h2>
-<div class="sectionbody">
-<div class="videoblock">
-<div class="content">
-<iframe width="848" height="480" src="https://www.youtube.com/embed/hL4rosv-iZQ?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="find-more-information">Find more information</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://cloud.netapp.com/home" target="_blank" rel="noopener">NetApp Cloud Central</a></p>
-</li>
-<li>
-<p><a href="https://www.netapp.com/us/forms/campaign/register-for-netapp-cloud-volumes-for-aws.aspx?hsCtaTracking=4f67614a-8c97-4c15-bd01-afa38bd31696%7C5e536b53-9371-4ce1-8e38-efda436e592e" target="_blank" rel="noopener">Get a first look at the new NetApp Cloud Volumes Service for AWS</a></p>
-</li>
-</ul>
-</div>
-</div>
+<div class="paragraph">
+<p>When you want to re-enable the snapshot policy, click the <strong>Enabled</strong> button to <strong>ON</strong> and click <strong>Save changes</strong>.</p>
 </div>
 
         </article>

@@ -6,7 +6,7 @@
   <meta property="og:title" content="Creating or modifying a snapshot policy | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/task_creating_modifying_snapshot_policies.html" />
-	<meta property="og:description" content="You can create or modify a snapshot policy as necessary for a cloud volume. You can also temporarily disable snapshots from being created while retaining you..." />
+	<meta property="og:description" content="You can create or modify a snapshot policy as necessary for a cloud volume." />
   <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="You can create or modify a snapshot policy as necessary for a cloud volume. You can also temporarily disable snapshots from being created while retaining you...">
+  <meta name="description" content="You can create or modify a snapshot policy as necessary for a cloud volume.">
   <meta name="keywords" content=" Cloud Volumes Service for AWS, snapshot policies">
   
 
@@ -372,6 +372,10 @@
   
 
   
+    <li><a href="task_disabling_snapshot_policy.html">Disabling a snapshot policy</a></li>
+  
+
+  
     <li><a href="task_deleting_snapshots.html">Deleting a snapshot</a></li>
   
 
@@ -499,7 +503,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-06-04 12:38:41 +0000">06/04/2019</time>
+<time datetime="2019-06-06 12:33:12 +0000">06/06/2019</time>
 
 
 <span>Contributors
@@ -525,7 +529,7 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can create or modify a snapshot policy as necessary for a cloud volume. You can also temporarily disable snapshots from being created while retaining your defined policy settings.</p>
+<p>You can create or modify a snapshot policy as necessary for a cloud volume.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -534,28 +538,25 @@
 <p>From the Volumes page, click the volume name, and then select <strong>Snapshot policy</strong>.</p>
 </li>
 <li>
-<p>Click the <strong>Enabled</strong> button to <strong>ON</strong> to create a policy or to re-enable a policy that had been temporarily disabled.</p>
-<div class="paragraph">
-<p>Click the <strong>Enabled</strong> button to <strong>OFF</strong> to temporarily disable snapshots from being created.</p>
-</div>
-</li>
-<li>
 <p>Select <strong>Hourly</strong>, <strong>Daily</strong>, <strong>Weekly</strong>, or <strong>Monthly</strong> to specify the frequency for creating snapshots.</p>
 <div class="paragraph">
 <p>Configured policies are marked with a green dot. Undefined policies are marked with a red dot.</p>
 </div>
 </li>
 <li>
-<p>Select the number of snapshots to keep.</p>
+<p>Select the number of snapshots you want to keep.</p>
 </li>
 <li>
-<p>Select the day, hour, and minute when the snapshots should be taken.</p>
+<p>Select the day, hour, and minute when the snapshot should be taken.</p>
+</li>
+<li>
+<p>If you want to create additional snapshots with different frequencies, for example, both monthly and daily snapshots, repeat steps 2 through 4.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/diagram_snapshot_policy_modify.png" alt="Snapshot policy"></span></p>
 </div>
 </li>
 <li>
-<p>If you need to create additional snapshot policies for this volume, repeat steps 3 through 5.</p>
+<p>If the <strong>Enabled</strong> button is not already set to <strong>ON</strong>, click the button to enable or re-enable the policy.</p>
 </li>
 <li>
 <p>Click <strong>Save changes</strong>.</p>
