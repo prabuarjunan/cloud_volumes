@@ -20,6 +20,12 @@ NetApp periodically updates Cloud Volumes Service for AWS to bring you new featu
 
 NetApp periodically updates the Cloud Volumes Service to bring you new features, enhancements, and bug fixes.
 
+=== July 2019
+* The user interface now displays the used capacity per volume.
+* The API has been updated to report used capacity, and total inodes and used inodes.
+* The API has been updated to use the same service levels names as the user interface (Standard, Premium, and Extreme).
+* The sample Python scripts have been updated to match the updated APIs (link:reference_cloud_volume_apis.html[Cloud Volumes APIs]).
+
 === March 2019
 * Added support for Microsoft Active Directory in the AWS Cloud (AWS Managed Microsoft AD) for SMB cloud volumes.
 * The control plane for us-east-1 and us-west-1 now have their own UI URL and API endpoint. Previously these regions shared the same control plane.
