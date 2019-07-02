@@ -505,7 +505,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-05-29 13:45:43 +0000">05/29/2019</time>
+<time datetime="2019-07-02 16:40:48 +0000">07/02/2019</time>
 
 
 <span>Contributors
@@ -535,44 +535,6 @@
 </li>
 <li>
 <p><strong>Issue</strong>: Creating a volume from an existing snapshot may take over an hour if the parent volume has a lot of data (100s of GBs). In some cases the process could time out.</p>
-</li>
-<li>
-<p><strong>Issue</strong>: The amount of space a Cloud Volume is currently using is not reported in the API response. The <strong>usedBytes</strong> key currently will always have a value of '0'.</p>
-<div class="paragraph">
-<p><strong>Workaround</strong>: You can determine the used capacity per volume from an EC2 client using the <strong>df</strong> command from a Linux command, or by viewing the properties from a Windows client.</p>
-</div>
-</li>
-<li>
-<p><strong>Issue</strong>: The service level names in the RESTful APIs do not match the names defined in the user interface. Use the correct name when defining the service level using the APIs.</p>
-<table class="tableblock frame-all grid-all" style="width: 50%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">UI Service Level Name</th>
-<th class="tableblock halign-left valign-top">API Service Level Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basic</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Premium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">standard</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extreme</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">extreme</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>See <a href="reference_selecting_service_level_and_quota.html">Selecting the appropriate service levels</a> for more information on service levels.</p>
-</div>
 </li>
 </ul>
 </div>
