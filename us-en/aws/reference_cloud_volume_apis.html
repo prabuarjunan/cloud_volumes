@@ -505,7 +505,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-07-02 18:18:01 +0000">07/02/2019</time>
+<time datetime="2019-07-16 11:16:00 +0000">07/16/2019</time>
 
 
 <span>Contributors
@@ -886,15 +886,15 @@ Use with caution.  This API call causes any data written after the snapshot to b
 <pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '
 {
 	"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
-	"name": "Clone",
-	"creationToken": "perfectly-cloned-volume",
+	"name": "Copy",
+	"creationToken": "perfectly-copied-volume",
 	"region": "us-west-1",
 	"serviceLevel": "extreme"
 }'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><a href="media/clone-cv.py">Script to clone a cloud volume</a></p>
+<p><a href="media/copy-cv.py">Script to copy a cloud volume</a></p>
 </div>
 </div>
 <div class="sect3">
