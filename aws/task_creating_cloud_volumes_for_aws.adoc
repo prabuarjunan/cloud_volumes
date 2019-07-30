@@ -91,6 +91,8 @@ Click *+ Add export policy rule* if you want to define additional export policy 
 *Note:* Do not enable encryption if SMB 2.1 clients need to mount the volume.
 
 == Integrate the volume with an Active Directory server (SMB and Dual Protocol)
+*Note:* Please refer the link which explains the guidelines/Best Practise to configure Microsoft Active Directory sites and subnets.
+        https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/designing-the-site-topology
 
 If you selected SMB or Dual-protocol, you can choose to integrate the volume with a Windows Active Directory server or an AWS Managed Microsoft AD in the *Active Directory* section.
 
